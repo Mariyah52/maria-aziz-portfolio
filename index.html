@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Maria Aziz — AI/ML Specialist and NLP Researcher building AI products, chatbots, and business dashboards. Founder &amp; CEO, Imadi Technologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Maria Aziz | AI/ML Specialist &amp; NLP Researcher">
+    <meta property="og:description" content="AI/ML Specialist and NLP Researcher building AI products, chatbots, and business dashboards.">
+    <title>Maria Aziz | AI/ML Specialist &amp; NLP Researcher</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+        :root {
+            --bg: #07111f;
+            --ink: #f3f8ff;
+            --muted: #9aabc1;
+            --line: rgba(211, 229, 255, .13);
+            --accent: #37ddf7;
+            --accent2: #8766ff;
+            --font: Manrope, Arial, sans-serif;
+            --display: "Space Grotesk", Manrope, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font);
+            line-height: 1.6;
+        }
+
+        body:before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: radial-gradient(circle at 80% 5%, rgba(55, 221, 247, .11), transparent 30rem),
+                        radial-gradient(circle at 5% 40%, rgba(135, 102, 255, .09), transparent 26rem),
+                        linear-gradient(120deg, #07111f, #091725 58%, #07111f);
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .wrap { width: min(920px, calc(100% - 48px)); margin: auto; }
+
+        header.nav {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .nav-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+
+        .brand { font: 700 1.05rem var(--display); letter-spacing: .02em; }
+
+        .navlinks { display: flex; gap: 22px; font-size: .82rem; font-weight: 700; color: #b9c8da; flex-wrap: wrap; }
+        .navlinks a:hover { color: var(--accent); }
+
+        .hero {
+            padding: 70px 0 60px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero .eyebrow {
+            color: var(--accent);
+            font-size: .74rem;
+            font-weight: 800;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font: 700 clamp(2.4rem, 5vw, 3.6rem)/1.05 var(--display);
+            letter-spacing: -.03em;
+            margin: 14px 0 12px;
+        }
+
+        .hero .tagline { color: #b4c4d8; font-size: 1.08rem; max-width: 540px; margin: 0 0 18px; }
+
+        .hero .meta { display: flex; gap: 14px; flex-wrap: wrap; color: var(--muted); font-size: .84rem; margin-bottom: 22px; }
+        .hero .meta span { display: inline-flex; align-items: center; gap: 6px; }
+
+        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        .btn {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, .02);
+            color: var(--ink);
+            font-weight: 800;
+            font-size: .82rem;
+            cursor: pointer;
+            transition: .25s;
+            display: inline-block;
+        }
+
+        .btn:hover { transform: translateY(-2px); border-color: rgba(55, 221, 247, .65); }
+
+        .btn.primary { background: var(--accent); color: #06121f; border-color: var(--accent); }
+
+        .portrait {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: rgba(13, 28, 48, .6);
+            flex: none;
+            justify-self: end;
+        }
+
+        .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .section { padding: 54px 0; border-top: 1px solid var(--line); }
+
+        .section h2 {
+            font: 700 clamp(1.6rem, 3vw, 2.1rem)/1.1 var(--display);
+            letter-spacing: -.02em;
+            margin: 0 0 26px;
+        }
+
+        .section .eyebrow {
+            color: var(--accent);
+            font-size: .72rem;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .about p { color: #c3d1e2; max-width: 700px; font-size: 1.02rem; }
+
+        .item { padding: 22px 0; border-bottom: 1px solid var(--line); }
+        .item:last-child { border-bottom: none; padding-bottom: 0; }
+
+        .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+        .item-title { font: 700 1.1rem/1.3 var(--display); letter-spacing: -.01em; }
+        .item-org { color: var(--accent); font-weight: 600; font-size: .92rem; margin-top: 3px; }
+        .item-date { color: var(--muted); font-size: .8rem; white-space: nowrap; }
+        .item-location { color: var(--muted); font-size: .8rem; margin-top: 2px; }
+        .item p.desc { color: #b5c6d8; margin: 12px 0 0; font-size: .93rem; max-width: 640px; }
+
+        .item .tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+        .tag {
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 5px 11px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            color: var(--muted);
+        }
+
+        .skills-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+        .skills-group h3 { font: 700 .82rem var(--display); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 12px; }
+        .skills-group .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+        .cert-groups { display: grid; gap: 22px; }
+        .cert-group h3 { font: 700 .95rem var(--display); margin: 0 0 10px; }
+        .cert-group ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+        .cert-group li { color: #b5c6d8; font-size: .88rem; padding-left: 16px; position: relative; }
+        .cert-group li:before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+        .cert-note { color: var(--muted); font-size: .8rem; margin-top: 14px; }
+
+        .contact-card {
+            padding: 32px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: linear-gradient(135deg, rgba(55, 221, 247, .08), rgba(135, 102, 255, .07));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .contact-card h2 { margin: 6px 0 8px; }
+        .contact-card p { color: var(--muted); margin: 0; max-width: 480px; }
+        .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+        footer { padding: 40px 0; text-align: center; color: #8395aa; font-size: .78rem; }
+
+        @media (max-width: 700px) {
+            .hero { grid-template-columns: 1fr; text-align: left; }
+            .portrait { justify-self: start; width: 140px; height: 140px; }
+            .skills-groups { grid-template-columns: 1fr; }
+            .item-head { flex-direction: column; align-items: flex-start; }
+            .contact-card { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav">
+        <div class="wrap nav-in">
+            <a class="brand" href="#top">MARIA AZIZ</a>
+            <nav class="navlinks">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="wrap hero" id="top">
+            <div>
+                <div class="eyebrow">AI / ML · NLP Research</div>
+                <h1>Maria Aziz</h1>
+                <p class="tagline">AI/ML Specialist &amp; NLP Researcher — I design and deploy AI products that solve real business problems: multilingual NLP pipelines, intelligent chatbots, and data-driven dashboards used for decision-making.</p>
+                <div class="meta">
+                    <span>📍 Karachi, Sindh, Pakistan</span>
+                    <span>🎓 NAVTTC Fellow @ IBA Karachi</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="btn primary" href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">View LinkedIn →</a>
+                    <a class="btn" href="https://imadi-platform-api.onrender.com" target="_blank" rel="noopener">Imadi Technologies →</a>
+                </div>
+            </div>
+            <div class="portrait">
+                <img src="assets/maria-aziz.jpg" alt="Portrait of Maria Aziz">
+            </div>
+        </section>
+
+        <section class="section about" id="about">
+            <div class="wrap">
+                <span class="eyebrow">About</span>
+                <h2>AI/ML Specialist &amp; NLP Researcher</h2>
+                <p>NAVTTC Fellow @ IBA Karachi. I design and deploy AI products that solve real business problems — from multilingual NLP pipelines to intelligent chatbots and data-driven dashboards used for decision-making.</p>
+                <p>Founder &amp; CEO of <a href="https://imadi-platform-api.onrender.com" target="_blank" rel="noopener" style="color:var(--accent);font-weight:700">Imadi Technologies</a>, where I lead practical, AI-first technology work for growing businesses.</p>
+            </div>
+        </section>
+
+        <section class="section" id="experience">
+            <div class="wrap">
+                <span class="eyebrow">Experience</span>
+                <h2>Where I've worked</h2>
+
+                <div class="item">
+                    <div class="item-head">
+                        <div>
+                            <div class="item-title">AI / ML and Automation Consultant</div>
+                            <div class="item-org">ALICO Enterprises · Contract</div>
+                            <div class="item-location">Karachi, Sindh, Pakistan · Remote</div>
+                        </div>
+                        <div class="item-date">Jun 2026 – Present</div>
+                    </div>
+                    <p class="desc">Contract role as AI/ML and Automation Consultant at ALICO Enterprises. Designed and deployed "ALICO Business Suite," a web ERP for invoicing, stock, expense, and banking with role-based access control and audit logging.</p>
+                    <div class="tags"><span class="tag">Firebase</span><span class="tag">Artificial Intelligence (AI)</span></div>
+                </div>
+
+                <div class="item">
+                    <div class="item-head">
+                        <div>
+                            <div class="item-title">AI Product Developer — SmartPlan Meals</div>
+                            <div class="item-org">Self Employed · Freelance</div>
+                            <div class="item-location">Karachi Division, Sindh, Pakistan · Remote</div>
+                        </div>
+                        <div class="item-date">May 2026 – Present</div>
+                    </div>
+                    <p class="desc">Developed AI-powered products and automation solutions. SmartPlan Meals is an AI-based meal planning system with personalized nutrition.</p>
+                    <div class="tags"><span class="tag">Natural Language Processing (NLP)</span><span class="tag">Artificial Intelligence (AI)</span></div>
+                </div>
+
+                <div class="item">
+                    <div class="item-head">
+                        <div>
+                            <div class="item-title">Creator — Child-Friendly City Index</div>
+                            <div class="item-org">Independent Project Development · Self-employed</div>
+                            <div class="item-location">Remote</div>
+                        </div>
+                        <div class="item-date">May 2026 – Present</div>
+                    </div>
+                    <p class="desc">Building an open-source tool to score neighborhoods for children — from vision deck to working prototype. Vision: "If Children Designed Our Cities: Reimagining Karachi."</p>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">Artificial Intelligence (AI)</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="wrap">
+                <span class="eyebrow">Featured project</span>
+                <h2>Decoding Traveler Emotions</h2>
+                <div class="item" style="border-bottom:none;padding-top:0">
+                    <div class="item-head">
+                        <div class="item-title">NLP Sentiment Analysis of Travel Blogs</div>
+                        <div class="item-date">2024</div>
+                    </div>
+                    <p class="desc">Analyzed travel blogs to understand how travelers express joy, frustration, and nostalgia using BERT and LSTM models. The project includes full training logs, confusion matrices, and visual comparisons — an open-source comparison of BERT vs. LSTM on travel-blog sentiment detection.</p>
+                    <div class="tags"><span class="tag">BERT</span><span class="tag">LSTM</span><span class="tag">Sentiment Analysis</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <div class="wrap">
+                <span class="eyebrow">Education</span>
+                <h2>Academic background</h2>
+
+                <div class="item">
+                    <div class="item-head">
+                        <div>
+                            <div class="item-title">Institute of Business Administration (IBA)</div>
+                            <div class="item-org">Specialization Certificate, Artificial Intelligence</div>
+                        </div>
+                        <div class="item-date">Feb 2026 – May 2026</div>
+                    </div>
+                    <p class="desc">Selected for the competitive, fully funded Prime Minister's Hunarmand Pakistan Program scholarship.</p>
+                </div>
+
+                <div class="item">
+                    <div class="item-head">
+                        <div>
+                            <div class="item-title">Karachi University</div>
+                            <div class="item-org">Master of Public Administration — Business Administration &amp; Management, General</div>
+                        </div>
+                        <div class="item-date">Jan 2024 – Dec 2025</div>
+                    </div>
+                    <p class="desc">Specialized in Data Analytics, Strategic Operations, and Enterprise Management. Activities: MBTI Career Compass.</p>
+                </div>
+
+                <div class="item">
+                    <div class="item-head">
+                        <div>
+                            <div class="item-title">Karachi University</div>
+                            <div class="item-org">Bachelor's Degree, Psychology</div>
+                        </div>
+                        <div class="item-date">Jan 2009 – Dec 2011</div>
+                    </div>
+                    <p class="desc">Grade: A. Activities: Psychology Seminar Series, Consumer Behavior Workshop, research seminars.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="wrap">
+                <span class="eyebrow">Skills</span>
+                <h2>What I work with</h2>
+                <div class="skills-groups">
+                    <div class="skills-group">
+                        <h3>AI &amp; Machine Learning</h3>
+                        <div class="tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Generative AI</span>
+                            <span class="tag">Natural Language Processing</span>
+                            <span class="tag">Sentiment Analysis</span>
+                            <span class="tag">Predictive Modeling</span>
+                            <span class="tag">Regression &amp; Logistic Regression</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Scikit-Learn</span>
+                            <span class="tag">Chatbots &amp; Conversational AI</span>
+                        </div>
+                    </div>
+                    <div class="skills-group">
+                        <h3>Data &amp; Product</h3>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Data Analytics</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Dashboard Building</span>
+                            <span class="tag">Microsoft Power BI</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Product Design &amp; Prototyping</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="wrap">
+                <span class="eyebrow">Certifications</span>
+                <h2>Selected certifications</h2>
+                <div class="cert-groups">
+                    <div class="cert-group">
+                        <h3>AI &amp; Data</h3>
+                        <ul>
+                            <li>Google AI Professional Certificate — Coursera</li>
+                            <li>AI Fundamentals — Google</li>
+                            <li>AI for Data Analysis — Google</li>
+                            <li>AI for Content Creation — Google</li>
+                            <li>AI for App Building — Google</li>
+                            <li>AI for Research and Insights — Google</li>
+                            <li>AI for Writing and Communicating — Google</li>
+                            <li>AI for Brainstorming and Planning — Google</li>
+                            <li>Foundations: Data, Data, Everywhere — Google</li>
+                        </ul>
+                    </div>
+                    <div class="cert-group">
+                        <h3>Project &amp; People Management</h3>
+                        <ul>
+                            <li>Foundations of Agile Project Management — Google</li>
+                            <li>Organize Projects and Measure Productivity with Scrum — Google</li>
+                            <li>Google People Management Essentials — Google</li>
+                            <li>Grow as a Manager — Google</li>
+                            <li>Create a High-Performing Team — Google</li>
+                            <li>Set and Achieve Team Goals — Google</li>
+                            <li>Support Individual Growth and Development — Google</li>
+                        </ul>
+                    </div>
+                    <div class="cert-group">
+                        <h3>Marketing &amp; Design</h3>
+                        <ul>
+                            <li>Search Engine Optimization (SEO) with Squarespace — Coursera</li>
+                            <li>Use Canva to Design Digital Course Collateral — Coursera</li>
+                            <li>Start Writing Prompts like a Pro — Google</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="cert-note">A full list of licenses and certifications (21 total) is available on LinkedIn.</p>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="wrap">
+                <div class="contact-card">
+                    <div>
+                        <span class="eyebrow">Get in touch</span>
+                        <h2>Let's talk AI.</h2>
+                        <p>Best way to reach me is on LinkedIn, or through Imadi Technologies.</p>
+                    </div>
+                    <div class="contact-actions">
+                        <a class="btn primary" href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">LinkedIn →</a>
+                        <a class="btn" href="https://imadi-platform-api.onrender.com" target="_blank" rel="noopener">Imadi Technologies →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">© 2026 Maria Aziz.</div>
+    </footer>
+</body>
+
+</html>
