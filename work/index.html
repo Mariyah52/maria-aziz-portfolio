@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Maria Aziz</title>
+    <meta name="description" content="Selected AI, automation, chatbot, SaaS, machine learning and social-impact technology projects by Maria Aziz.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Work | Maria Aziz">
+    <meta property="og:description" content="Selected AI, automation, chatbot, SaaS, machine learning and social-impact technology projects by Maria Aziz.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/site.css">
+</head>
+
+<body>
+
+    <header class="nav">
+        <div class="wrap navin">
+            <a class="brand" href="/">
+                <span class="mono">MA</span>
+                Maria Aziz
+            </a>
+            <nav class="navlinks">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/work/" aria-current="page">Work</a>
+                <a href="/solutions/">Solutions</a>
+                <a href="/research/">Research</a>
+                <a href="/writing/">Writing</a>
+                <a href="/recognition/">Recognition</a>
+                <a href="/now/">Now</a>
+            </nav>
+            <div class="navcta">
+                <a class="btn primary" href="/contact/">Contact</a>
+                <button class="menu" id="menuToggle" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <section class="wrap page-hero reveal">
+            <div class="eyebrow">Work</div>
+            <h1>Selected Technology Projects</h1>
+            <p>Problem, solution and current status for each project — filter by category to explore.</p>
+        </section>
+
+        <section class="wrap section reveal">
+            <div class="filter-bar" id="filter-bar"></div>
+            <div class="grid three" id="work-grid"></div>
+        </section>
+
+    </main>
+
+    <footer class="wrap foot">
+        <span>© <span id="year"></span> Maria Aziz</span>
+        <span><a href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="https://imadi-technologies.com" target="_blank" rel="noopener">Imadi Technologies</a> ·
+            <a href="/contact/">Contact</a></span>
+    </footer>
+    <script src="/assets/site.js"></script>
+    <script src="/assets/projects-data.js"></script>
+    <script>
+        (function () {
+            var grid = document.getElementById('work-grid');
+            var bar = document.getElementById('filter-bar');
+            if (!grid || !bar || !window.PROJECTS) return;
+
+            var categoriesPresent = ['featured'];
+            window.PROJECTS.forEach(function (p) {
+                p.categories.forEach(function (c) { if (categoriesPresent.indexOf(c) === -1) categoriesPresent.push(c); });
+            });
+
+            var active = 'featured';
+
+            function render() {
+                grid.innerHTML = '';
+                var list = active === 'featured'
+                    ? window.PROJECTS.filter(function (p) { return p.featured; })
+                    : window.PROJECTS.filter(function (p) { return p.categories.indexOf(active) !== -1; });
+                list.forEach(function (p) {
+                    var a = document.createElement('a');
+                    a.href = '/case-study/?slug=' + encodeURIComponent(p.slug);
+                    a.className = 'card project-card';
+                    var problem = p.problem || 'Problem statement to be added.';
+                    a.innerHTML =
+                        '<div class="project-tag">' + p.tagline + '</div>' +
+                        '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
+                        '<h3>' + p.name + '</h3>' +
+                        '<p>' + problem + '</p>' +
+                        '<span class="arrow">View case study →</span>';
+                    grid.appendChild(a);
+                });
+            }
+
+            categoriesPresent.forEach(function (cat) {
+                var btn = document.createElement('button');
+                btn.className = 'btn small';
+                btn.textContent = window.CATEGORY_LABELS[cat] || cat;
+                btn.setAttribute('aria-pressed', cat === active ? 'true' : 'false');
+                btn.addEventListener('click', function () {
+                    active = cat;
+                    bar.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+                    btn.setAttribute('aria-pressed', 'true');
+                    render();
+                });
+                bar.appendChild(btn);
+            });
+
+            render();
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study | Maria Aziz</title>
+    <meta name="description" content="A detailed case study: problem, solution, technology, and results.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Case Study | Maria Aziz">
+    <meta property="og:description" content="A detailed case study: problem, solution, technology, and results.">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/site.css">
+</head>
+
+<body>
+
+    <header class="nav">
+        <div class="wrap navin">
+            <a class="brand" href="/">
+                <span class="mono">MA</span>
+                Maria Aziz
+            </a>
+            <nav class="navlinks">
+                <a href="/">Home</a>
+                <a href="/about/">About</a>
+                <a href="/work/">Work</a>
+                <a href="/solutions/">Solutions</a>
+                <a href="/research/">Research</a>
+                <a href="/writing/">Writing</a>
+                <a href="/recognition/">Recognition</a>
+                <a href="/now/">Now</a>
+            </nav>
+            <div class="navcta">
+                <a class="btn primary" href="/contact/">Contact</a>
+                <button class="menu" id="menuToggle" aria-label="Open menu">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <section class="wrap page-hero reveal">
+            <div class="eyebrow" id="case-tagline">Case study</div>
+            <h1 id="case-title">Loading…</h1>
+            <div class="case-hero-meta">
+                <span class="project-status" id="case-status" data-status="">Status</span>
+            </div>
+        </section>
+        <section class="wrap" style="padding:20px 0 60px;">
+            <div class="card" style="padding:8px 40px;">
+                <div class="case-section"><h2>01. The Problem</h2><p id="case-problem"></p></div>
+                <div class="case-section" id="case-challenge-section" hidden><h2>02. The Challenge</h2><p id="case-challenge"></p></div>
+                <div class="case-section"><h2>03. The Solution</h2><p id="case-solution"></p></div>
+                <div class="case-section"><h2>04. My Role</h2><p id="case-role"></p></div>
+                <div class="case-section" id="case-tech-section" hidden><h2>05. Technology</h2><div class="chip-row" id="case-technology"></div></div>
+                <div class="case-section" id="case-architecture-section" hidden><h2>06. Architecture</h2><div class="workflow-steps" id="case-architecture"></div><p class="placeholder" id="case-architecture-note" style="margin-top:12px;" hidden></p></div>
+                <div class="case-section" id="case-innovation-section" hidden><h2>07. Innovation</h2><p id="case-innovation"></p></div>
+                <div class="case-section"><h2>08. Results</h2><p id="case-results"></p></div>
+                <div class="case-section" id="case-evidence-section" hidden><h2>09. Evidence</h2><div class="evidence-list" id="case-evidence"></div></div>
+            </div>
+        </section>
+        <section class="wrap section reveal">
+            <div class="card feature center" style="padding:44px;text-align:center;">
+                <h2>Have a similar problem?</h2>
+                <p style="max-width:480px;margin:0 auto 24px;">Let's talk through what you're trying to solve.</p>
+                <a class="btn primary" href="/contact/">Discuss your problem</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="wrap foot">
+        <span>© <span id="year"></span> Maria Aziz</span>
+        <span><a href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="https://imadi-technologies.com" target="_blank" rel="noopener">Imadi Technologies</a> ·
+            <a href="/contact/">Contact</a></span>
+    </footer>
+    <script src="/assets/site.js"></script>
+    <script src="/assets/projects-data.js"></script>
+    <script>
+        (function () {
+            var slug = new URLSearchParams(location.search).get('slug');
+            var project = slug ? window.getProjectBySlug(slug) : null;
+            var placeholder = function (text) {
+                var span = document.createElement('span');
+                span.className = 'placeholder';
+                span.textContent = text;
+                return span;
+            };
+            var setText = function (id, value, fallback) {
+                var el = document.getElementById(id);
+                if (!el) return;
+                if (value) { el.textContent = value; }
+                else { el.innerHTML = ''; el.appendChild(placeholder(fallback)); }
+            };
+
+            if (!project) {
+                document.getElementById('case-title').textContent = 'Case study not found';
+                document.getElementById('case-tagline').textContent = 'Case study';
+                return;
+            }
+
+            document.title = project.name + ' | Maria Aziz';
+            document.getElementById('case-title').textContent = project.name;
+            document.getElementById('case-tagline').textContent = project.tagline;
+            var statusEl = document.getElementById('case-status');
+            statusEl.textContent = project.status;
+            statusEl.setAttribute('data-status', project.status);
+
+            setText('case-problem', project.problem, 'Problem statement to be added.');
+            if (project.challenge) {
+                document.getElementById('case-challenge-section').hidden = false;
+                setText('case-challenge', project.challenge, '');
+            }
+            setText('case-solution', project.solution, 'Solution summary to be added.');
+            setText('case-role', project.myRole, 'To be confirmed.');
+            setText('case-results', project.resultsNote || project.results, 'No measurable results are published yet for this project. This section will be updated once real, verified figures are available — nothing here is estimated.');
+
+            if (project.technology && project.technology.length) {
+                document.getElementById('case-tech-section').hidden = false;
+                var techRow = document.getElementById('case-technology');
+                project.technology.forEach(function (t) {
+                    var chip = document.createElement('span');
+                    chip.className = 'chip';
+                    chip.textContent = t;
+                    techRow.appendChild(chip);
+                });
+            }
+
+            if (project.architecture && project.architecture.length) {
+                document.getElementById('case-architecture-section').hidden = false;
+                var archRow = document.getElementById('case-architecture');
+                project.architecture.forEach(function (step) {
+                    var box = document.createElement('span');
+                    box.className = 'workflow-step';
+                    box.textContent = step;
+                    archRow.appendChild(box);
+                });
+                if (project.architectureNote) {
+                    var note = document.getElementById('case-architecture-note');
+                    note.hidden = false;
+                    note.textContent = project.architectureNote;
+                }
+            }
+
+            if (project.innovation) {
+                document.getElementById('case-innovation-section').hidden = false;
+                setText('case-innovation', project.innovation, '');
+            }
+
+            if (project.evidence && project.evidence.length) {
+                document.getElementById('case-evidence-section').hidden = false;
+                var evRow = document.getElementById('case-evidence');
+                project.evidence.forEach(function (ev) {
+                    var a = document.createElement('a');
+                    a.href = ev.href;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.textContent = ev.label + ' ↗';
+                    evRow.appendChild(a);
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
