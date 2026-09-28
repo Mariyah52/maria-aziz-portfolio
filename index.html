@@ -7,6 +7,8 @@
     <title>Maria Aziz | AI Product Founder & Technology Entrepreneur</title>
     <meta name="description" content="Maria Aziz builds AI-powered products, intelligent automation, conversational systems and scalable SaaS solutions for real-world problems.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maria-aziz-portfolio.onrender.com/">
+    <link rel="canonical" href="https://maria-aziz-portfolio.onrender.com/">
     <meta property="og:title" content="Maria Aziz | AI Product Founder & Technology Entrepreneur">
     <meta property="og:description" content="Maria Aziz builds AI-powered products, intelligent automation, conversational systems and scalable SaaS solutions for real-world problems.">
     <meta name="twitter:card" content="summary">
@@ -19,7 +21,7 @@
       "name": "Maria Aziz",
       "jobTitle": "AI Product Founder & Technology Entrepreneur",
       "worksFor": { "@type": "Organization", "name": "Imadi Technologies", "url": "https://imadi-technologies.com" },
-      "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/"]
+      "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"]
     }
     </script>
     <script src="/assets/projects-data.js"></script>
@@ -39,11 +41,10 @@
                 <a href="/work/">Work</a>
                 <a href="/solutions/">Solutions</a>
                 <a href="/research/">Research</a>
-                <a href="/writing/">Writing</a>
-                <a href="/recognition/">Recognition</a>
                 <a href="/now/">Now</a>
             </nav>
             <div class="navcta">
+                <a class="btn" href="/assets/Maria_Aziz_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
                 <a class="btn primary" href="/contact/">Contact</a>
                 <button class="menu" id="menuToggle" aria-label="Open menu">☰</button>
             </div>
@@ -73,6 +74,16 @@
                     <div class="step"><div class="num">5</div><div><h3 style="margin:0;font-size:.95rem;">Automation</h3></div></div>
                     <div class="step"><div class="num">6</div><div><h3 style="margin:0;font-size:.95rem;">Measurable impact</h3></div></div>
                 </div>
+            </div>
+        </section>
+
+
+        <section class="wrap section reveal" style="padding-top:0;">
+            <div class="stat-band">
+                <div class="stat"><span class="stat-num">6</span><span class="stat-label">Client platforms built</span></div>
+                <div class="stat"><span class="stat-num">5</span><span class="stat-label">Live in daily use</span></div>
+                <div class="stat"><span class="stat-num">3</span><span class="stat-label">Countries: Pakistan, UK, Kenya</span></div>
+                <div class="stat"><span class="stat-num">358</span><span class="stat-label">Automated tests on one ERP</span></div>
             </div>
         </section>
 
@@ -168,16 +179,16 @@
         <section class="wrap section reveal">
             <div class="grid two">
                 <div class="card">
-                    <div class="eyebrow">Research</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Research, Publications &amp; Recognition</h3>
-                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">A 2024 conference proceeding at the National Conference on Managing Mega Cities, plus recognition and media coverage as it's confirmed.</p>
+                    <div class="eyebrow">Research &amp; Publications</div>
+                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Published Work</h3>
+                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">A conference paper at the National Conference on Managing Mega Cities (2024) and a guided journal published on Amazon.</p>
                     <a class="btn small" href="/research/">View research →</a>
                 </div>
                 <div class="card">
-                    <div class="eyebrow">Recognition</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Media &amp; Recognition</h3>
-                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">Including an IBA success story currently in preparation.</p>
-                    <a class="btn small" href="/recognition/">View recognition →</a>
+                    <div class="eyebrow">IMADI Technologies</div>
+                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Founder &amp; AI Specialist</h3>
+                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">Building AI-powered business software, WhatsApp automation and SaaS products for clients in Pakistan, the United Kingdom and Kenya.</p>
+                    <a class="btn small" href="/about/">About my experience →</a>
                 </div>
             </div>
         </section>
@@ -187,6 +198,8 @@
     <footer class="wrap foot">
         <span>© <span id="year"></span> Maria Aziz</span>
         <span><a href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">LinkedIn</a> ·
+            <a href="https://github.com/Mariyah52" target="_blank" rel="noopener">GitHub</a> ·
+            <a href="mailto:mariyahheal92@gmail.com">Email</a> ·
             <a href="https://imadi-technologies.com" target="_blank" rel="noopener">Imadi Technologies</a> ·
             <a href="/contact/">Contact</a></span>
     </footer>
@@ -200,9 +213,9 @@
                 var a = document.createElement('a');
                 a.href = '/case-study/?slug=' + encodeURIComponent(p.slug);
                 a.className = 'card project-card reveal in';
-                var problem = p.problem || 'Problem statement to be added.';
+                var problem = p.problem || p.solution || '';
                 a.innerHTML =
-                    '<div class="project-tag">' + p.tagline + '</div>' +
+                    '<div class="project-tag">' + p.tagline + '</div>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
                     '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
                     '<h3>' + p.name + '</h3>' +
                     '<p>' + problem + '</p>' +

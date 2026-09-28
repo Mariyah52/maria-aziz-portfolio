@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/about/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/work/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/solutions/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/research/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/writing/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/recognition/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/now/</loc></url>
-  <url><loc>https://REPLACE-WITH-YOUR-DOMAIN/contact/</loc></url>
+  <url><loc>https://maria-aziz-portfolio.onrender.com/</loc></url>
+  <url><loc>https://maria-aziz-portfolio.onrender.com/about/</loc></url>
+  <url><loc>https://maria-aziz-portfolio.onrender.com/work/</loc></url>
+  <url><loc>https://maria-aziz-portfolio.onrender.com/solutions/</loc></url>
+  <url><loc>https://maria-aziz-portfolio.onrender.com/research/</loc></url>
+  <url><loc>https://maria-aziz-portfolio.onrender.com/now/</loc></url>
+  <url><loc>https://maria-aziz-portfolio.onrender.com/contact/</loc></url>
 </urlset>

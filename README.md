@@ -60,31 +60,20 @@ links and the shared CSS/JS won't resolve correctly without a real server
 — run a local server (e.g. `python3 -m http.server`) from this folder to
 preview it properly before deploying.
 
-Two files need a one-time edit once real hosting exists:
+The live domain is https://maria-aziz-portfolio.onrender.com, set in
+`SITE_URL` (`build/generate.py`) and `SITE_URL_PLACEHOLDER` (`build/pages.py`).
+If the domain changes, update both and regenerate.
 
-- `sitemap.xml` and `robots.txt` currently use the placeholder
-  `https://REPLACE-WITH-YOUR-DOMAIN` — find-and-replace it with the real
-  domain (or edit the `SITE_URL_PLACEHOLDER` constant in `build/pages.py`
-  and regenerate).
-- `build/generate.py` has a `head()` function with a comment marking where
-  to reinstate `<link rel="canonical">` / `og:url` tags once a domain is
-  confirmed — they're currently omitted rather than guessed.
+## Current state (September 2026)
 
-## What's marked as a placeholder right now
-
-Several sections are intentionally left as clearly-labeled placeholders
-rather than invented content, per the brief this site was built from:
-
-- HifzAI, SHAH, Imadi Logistics Bot, Marist Bot, the ML Pipeline project,
-  and Smart Meal Planner: status, technology, role and results are marked
-  "to be confirmed" wherever the underlying fact isn't yet verified.
-- The 2024 NCMC research publication: only the conference name and dates
-  are confirmed; title, authors, abstract, research area and DOI are
-  placeholders until the verified publication details are available.
-- The IBA success story is marked "Coming Soon."
-- The six Writing page articles are marked "Planned" — none are published.
-- The Karachi University "Public Administration & Supply Chain Management"
-  qualification's exact official title is marked as needing confirmation.
-
-Fill these in via `assets/projects-data.js` (for projects) or by editing
-the relevant page's content block in `build/pages.py` and regenerating.
+- All projects in `assets/projects-data.js` hold confirmed facts only. Empty
+  fields are hidden automatically on case-study pages, so no placeholder text
+  ever shows.
+- The Writing and Recognition pages were removed until real articles or media
+  coverage exist. Re-add them in `build/generate.py` (NAV_ITEMS) and
+  `build/pages.py` when there is something to publish.
+- The CV PDF lives at `assets/Maria_Aziz_CV.pdf` and is linked from the nav
+  and the Contact page. Replace that one file whenever the CV changes.
+- Status labels to update when things change: IMADI AI Sales Engine
+  ("Launching Oct 2026" -> "Live"), Company Monitor ("In build"), Marist Bot
+  ("In build"), HifzAI ("Pilot").
