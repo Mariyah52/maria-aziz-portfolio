@@ -238,3 +238,21 @@ img { max-width: 100%; display: block; }
     html { scroll-behavior: auto }
     .reveal { transition: none; opacity: 1; transform: none }
 }
+
+/* Added: client line, stats band, case study meta, extra statuses */
+.project-client { color: var(--muted); font-size: .8rem; margin: -4px 0 10px; }
+.stat-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.stat { border: 1px solid var(--line); border-radius: 18px; padding: 22px; background: rgba(255,255,255,.02); display: flex; flex-direction: column; gap: 6px; }
+.stat-num { font: 700 2.2rem/1 var(--display); color: var(--cyan); }
+.stat-label { color: var(--muted); font-size: .86rem; }
+@media (max-width: 760px) { .stat-band { grid-template-columns: repeat(2, 1fr); } }
+.case-hero-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.case-meta { color: var(--muted); font-size: .88rem; }
+.case-meta:empty { display: none; }
+.feature-list { margin: 0; padding-left: 20px; color: #cdd9ec; display: grid; gap: 6px; }
+.project-status[data-status="In build"], .project-status[data-status^="Launching"] { color: var(--amber); border-color: rgba(247,185,85,.35); }
+.project-status[data-status="In build"]::before, .project-status[data-status^="Launching"]::before { background: var(--amber); }
+.project-status[data-status="Research"], .project-status[data-status="Academic"] { color: var(--violet); border-color: rgba(135,102,255,.35); }
+.project-status[data-status="Research"]::before, .project-status[data-status="Academic"]::before { background: var(--violet); }
+.navcta .btn { white-space: nowrap; }
+@media (max-width: 760px) { .navcta .btn:not(.primary) { display: none; } }

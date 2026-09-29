@@ -29,6 +29,16 @@ home_body = """
             </div>
         </section>
 
+
+        <section class="wrap section reveal" style="padding-top:0;">
+            <div class="stat-band">
+                <div class="stat"><span class="stat-num">6</span><span class="stat-label">Client platforms built</span></div>
+                <div class="stat"><span class="stat-num">5</span><span class="stat-label">Live in daily use</span></div>
+                <div class="stat"><span class="stat-num">3</span><span class="stat-label">Countries: Pakistan, UK, Kenya</span></div>
+                <div class="stat"><span class="stat-num">358</span><span class="stat-label">Automated tests on one ERP</span></div>
+            </div>
+        </section>
+
         <section class="wrap section reveal">
             <div class="section-head">
                 <div class="eyebrow">What I do</div>
@@ -121,16 +131,16 @@ home_body = """
         <section class="wrap section reveal">
             <div class="grid two">
                 <div class="card">
-                    <div class="eyebrow">Research</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Research, Publications &amp; Recognition</h3>
-                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">A 2024 conference proceeding at the National Conference on Managing Mega Cities, plus recognition and media coverage as it's confirmed.</p>
+                    <div class="eyebrow">Research &amp; Publications</div>
+                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Published Work</h3>
+                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">A conference paper at the National Conference on Managing Mega Cities (2024) and a guided journal published on Amazon.</p>
                     <a class="btn small" href="/research/">View research →</a>
                 </div>
                 <div class="card">
-                    <div class="eyebrow">Recognition</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Media &amp; Recognition</h3>
-                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">Including an IBA success story currently in preparation.</p>
-                    <a class="btn small" href="/recognition/">View recognition →</a>
+                    <div class="eyebrow">IMADI Technologies</div>
+                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Founder &amp; AI Specialist</h3>
+                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">Building AI-powered business software, WhatsApp automation and SaaS products for clients in Pakistan, the United Kingdom and Kenya.</p>
+                    <a class="btn small" href="/about/">About my experience →</a>
                 </div>
             </div>
         </section>
@@ -143,7 +153,7 @@ home_extra = """    <script type="application/ld+json">
       "name": "Maria Aziz",
       "jobTitle": "AI Product Founder & Technology Entrepreneur",
       "worksFor": { "@type": "Organization", "name": "Imadi Technologies", "url": "https://imadi-technologies.com" },
-      "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/"]
+      "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"]
     }
     </script>
     <script src="/assets/projects-data.js"></script>
@@ -157,9 +167,9 @@ home_scripts = """    <script>
                 var a = document.createElement('a');
                 a.href = '/case-study/?slug=' + encodeURIComponent(p.slug);
                 a.className = 'card project-card reveal in';
-                var problem = p.problem || 'Problem statement to be added.';
+                var problem = p.problem || p.solution || '';
                 a.innerHTML =
-                    '<div class="project-tag">' + p.tagline + '</div>' +
+                    '<div class="project-tag">' + p.tagline + '</div>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
                     '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
                     '<h3>' + p.name + '</h3>' +
                     '<p>' + problem + '</p>' +
@@ -186,10 +196,12 @@ about_body = """
             <h1>Maria Aziz</h1>
             <p style="font-weight:700;color:var(--ink);font-size:1.15rem;margin:-6px 0 20px;">AI Product Founder &amp; Technology Entrepreneur</p>
             <p>I build practical technology solutions around real-world problems, working across AI-powered products, machine learning, natural language processing, automation, conversational systems and SaaS.</p>
-            <p>My approach begins with understanding the people, processes and challenges behind a problem before selecting the technology.</p>
+            <p>My approach begins with understanding the people, processes and challenges behind a problem before selecting the technology. Since founding IMADI Technologies, I have built six client platforms for businesses in Pakistan, the United Kingdom and Kenya, five of them live in daily use, alongside my own SaaS products.</p>
             <div style="display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.86rem;margin-top:22px;">
                 <span>📍 Karachi, Sindh, Pakistan</span>
-                <span>🎓 NAVTTC Fellow @ IBA Karachi</span>
+                <span>🏢 Founder &amp; AI Specialist, IMADI Technologies</span>
+                <span>🌍 Clients in Pakistan, UK &amp; Kenya</span>
+                <span>🎓 AI/ML/DL Specialization, IBA Karachi</span>
             </div>
         </section>
 
@@ -202,68 +214,96 @@ about_body = """
         </section>
 
         <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Experience</div><h2>Where I've Worked</h2></div>
+            <div class="section-head"><div class="eyebrow">Experience</div><h2>Founder &amp; AI Specialist, IMADI Technologies</h2></div>
+            <p class="section-intro">May 2025 – Present · Karachi, Pakistan. I founded IMADI Technologies to build AI-powered business software, WhatsApp automation and SaaS products for SMEs. I gather requirements directly from business owners, then design, build and deploy each system end to end.</p>
             <div class="stack">
                 <div class="card exp-card">
                     <div class="exp-logo">AE</div>
                     <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">AI / ML and Automation Consultant</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 12px;">ALICO Enterprises · Contract · Jun 2026 – Present · Karachi, Sindh, Pakistan · Remote</p>
-                        <p style="color:#cdd9ec;font-size:.96rem;margin:0 0 14px;">Designed and deployed the ALICO Business Suite, a web ERP for invoicing, stock, expense and banking with role-based access control and audit logging.</p>
-                        <div class="chip-row"><span class="chip">Firebase</span><span class="chip">Artificial Intelligence (AI)</span></div>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">ALICO Business Suite</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: ALICO Enterprises, Pakistan · May 2026 – Present · Live</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Complete business management PWA: quotations, challans, GST invoices, purchase orders, stock, ledgers and banking, offline-first with real-time sync.</p>
+                        <a class="btn small" href="/case-study/?slug=alico">View case study →</a>
                     </div>
                 </div>
                 <div class="card exp-card">
-                    <div class="exp-logo">SM</div>
+                    <div class="exp-logo">UK</div>
                     <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">AI Product Developer — SmartPlan Meals</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 12px;">Self Employed · Freelance · May 2026 – Present · Karachi Division, Sindh, Pakistan · Remote</p>
-                        <p style="color:#cdd9ec;font-size:.96rem;margin:0 0 14px;">Developed AI-powered products and automation solutions. SmartPlan Meals is an AI-based meal planning system with personalized nutrition.</p>
-                        <div class="chip-row"><span class="chip">Natural Language Processing (NLP)</span><span class="chip">Artificial Intelligence (AI)</span></div>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">ERP &amp; Accounting Platform</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: logistics company, United Kingdom · Jun 2026 – Present · Live</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">13-module ERP and double-entry accounting backend with UK VAT, logistics and OCR, verified by 358 end-to-end tests.</p>
+                        <a class="btn small" href="/case-study/?slug=uk-logistics-erp">View case study →</a>
                     </div>
                 </div>
                 <div class="card exp-card">
-                    <div class="exp-logo">CI</div>
+                    <div class="exp-logo">SE</div>
                     <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">Creator — Child-Friendly City Index</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 12px;">Independent Project Development · Self-employed · May 2026 – Present · Remote</p>
-                        <p style="color:#cdd9ec;font-size:.96rem;margin:0 0 14px;">Building an open-source tool to score neighborhoods for children — from vision deck to working prototype. Vision: "If Children Designed Our Cities: Reimagining Karachi."</p>
-                        <div class="chip-row"><span class="chip">Python</span><span class="chip">Artificial Intelligence (AI)</span></div>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">SHAH Enterprise Business Suite</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: SHAH Enterprise, Pakistan · Jul 2026 – Present · Live</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Adapted the ALICO platform for a petrochemicals trader, with linked document conversion and automatic stock updates.</p>
+                        <a class="btn small" href="/case-study/?slug=shah">View case study →</a>
+                    </div>
+                </div>
+                <div class="card exp-card">
+                    <div class="exp-logo">RN</div>
+                    <div>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">ReNaz: WhatsApp Scrap Collection Platform</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: scrap collection business, Pakistan · Aug 2026 – Present · Live</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">WhatsApp-first pickup booking for customers and collectors, with 23+ pickups completed and 1–2 new requests daily.</p>
+                        <a class="btn small" href="/case-study/?slug=renaz">View case study →</a>
+                    </div>
+                </div>
+                <div class="card exp-card">
+                    <div class="exp-logo">UK</div>
+                    <div>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">WhatsApp Automation &amp; Operations Platform</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: logistics company, United Kingdom (repeat client) · Sep 2026 – Present · Live</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Instant rate quotes, order enquiries and a full damage-claims workflow on WhatsApp, with an operations dashboard.</p>
+                        <a class="btn small" href="/case-study/?slug=uk-logistics-whatsapp">View case study →</a>
+                    </div>
+                </div>
+                <div class="card exp-card">
+                    <div class="exp-logo">KE</div>
+                    <div>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Company Monitor</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: multi-branch business, Nairobi, Kenya · Sep 2026 – Present · In build</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Secure platform giving management branch-level visibility of messages on company-authorised WhatsApp Business numbers.</p>
+                        <a class="btn small" href="/case-study/?slug=company-monitor">View case study →</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Background</div><h2>My Background</h2></div>
+            <div class="section-head"><div class="eyebrow">Education</div><h2>My Background</h2></div>
             <div class="stack">
                 <div class="card exp-card">
                     <div class="exp-logo">IBA</div>
                     <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">Institute of Business Administration (IBA)</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 12px;">Specialization Certificate, Artificial Intelligence · February 2026 – May 2026</p>
-                        <p style="color:#cdd9ec;font-size:.96rem;margin:0;">Selected for the competitive, fully funded Prime Minister's Hunarmand Pakistan Program scholarship.</p>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Specialization Certificate: Artificial Intelligence / Machine Learning / Deep Learning</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Institute of Business Administration (IBA), Karachi · February 2026 – May 2026</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Fully funded under the Prime Minister's Hunarmand Pakistan Program (NAVTTC). Machine learning, deep learning and NLP pipelines with scikit-learn, TensorFlow, PyTorch and Keras.</p>
                     </div>
                 </div>
                 <div class="card exp-card">
                     <div class="exp-logo">KU</div>
                     <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">Karachi University</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 12px;">Public Administration &amp; Supply Chain Management · January 2024 – December 2025</p>
-                        <p class="placeholder" style="font-size:.86rem;margin:0;">Exact official qualification title to be confirmed and added here.</p>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Bachelor of Public Administration (BSPA, BS 4-year)</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">University of Karachi · January 2024 – December 2025 · CGPA 3.37 / 4.00</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">16 years of education. Statistics, research methodology, Power BI, logistics and supply chain management, and public policy.</p>
                     </div>
                 </div>
                 <div class="card exp-card">
                     <div class="exp-logo">KU</div>
                     <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">Karachi University</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 12px;">Bachelor's Degree, Psychology · January 2009 – December 2011 · Grade: A</p>
-                        <p style="color:#cdd9ec;font-size:.96rem;margin:0;">Activities: Psychology Seminar Series, Consumer Behavior Workshop, research seminars.</p>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Bachelor of Arts (Psychology)</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">University of Karachi · November 2009 – December 2011 · 69.32%</p>
+                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">14 years of education.</p>
                     </div>
                 </div>
             </div>
             <div class="card" style="margin-top:24px;">
-                <p style="color:#cdd9ec;margin:0;">Studying public administration and supply chain management alongside a technical AI specialization gives me a working understanding of how organisations, operations, public systems and supply chains actually function — which shapes how I approach real-world implementation, not just the technology in isolation.</p>
+                <p style="color:#cdd9ec;margin:0;">A background in public administration and psychology alongside a technical AI specialisation gives me a working understanding of how organisations, operations and people actually function, which shapes how I design technology for real-world use, not just the technology in isolation.</p>
             </div>
         </section>
 
@@ -359,9 +399,9 @@ work_scripts = """    <script src="/assets/projects-data.js"></script>
                     var a = document.createElement('a');
                     a.href = '/case-study/?slug=' + encodeURIComponent(p.slug);
                     a.className = 'card project-card';
-                    var problem = p.problem || 'Problem statement to be added.';
+                    var problem = p.problem || p.solution || '';
                     a.innerHTML =
-                        '<div class="project-tag">' + p.tagline + '</div>' +
+                        '<div class="project-tag">' + p.tagline + '</div>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
                         '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
                         '<h3>' + p.name + '</h3>' +
                         '<p>' + problem + '</p>' +
@@ -439,169 +479,89 @@ write("/solutions/index.html", page(
 ))
 
 # ------------------------------------------------------------- RESEARCH ----
-research_body = """
+def field(label, value):
+    return f'<div><p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">{label}</p><p style="color:#cdd9ec;margin:0;">{value}</p></div>'
+
+research_body = f"""
         <section class="wrap page-hero reveal">
             <div class="eyebrow">Research</div>
             <h1>Research &amp; Publications</h1>
-            <p>Verified academic and conference work. Details are added here only once confirmed — nothing is published as complete until it genuinely is.</p>
+            <p>Published academic and written work, alongside the machine learning research behind my projects.</p>
         </section>
 
         <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">2024 Publications</div><h2>National Conference on Managing Mega Cities (NCMC)</h2></div>
+            <div class="section-head"><div class="eyebrow">Conference Paper · 2024</div><h2>Exploring the Psychological Puzzle of Travelling: A Journey Through Your Thoughts</h2></div>
             <div class="card">
                 <div class="grid two" style="margin-bottom:18px;">
-                    <div>
-                        <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Title</p>
-                        <p class="placeholder" style="margin:0;">Exact verified publication title to be added.</p>
-                    </div>
-                    <div>
-                        <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Authors</p>
-                        <p class="placeholder" style="margin:0;">To be confirmed.</p>
-                    </div>
-                    <div>
-                        <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Conference</p>
-                        <p style="color:#cdd9ec;margin:0;">National Conference on Managing Mega Cities (NCMC)</p>
-                    </div>
-                    <div>
-                        <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Date</p>
-                        <p style="color:#cdd9ec;margin:0;">May 14–15, 2024</p>
-                    </div>
-                    <div>
-                        <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Research area</p>
-                        <p class="placeholder" style="margin:0;">To be confirmed.</p>
-                    </div>
-                    <div>
-                        <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">DOI / official link</p>
-                        <p class="placeholder" style="margin:0;">To be added once available.</p>
-                    </div>
+                    {field("Author", "Maria Aziz")}
+                    {field("Role", "Research Scholar, Department of Public Administration, University of Karachi")}
+                    {field("Conference", "National Conference on Managing Mega Cities (NCMC), Department of Public Administration, University of Karachi")}
+                    {field("Date", "14–15 May 2024")}
                 </div>
-                <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Abstract</p>
-                <p class="placeholder" style="margin:0;">Abstract to be added once the verified publication details are confirmed.</p>
-                <p style="margin-top:18px"><span class="placeholder-tag">Awaiting verified details</span></p>
+                <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Summary</p>
+                <p style="color:#cdd9ec;margin:0 0 12px;">Explores the psychological dimensions of daily commuting and travel behaviour: how routine journeys by walking, cycling, driving or public transport affect mood, stress, attention and reflective thinking.</p>
+                <ul style="margin:0;padding-left:18px;color:#cdd9ec;display:grid;gap:5px;">
+                    <li>The interplay between the mind and daily travel routines</li>
+                    <li>How traffic jams, delays and crowded transport drive stress and annoyance</li>
+                    <li>Moments of calm and self-reflection on familiar routes</li>
+                    <li>Implications for urban mobility and well-being in mega cities</li>
+                </ul>
             </div>
         </section>
 
         <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Related work</div><h2>NLP Sentiment Analysis of Travel Blogs</h2></div>
-            <p class="section-intro">A separate, independent research project comparing BERT and LSTM models on nuanced emotional sentiment in travel writing.</p>
-            <a class="btn" href="/case-study/?slug=nlp-sentiment-analysis">View the case study →</a>
+            <div class="section-head"><div class="eyebrow">Book · Amazon KDP</div><h2>Overthinking Journal for Women 25–40: A Guided Emotional Reset System</h2></div>
+            <div class="card">
+                <div class="grid two" style="margin-bottom:18px;">
+                    {field("Author", "Mariyah Aziz")}
+                    {field("Format", "Paperback, self-published on Amazon KDP (ASIN B0GZBRLHDD)")}
+                </div>
+                <p style="color:#cdd9ec;margin:0 0 18px;">A guided, structured journal that helps women manage racing thoughts, emotional overwhelm and mental spirals. Targeted prompts and a guided emotional-reset framework help readers slow down, process their thoughts and regain calm and clarity in daily life: a practical, non-clinical tool for everyday emotional regulation.</p>
+                <a class="btn primary small" href="https://www.amazon.com/dp/B0GZBRLHDD" target="_blank" rel="noopener">View on Amazon ↗</a>
+            </div>
+        </section>
+
+        <section class="wrap section reveal">
+            <div class="section-head"><div class="eyebrow">Machine learning research</div><h2>AI / ML Projects</h2></div>
+            <div class="grid two">
+                <a class="card project-card" href="/case-study/?slug=nlp-sentiment-analysis"><div class="project-tag">NLP · Research</div><h3>NLP Sentiment Analysis of Travel Blogs</h3><p>Comparing BERT and LSTM models on nuanced emotional sentiment in long-form travel writing.</p><span class="arrow">View case study →</span></a>
+                <a class="card project-card" href="/case-study/?slug=ml-pipeline"><div class="project-tag">ML · IBA Karachi</div><h3>End-to-End Machine Learning Pipeline</h3><p>21 Decision Tree and SVM models trained, tuned and evaluated on accuracy, sensitivity and specificity.</p><span class="arrow">View case study →</span></a>
+            </div>
         </section>
 """
 write("/research/index.html", page(
     "Research | Maria Aziz",
-    "Research and publications by Maria Aziz, including a 2024 National Conference on Managing Mega Cities (NCMC) proceeding.",
+    "Research and publications by Maria Aziz: a 2024 National Conference on Managing Mega Cities paper, a book on Amazon, and machine learning research.",
     "/research/",
     research_body,
 ))
 
-# -------------------------------------------------------------- WRITING ----
-articles = [
-    "We Stopped Prompting AI. We Started Onboarding It.",
-    "From Problem to Product: How I Approach Technology Solutions",
-    "Building Technology for Real-World Problems",
-    "BERT vs LSTM: Lessons from My NLP Sentiment Analysis Project",
-    "Why Automation Should Start With Understanding the Workflow",
-    "WhatsApp as a Gateway to Digital Services",
-]
-article_cards = "\n                ".join(
-    f'<div class="card project-card"><span class="placeholder-tag" style="margin-bottom:14px;align-self:flex-start;">Planned</span><h3>{title}</h3><p class="placeholder">Article coming soon.</p></div>'
-    for title in articles
-)
-writing_body = f"""
-        <section class="wrap page-hero reveal">
-            <div class="eyebrow">Writing</div>
-            <h1>Writing &amp; Insights</h1>
-            <p>Planned articles on building AI products, automation and technology for real-world problems. None of these are published yet — this is the upcoming list.</p>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="grid three">
-                {article_cards}
-            </div>
-        </section>
-"""
-write("/writing/index.html", page(
-    "Writing | Maria Aziz",
-    "Planned articles and insights from Maria Aziz on AI products, automation and building technology for real-world problems.",
-    "/writing/",
-    writing_body,
-))
-
-# ----------------------------------------------------------- RECOGNITION --
-recognition_body = """
-        <section class="wrap page-hero reveal">
-            <div class="eyebrow">Recognition</div>
-            <h1>Recognition &amp; Media</h1>
-            <p>Verified recognition only — anything still in progress is marked clearly rather than implied.</p>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="grid two">
-                <div class="card">
-                    <div class="eyebrow">IBA</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">IBA Success Story</h3>
-                    <p style="color:var(--muted);margin:0 0 16px;">A success story with the Institute of Business Administration (IBA) is currently being prepared.</p>
-                    <span class="placeholder-tag">Success Story — Coming Soon</span>
-                </div>
-                <div class="card">
-                    <div class="eyebrow">Research</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Conference Appearance</h3>
-                    <p style="color:var(--muted);margin:0 0 16px;">National Conference on Managing Mega Cities (NCMC), May 14–15, 2024.</p>
-                    <a class="btn small" href="/research/">View research →</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Media &amp; appearances</div><h2>Coverage, Interviews &amp; Podcasts</h2></div>
-            <div class="card">
-                <p class="placeholder" style="margin:0;">No media coverage, interviews, podcast appearances or awards are confirmed yet. This section will be updated as soon as any are.</p>
-            </div>
-        </section>
-"""
-write("/recognition/index.html", page(
-    "Recognition | Maria Aziz",
-    "Recognition and media coverage for Maria Aziz, including the IBA success story (coming soon) and conference appearances.",
-    "/recognition/",
-    recognition_body,
-))
-
 # -------------------------------------------------------------------- NOW -
-now_body = """
+def now_card(logo, title, meta, slug):
+    return f"""                <div class="card exp-card">
+                    <div class="exp-logo">{logo}</div>
+                    <div>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">{title}</h3>
+                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">{meta}</p>
+                        <a class="btn small" href="/case-study/?slug={slug}">View case study →</a>
+                    </div>
+                </div>
+"""
+now_body = f"""
         <section class="wrap page-hero reveal">
-            <div class="eyebrow">Now</div>
+            <div class="eyebrow">Now · September 2026</div>
             <h1>What I'm Building Now</h1>
-            <p>Only projects that are genuinely active right now — everything else lives on the <a href="/work/" style="color:var(--cyan);font-weight:700;">Work</a> page.</p>
+            <p>Work actively in progress right now. Everything already delivered lives on the <a href="/work/" style="color:var(--cyan);font-weight:700;">Work</a> page.</p>
         </section>
 
         <section class="wrap section reveal">
             <div class="stack">
-                <div class="card exp-card">
-                    <div class="exp-logo">AE</div>
-                    <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">ALICO Business Suite</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">AI/ML and Automation Consultant, ALICO Enterprises · Jun 2026 – Present</p>
-                        <a class="btn small" href="/case-study/?slug=alico">View case study →</a>
-                    </div>
-                </div>
-                <div class="card exp-card">
-                    <div class="exp-logo">SM</div>
-                    <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">Smart Meal Planner</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">AI Product Developer, self-employed · May 2026 – Present</p>
-                        <a class="btn small" href="/case-study/?slug=smart-meal-planner">View case study →</a>
-                    </div>
-                </div>
-                <div class="card exp-card">
-                    <div class="exp-logo">CI</div>
-                    <div>
-                        <h3 style="font:700 1.2rem var(--display);margin:0 0 4px;">Child Friendly City Index</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Independent project development · May 2026 – Present</p>
-                        <a class="btn small" href="/case-study/?slug=child-friendly-city-index">View case study →</a>
-                    </div>
-                </div>
+{now_card("KE", "Company Monitor", "Client project, Nairobi, Kenya · In build · QR-login pilot in testing", "company-monitor")}
+{now_card("AI", "IMADI AI Sales Engine", "Co-founded venture · Launching October 2026", "imadi-sales-engine")}
+{now_card("MB", "Marist Bot", "Own product · Conversational AI assistant · ~80% built", "marist-bot")}
+{now_card("HA", "HifzAI", "Own product · Completed · Pilot stage ahead of launch", "hifzai")}
+{now_card("RN", "ReNaz", "Client project, Pakistan · Live · Expanding to commercial bulk scrap", "renaz")}
             </div>
-            <p class="placeholder" style="margin-top:24px;">Activity status for HifzAI, ReNaz and other Imadi Technologies products is being confirmed before listing here.</p>
         </section>
 """
 write("/now/index.html", page(
@@ -616,16 +576,31 @@ contact_body = """
         <section class="wrap page-hero reveal">
             <div class="eyebrow">Contact</div>
             <h1>Tell Me Your Problem.</h1>
-            <p>You don't need to know which technology fits — describe the challenge and we'll work out the right approach together.</p>
+            <p>You don't need to know which technology fits. Describe the challenge and we'll work out the right approach together.</p>
         </section>
 
         <section class="wrap section reveal">
-            <div class="card feature center" style="padding:56px 40px;text-align:center;">
-                <p style="color:var(--muted);max-width:520px;margin:0 auto 28px;">Best way to reach me is on LinkedIn, or through Imadi Technologies.</p>
-                <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
-                    <a class="btn primary" href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">LinkedIn ↗</a>
-                    <a class="btn" href="https://imadi-technologies.com" target="_blank" rel="noopener">Imadi Technologies ↗</a>
-                </div>
+            <div class="grid two">
+                <a class="card" href="mailto:mariyahheal92@gmail.com" style="text-decoration:none;">
+                    <div class="eyebrow">Email</div>
+                    <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">mariyahheal92@gmail.com</h3>
+                    <p style="color:var(--muted);margin:0;">The best way to describe a project or problem in detail.</p>
+                </a>
+                <a class="card" href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener" style="text-decoration:none;">
+                    <div class="eyebrow">LinkedIn</div>
+                    <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">linkedin.com/in/maria-aziz-ai ↗</h3>
+                    <p style="color:var(--muted);margin:0;">Connect or send a message.</p>
+                </a>
+                <a class="card" href="https://github.com/Mariyah52" target="_blank" rel="noopener" style="text-decoration:none;">
+                    <div class="eyebrow">GitHub</div>
+                    <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">github.com/Mariyah52 ↗</h3>
+                    <p style="color:var(--muted);margin:0;">Public code and open-source projects.</p>
+                </a>
+                <a class="card" href="/assets/Maria_Aziz_CV.pdf" target="_blank" rel="noopener" style="text-decoration:none;">
+                    <div class="eyebrow">CV</div>
+                    <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">Download my CV (PDF) ↓</h3>
+                    <p style="color:var(--muted);margin:0;">Two pages: experience, products, education and publications.</p>
+                </a>
             </div>
         </section>
 """
@@ -643,19 +618,22 @@ case_study_body = """
             <h1 id="case-title">Loading…</h1>
             <div class="case-hero-meta">
                 <span class="project-status" id="case-status" data-status="">Status</span>
+                <span class="case-meta" id="case-client"></span>
+                <span class="case-meta" id="case-period"></span>
             </div>
         </section>
         <section class="wrap" style="padding:20px 0 60px;">
             <div class="card" style="padding:8px 40px;">
-                <div class="case-section"><h2>01. The Problem</h2><p id="case-problem"></p></div>
-                <div class="case-section" id="case-challenge-section" hidden><h2>02. The Challenge</h2><p id="case-challenge"></p></div>
-                <div class="case-section"><h2>03. The Solution</h2><p id="case-solution"></p></div>
-                <div class="case-section"><h2>04. My Role</h2><p id="case-role"></p></div>
-                <div class="case-section" id="case-tech-section" hidden><h2>05. Technology</h2><div class="chip-row" id="case-technology"></div></div>
-                <div class="case-section" id="case-architecture-section" hidden><h2>06. Architecture</h2><div class="workflow-steps" id="case-architecture"></div><p class="placeholder" id="case-architecture-note" style="margin-top:12px;" hidden></p></div>
-                <div class="case-section" id="case-innovation-section" hidden><h2>07. Innovation</h2><p id="case-innovation"></p></div>
-                <div class="case-section"><h2>08. Results</h2><p id="case-results"></p></div>
-                <div class="case-section" id="case-evidence-section" hidden><h2>09. Evidence</h2><div class="evidence-list" id="case-evidence"></div></div>
+                <div class="case-section" data-field="problem" hidden><h2>The Problem</h2><p id="case-problem"></p></div>
+                <div class="case-section" data-field="challenge" hidden><h2>The Challenge</h2><p id="case-challenge"></p></div>
+                <div class="case-section" data-field="solution" hidden><h2>The Solution</h2><p id="case-solution"></p></div>
+                <div class="case-section" data-field="features" hidden><h2>Key Features</h2><ul class="feature-list" id="case-features"></ul></div>
+                <div class="case-section" data-field="myRole" hidden><h2>My Role</h2><p id="case-myRole"></p></div>
+                <div class="case-section" data-field="technology" hidden><h2>Technology</h2><div class="chip-row" id="case-technology"></div></div>
+                <div class="case-section" data-field="architecture" hidden><h2>Architecture</h2><div class="workflow-steps" id="case-architecture"></div></div>
+                <div class="case-section" data-field="innovation" hidden><h2>What's Different</h2><p id="case-innovation"></p></div>
+                <div class="case-section" data-field="results" hidden><h2>Results</h2><ul class="feature-list" id="case-results"></ul></div>
+                <div class="case-section" data-field="evidence" hidden><h2>Links</h2><div class="evidence-list" id="case-evidence"></div></div>
             </div>
         </section>
         <section class="wrap section reveal">
@@ -671,84 +649,51 @@ case_study_scripts = """    <script src="/assets/projects-data.js"></script>
         (function () {
             var slug = new URLSearchParams(location.search).get('slug');
             var project = slug ? window.getProjectBySlug(slug) : null;
-            var placeholder = function (text) {
-                var span = document.createElement('span');
-                span.className = 'placeholder';
-                span.textContent = text;
-                return span;
-            };
-            var setText = function (id, value, fallback) {
-                var el = document.getElementById(id);
-                if (!el) return;
-                if (value) { el.textContent = value; }
-                else { el.innerHTML = ''; el.appendChild(placeholder(fallback)); }
-            };
-
             if (!project) {
                 document.getElementById('case-title').textContent = 'Case study not found';
-                document.getElementById('case-tagline').textContent = 'Case study';
                 return;
             }
-
             document.title = project.name + ' | Maria Aziz';
             document.getElementById('case-title').textContent = project.name;
             document.getElementById('case-tagline').textContent = project.tagline;
             var statusEl = document.getElementById('case-status');
             statusEl.textContent = project.status;
             statusEl.setAttribute('data-status', project.status);
+            document.getElementById('case-client').textContent = project.client || '';
+            document.getElementById('case-period').textContent = project.period || '';
 
-            setText('case-problem', project.problem, 'Problem statement to be added.');
-            if (project.challenge) {
-                document.getElementById('case-challenge-section').hidden = false;
-                setText('case-challenge', project.challenge, '');
+            function show(field) { document.querySelector('[data-field="' + field + '"]').hidden = false; }
+            function text(field) {
+                if (!project[field]) return;
+                document.getElementById('case-' + field).textContent = project[field];
+                show(field);
             }
-            setText('case-solution', project.solution, 'Solution summary to be added.');
-            setText('case-role', project.myRole, 'To be confirmed.');
-            setText('case-results', project.resultsNote || project.results, 'No measurable results are published yet for this project. This section will be updated once real, verified figures are available — nothing here is estimated.');
-
-            if (project.technology && project.technology.length) {
-                document.getElementById('case-tech-section').hidden = false;
-                var techRow = document.getElementById('case-technology');
-                project.technology.forEach(function (t) {
-                    var chip = document.createElement('span');
-                    chip.className = 'chip';
-                    chip.textContent = t;
-                    techRow.appendChild(chip);
+            function list(field, id, cls) {
+                var items = project[field];
+                if (!items || !items.length) return;
+                var el = document.getElementById(id);
+                items.forEach(function (item) {
+                    var node = document.createElement(cls === 'li' ? 'li' : 'span');
+                    if (cls !== 'li') node.className = cls;
+                    node.textContent = item;
+                    el.appendChild(node);
                 });
+                show(field);
             }
-
-            if (project.architecture && project.architecture.length) {
-                document.getElementById('case-architecture-section').hidden = false;
-                var archRow = document.getElementById('case-architecture');
-                project.architecture.forEach(function (step) {
-                    var box = document.createElement('span');
-                    box.className = 'workflow-step';
-                    box.textContent = step;
-                    archRow.appendChild(box);
-                });
-                if (project.architectureNote) {
-                    var note = document.getElementById('case-architecture-note');
-                    note.hidden = false;
-                    note.textContent = project.architectureNote;
-                }
-            }
-
-            if (project.innovation) {
-                document.getElementById('case-innovation-section').hidden = false;
-                setText('case-innovation', project.innovation, '');
-            }
-
+            ['problem', 'challenge', 'solution', 'myRole', 'innovation'].forEach(text);
+            list('features', 'case-features', 'li');
+            list('results', 'case-results', 'li');
+            list('technology', 'case-technology', 'chip');
+            list('architecture', 'case-architecture', 'workflow-step');
             if (project.evidence && project.evidence.length) {
-                document.getElementById('case-evidence-section').hidden = false;
-                var evRow = document.getElementById('case-evidence');
-                project.evidence.forEach(function (ev) {
+                var ev = document.getElementById('case-evidence');
+                project.evidence.forEach(function (e) {
                     var a = document.createElement('a');
-                    a.href = ev.href;
-                    a.target = '_blank';
-                    a.rel = 'noopener';
-                    a.textContent = ev.label + ' ↗';
-                    evRow.appendChild(a);
+                    a.href = e.href; a.target = '_blank'; a.rel = 'noopener';
+                    a.textContent = e.label + ' ↗';
+                    ev.appendChild(a);
                 });
+                show('evidence');
             }
         })();
     </script>
@@ -765,8 +710,8 @@ write("/case-study/index.html", page(
 # No live domain is confirmed yet for this site. Rather than guess one, the
 # sitemap uses an obvious placeholder token — find-and-replace it with the
 # real domain once this site is actually hosted somewhere.
-SITE_URL_PLACEHOLDER = "https://REPLACE-WITH-YOUR-DOMAIN"
-sitemap_paths = ["/", "/about/", "/work/", "/solutions/", "/research/", "/writing/", "/recognition/", "/now/", "/contact/"]
+SITE_URL_PLACEHOLDER = "https://maria-aziz-portfolio.onrender.com"
+sitemap_paths = ["/", "/about/", "/work/", "/solutions/", "/research/", "/now/", "/contact/"]
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for p in sitemap_paths:
     sitemap_xml += f"  <url><loc>{SITE_URL_PLACEHOLDER}{p}</loc></url>\n"
@@ -781,4 +726,3 @@ Sitemap: {SITE_URL_PLACEHOLDER}/sitemap.xml
 write("/robots.txt", robots_txt)
 
 print("\\nAll pages generated.")
-print("NOTE: sitemap.xml and robots.txt use a placeholder domain (" + SITE_URL_PLACEHOLDER + ") — update once this site has real hosting.")
