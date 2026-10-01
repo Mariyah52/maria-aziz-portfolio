@@ -79,7 +79,7 @@ window.PROJECTS = [
       "AI assistant: invoice and receipt OCR, duplicate-invoice detection, expense categorisation, cash-flow forecast and financial Q&A",
       "Security: 2FA, argon2 password hashing, role permissions, field-level encryption, CSRF protection, rate limiting, audit logs, backup and restore"
     ],
-    myRole: "Founder & AI Specialist, IMADI Technologies. Owned the architecture, module design, build and delivery.",
+    myRole: "Founder & AI Specialist, IMADI Technologies. Led the architecture, module design and delivery; co-built with IMADI co-founder Burhanuddin Patanwala.",
     technology: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Alembic", "Pydantic", "Tesseract OCR", "ReportLab", "JWT / TOTP 2FA"],
     architecture: ["API routers", "Services (business logic)", "Repositories (data access)", "PostgreSQL", "Shared accounting engine", "Reports & PDF/Excel export"],
     innovation: "A single shared accounting engine enforces double entry and period locks for every module, so no part of the system can post an unbalanced or back-dated entry.",
