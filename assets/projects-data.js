@@ -235,7 +235,7 @@ window.PROJECTS = [
     architecture: ["Mobile-first React app", "Firebase Authentication", "Firestore (multi-tenant)", "Security Rules validation", "Cloudinary images", "WhatsApp order links"],
     innovation: "No backend server at all: every write, including a customer placing an order without an account, goes straight to Firestore inside a transaction and is validated by Security Rules, so the platform runs at zero cost.",
     results: ["Live with 18 active subscriptions", "All 6 build phases complete: foundation, store builder, selling, customer tools, platform admin"],
-    evidence: []
+    evidence: [{ label: "Open HerCommerce", href: "https://hercommerce-299ba.web.app/" }]
   },
   {
     slug: "marist-bot",
