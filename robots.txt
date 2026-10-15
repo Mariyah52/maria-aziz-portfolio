@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maria-aziz-portfolio.onrender.com/sitemap.xml
+Sitemap: https://www.imadi.tech/sitemap.xml

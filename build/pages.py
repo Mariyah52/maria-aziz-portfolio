@@ -3,40 +3,68 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from generate import page, write
 
+import json as _json, re as _re
+_pd = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "projects-data.js"), encoding="utf-8").read()
+PLAIN = _json.loads(_re.search(r"window\.PLAIN = (\{.*?\n\});", _pd, _re.S).group(1))
+_NAMES = dict(_re.findall(r'slug: "([^"]+)",\s*name: "([^"]+)"', _pd))
+_CLIENTS = dict((m[0], m[1]) for m in _re.findall(r'slug: "([^"]+)",[\s\S]*?client: "([^"]+)"', _pd))
+
+def ps_card(slug):
+    x = PLAIN[slug]
+    return (f'<a class="card ps-card" href="/case-study/?slug={slug}">'
+            f'<h3>{_NAMES[slug]}</h3><div class="project-client">{_CLIENTS.get(slug, "")}</div>'
+            f'<div class="ps"><p><b class="ps-l ps-p">Problem</b>{x["problem"]}</p>'
+            f'<p><b class="ps-l ps-s">Solution</b>{x["solution"]}</p></div>'
+            f'<span class="arrow">Read the case study →</span></a>')
+
+HOME_SOLVED = "".join(ps_card(s_) for s_ in ["alico", "uk-logistics-whatsapp", "company-monitor", "renaz", "uk-logistics-erp", "hercommerce"])
+
 # ---------------------------------------------------------------- HOME -----
 home_body = """
         <section class="wrap hero-grid reveal">
             <div>
                 <div class="eyebrow">Maria Aziz</div>
                 <h1 style="font:700 clamp(2.4rem,5.6vw,4.2rem)/1.05 var(--display);letter-spacing:-.03em;margin:8px 0 20px;">AI Product Founder<br>&amp; Technology Entrepreneur</h1>
-                <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">Building AI-powered products, intelligent automation, conversational systems and scalable SaaS solutions for real-world problems.</p>
-                <p style="color:#cdd9ec;max-width:580px;margin:0 0 30px;">My work begins with understanding the problem. I analyse workflows, users and operational challenges, then design practical technology solutions that can be built, tested and improved.</p>
-                <div style="display:flex;flex-wrap:wrap;gap:12px;">
-                    <a class="btn primary" href="/work/">Explore My Work</a>
-                    <a class="btn" href="/contact/">Tell Me Your Problem</a>
+                <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">Full-Stack AI Engineer &amp; SaaS Builder with a proven track record of architecting, building, and deploying 6 production-ready client platforms across the UK, Kenya, and Pakistan in under a year. Expert in Python, React, LLM integration, and enterprise-grade automation.</p>
+                <p style="color:var(--body);max-width:580px;margin:0 0 30px;">My work begins with understanding the problem. I analyse workflows, users and operational challenges, then design practical technology solutions that can be built, tested and improved.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="/contact/?source=homepage" data-track="primary_cta">Discuss Your Project <span aria-hidden="true">↗</span></a>
+                    <a class="btn" href="/work/">Explore Case Studies</a>
+                    <a class="btn" href="https://wa.me/923421393991?text=Hi%20Marist!" target="_blank" rel="noopener">Say Hi to Marist</a>
                 </div>
-            </div>
-            <div class="card reveal" style="padding:32px;">
-                <div class="eyebrow">How the work moves</div>
-                <div class="timeline-numbered" style="margin-top:8px;">
-                    <div class="step"><div class="num">1</div><div><h3 style="margin:0;font-size:.95rem;">Problem</h3></div></div>
-                    <div class="step"><div class="num">2</div><div><h3 style="margin:0;font-size:.95rem;">Research</h3></div></div>
-                    <div class="step"><div class="num">3</div><div><h3 style="margin:0;font-size:.95rem;">Solution design</h3></div></div>
-                    <div class="step"><div class="num">4</div><div><h3 style="margin:0;font-size:.95rem;">Technology &amp; build</h3></div></div>
-                    <div class="step"><div class="num">5</div><div><h3 style="margin:0;font-size:.95rem;">Automation</h3></div></div>
-                    <div class="step"><div class="num">6</div><div><h3 style="margin:0;font-size:.95rem;">Measurable impact</h3></div></div>
-                </div>
+                <p class="hero-note">From workflow discovery to a tested, practical solution.</p>
             </div>
         </section>
 
+        <section class="wrap section reveal">
+            <a class="card marist-card" href="https://wa.me/923421393991?text=Hi%20Marist!" target="_blank" rel="noopener" style="text-decoration:none;">
+                <div class="marist-icon"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36A9.4 9.4 0 0 1 2.6 12C2.6 6.8 6.84 2.56 12.06 2.56c2.52 0 4.9.99 6.68 2.77A9.38 9.38 0 0 1 21.5 12c0 5.2-4.24 9.44-9.45 9.44M20.1 3.9A11.3 11.3 0 0 0 12.05.6C5.78.6.67 5.71.67 12c0 2 .52 3.97 1.52 5.7L.57 23.4l5.83-1.53A11.4 11.4 0 0 0 12.04 23.4h.01c6.27 0 11.38-5.11 11.38-11.4 0-3.04-1.18-5.9-3.33-8.1"/></svg></div>
+                <div>
+                    <div class="eyebrow">My AI chat buddy</div>
+                    <h3 style="font:700 1.25rem var(--display);margin:0 0 6px;">Say hi to Marist on WhatsApp ↗</h3>
+                    <p style="color:var(--muted);margin:0 0 6px;">Marist is an AI chat buddy I built in my free time. It chats in Roman Urdu and loves sharing a little motivation. Say hi any time.</p>
+                    <p style="color:var(--body);margin:0;font-weight:600;">+92 342 1393991</p>
+                </div>
+            </a>
+        </section>
 
         <section class="wrap section reveal" style="padding-top:0;">
             <div class="stat-band">
                 <div class="stat"><span class="stat-num">6</span><span class="stat-label">Client platforms built</span></div>
                 <div class="stat"><span class="stat-num">5</span><span class="stat-label">Live in daily use</span></div>
                 <div class="stat"><span class="stat-num">3</span><span class="stat-label">Countries: Pakistan, UK, Kenya</span></div>
-                <div class="stat"><span class="stat-num">358</span><span class="stat-label">Automated tests on one ERP</span></div>
+                <div class="stat"><span class="stat-num">358</span><span class="stat-label">Automated tests on one ERP</span><span class="stat-note">Checks that run automatically after every change</span></div>
             </div>
+        </section>
+
+        <section class="wrap section reveal">
+            <div class="section-head">
+                <div class="eyebrow">Problems I've solved</div>
+                <h2>The Problem, and What I Built</h2>
+                <p class="section-intro">Every project starts with a real business problem. Here is what each client was struggling with, and how the solution changed their day.</p>
+            </div>
+            <div class="grid two">__HOME_SOLVED__</div>
+            <p style="margin-top:18px;"><a class="btn" href="/work/">See all projects →</a></p>
         </section>
 
         <section class="wrap section reveal">
@@ -55,33 +83,6 @@ home_body = """
 
         <section class="wrap section reveal">
             <div class="section-head">
-                <div class="eyebrow">Selected work</div>
-                <h2>Selected Technology Projects</h2>
-                <p class="section-intro">A closer look at the projects behind the categories above — problem, solution, and current status for each.</p>
-            </div>
-            <div class="grid three" id="featured-work-grid"></div>
-            <p style="margin-top:28px"><a class="btn" href="/work/">See all projects →</a></p>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="card feature" style="padding:44px;">
-                <div class="eyebrow">Not sure what you need?</div>
-                <h2>Have a Problem? Let's Find the Right Solution.</h2>
-                <p style="max-width:640px;margin-bottom:28px;">You do not need to know which technology to use. Start by explaining the challenge you are facing. I can help analyse workflows, identify opportunities and explore practical digital solutions — from automation and chatbots to AI-powered products and SaaS platforms.</p>
-                <div class="timeline-numbered" style="margin-bottom:28px;">
-                    <div class="step"><div class="num">01</div><div><h3>Tell Me the Problem</h3></div></div>
-                    <div class="step"><div class="num">02</div><div><h3>Understand the Process</h3></div></div>
-                    <div class="step"><div class="num">03</div><div><h3>Identify Opportunities</h3></div></div>
-                    <div class="step"><div class="num">04</div><div><h3>Design the Solution</h3></div></div>
-                    <div class="step"><div class="num">05</div><div><h3>Build &amp; Automate</h3></div></div>
-                    <div class="step"><div class="num">06</div><div><h3>Test &amp; Improve</h3></div></div>
-                </div>
-                <a class="btn primary" href="/contact/">Discuss Your Problem</a>
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="section-head">
                 <div class="eyebrow">How I work</div>
                 <h2>How I Build Solutions</h2>
             </div>
@@ -93,6 +94,49 @@ home_body = """
                 <div class="card"><h3 style="font:700 1.05rem var(--display);margin:0 0 8px;">Test</h3><p style="color:var(--muted);margin:0;font-size:.92rem;">Check the solution against real use, not just an ideal case.</p></div>
                 <div class="card"><h3 style="font:700 1.05rem var(--display);margin:0 0 8px;">Measure</h3><p style="color:var(--muted);margin:0;font-size:.92rem;">Track what actually changed, and improve based on evidence.</p></div>
             </div>
+        </section>
+"""
+
+home_extra = """    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maria Aziz",
+      "jobTitle": "AI Product Founder & Technology Entrepreneur",
+      "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"]
+    }
+    </script>
+"""
+
+home_body = home_body.replace("__HOME_SOLVED__", HOME_SOLVED)
+write("/index.html", page(
+    "Maria Aziz | AI Product Founder & Technology Entrepreneur",
+    "Maria Aziz builds AI-powered products, intelligent automation, conversational systems and scalable SaaS solutions for real-world problems.",
+    "/",
+    home_body,
+    extra_head=home_extra,
+))
+
+# ---------------------------------------------------------------- ABOUT ----
+about_body = """
+        <section class="wrap page-hero reveal">
+            <div class="eyebrow">About</div>
+            <h1>Maria Aziz</h1>
+            <p style="font-weight:700;color:var(--ink);font-size:1.15rem;margin:-6px 0 20px;">AI Product Founder &amp; Technology Entrepreneur</p>
+            <p>I build practical technology solutions around real-world problems, working across AI-powered products, machine learning, natural language processing, automation, conversational systems and SaaS.</p>
+            <p>My approach begins with understanding the people, processes and challenges behind a problem before selecting the technology. Since May 2026, I have built six client platforms for businesses in Pakistan, the United Kingdom and Kenya, five of them live in daily use, alongside my own SaaS products.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.86rem;margin-top:22px;">
+                <span>📍 Karachi, Sindh, Pakistan</span>
+                <span>🏢 Founder &amp; AI Specialist</span>
+                <span>🌍 Clients in Pakistan, UK &amp; Kenya</span>
+                <span>🎓 AI/ML/DL Specialization, IBA Karachi</span>
+            </div>
+        </section>
+
+        <section class="wrap section reveal">
+            <div class="section-head"><div class="eyebrow">Experience</div><h2>Founder &amp; AI Specialist</h2></div>
+            <p class="section-intro">May 2026 – Present · Karachi, Pakistan. I build AI-powered business software, WhatsApp automation and SaaS products for SMEs. I gather requirements directly from business owners, then design, build and deploy each system end to end.</p>
+            <p style="margin-top:8px;"><a class="btn" href="/work/">See all projects →</a></p>
         </section>
 
         <section class="wrap section reveal">
@@ -129,152 +173,6 @@ home_body = """
         </section>
 
         <section class="wrap section reveal">
-            <div class="grid two">
-                <div class="card">
-                    <div class="eyebrow">Research &amp; Publications</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Published Work</h3>
-                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">A conference paper at the National Conference on Managing Mega Cities (2024) and a guided journal published on Amazon.</p>
-                    <a class="btn small" href="/research/">View research →</a>
-                </div>
-                <div class="card">
-                    <div class="eyebrow">IMADI Technologies</div>
-                    <h3 style="font:700 1.2rem var(--display);margin:0 0 10px;">Founder &amp; AI Specialist</h3>
-                    <p style="color:var(--muted);font-size:.92rem;margin:0 0 18px;">Building AI-powered business software, WhatsApp automation and SaaS products for clients in Pakistan, the United Kingdom and Kenya.</p>
-                    <a class="btn small" href="/about/">About my experience →</a>
-                </div>
-            </div>
-        </section>
-"""
-
-home_extra = """    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Maria Aziz",
-      "jobTitle": "AI Product Founder & Technology Entrepreneur",
-      "worksFor": { "@type": "Organization", "name": "Imadi Technologies", "url": "https://imadi-technologies.com" },
-      "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"]
-    }
-    </script>
-    <script src="/assets/projects-data.js"></script>
-"""
-home_scripts = """    <script>
-        (function () {
-            var grid = document.getElementById('featured-work-grid');
-            if (!grid || !window.PROJECTS) return;
-            var featured = window.PROJECTS.filter(function (p) { return p.featured; }).slice(0, 6);
-            featured.forEach(function (p) {
-                var a = document.createElement('a');
-                a.href = '/case-study/?slug=' + encodeURIComponent(p.slug);
-                a.className = 'card project-card reveal in';
-                var problem = p.problem || p.solution || '';
-                a.innerHTML =
-                    '<div class="project-tag">' + p.tagline + '</div>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
-                    '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
-                    '<h3>' + p.name + '</h3>' +
-                    '<p>' + problem + '</p>' +
-                    '<span class="arrow">View case study →</span>';
-                grid.appendChild(a);
-            });
-        })();
-    </script>
-"""
-
-write("/index.html", page(
-    "Maria Aziz | AI Product Founder & Technology Entrepreneur",
-    "Maria Aziz builds AI-powered products, intelligent automation, conversational systems and scalable SaaS solutions for real-world problems.",
-    "/",
-    home_body,
-    extra_head=home_extra,
-    extra_scripts=home_scripts,
-))
-
-# ---------------------------------------------------------------- ABOUT ----
-about_body = """
-        <section class="wrap page-hero reveal">
-            <div class="eyebrow">About</div>
-            <h1>Maria Aziz</h1>
-            <p style="font-weight:700;color:var(--ink);font-size:1.15rem;margin:-6px 0 20px;">AI Product Founder &amp; Technology Entrepreneur</p>
-            <p>I build practical technology solutions around real-world problems, working across AI-powered products, machine learning, natural language processing, automation, conversational systems and SaaS.</p>
-            <p>My approach begins with understanding the people, processes and challenges behind a problem before selecting the technology. Since founding IMADI Technologies, I have built six client platforms for businesses in Pakistan, the United Kingdom and Kenya, five of them live in daily use, alongside my own SaaS products.</p>
-            <div style="display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.86rem;margin-top:22px;">
-                <span>📍 Karachi, Sindh, Pakistan</span>
-                <span>🏢 Founder &amp; AI Specialist, IMADI Technologies</span>
-                <span>🌍 Clients in Pakistan, UK &amp; Kenya</span>
-                <span>🎓 AI/ML/DL Specialization, IBA Karachi</span>
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">What I do</div><h2>Capabilities</h2></div>
-            <div class="chip-row">
-                <span class="chip">AI Product Development</span><span class="chip">Machine Learning</span><span class="chip">Natural Language Processing</span>
-                <span class="chip">Intelligent Automation</span><span class="chip">Conversational Systems</span><span class="chip">SaaS</span><span class="chip">Product Strategy</span>
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Experience</div><h2>Founder &amp; AI Specialist, IMADI Technologies</h2></div>
-            <p class="section-intro">May 2025 – Present · Karachi, Pakistan. I founded IMADI Technologies to build AI-powered business software, WhatsApp automation and SaaS products for SMEs. I gather requirements directly from business owners, then design, build and deploy each system end to end.</p>
-            <div class="stack">
-                <div class="card exp-card">
-                    <div class="exp-logo">AE</div>
-                    <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">ALICO Business Suite</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: ALICO Enterprises, Pakistan · May 2026 – Present · Live</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Complete business management PWA: quotations, challans, GST invoices, purchase orders, stock, ledgers and banking, offline-first with real-time sync.</p>
-                        <a class="btn small" href="/case-study/?slug=alico">View case study →</a>
-                    </div>
-                </div>
-                <div class="card exp-card">
-                    <div class="exp-logo">UK</div>
-                    <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">ERP &amp; Accounting Platform</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: logistics company, United Kingdom · Jun 2026 – Present · Live</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">13-module ERP and double-entry accounting backend with UK VAT, logistics and OCR, verified by 358 end-to-end tests.</p>
-                        <a class="btn small" href="/case-study/?slug=uk-logistics-erp">View case study →</a>
-                    </div>
-                </div>
-                <div class="card exp-card">
-                    <div class="exp-logo">SE</div>
-                    <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">SHAH Enterprise Business Suite</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: SHAH Enterprise, Pakistan · Jul 2026 – Present · Live</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Adapted the ALICO platform for a petrochemicals trader, with linked document conversion and automatic stock updates.</p>
-                        <a class="btn small" href="/case-study/?slug=shah">View case study →</a>
-                    </div>
-                </div>
-                <div class="card exp-card">
-                    <div class="exp-logo">RN</div>
-                    <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">ReNaz: WhatsApp Scrap Collection Platform</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: scrap collection business, Pakistan · Aug 2026 – Present · Live</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">WhatsApp-first pickup booking for customers and collectors, with 23+ pickups completed and 1–2 new requests daily.</p>
-                        <a class="btn small" href="/case-study/?slug=renaz">View case study →</a>
-                    </div>
-                </div>
-                <div class="card exp-card">
-                    <div class="exp-logo">UK</div>
-                    <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">WhatsApp Automation &amp; Operations Platform</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: logistics company, United Kingdom (repeat client) · Sep 2026 – Present · Live</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Instant rate quotes, order enquiries and a full damage-claims workflow on WhatsApp, with an operations dashboard.</p>
-                        <a class="btn small" href="/case-study/?slug=uk-logistics-whatsapp">View case study →</a>
-                    </div>
-                </div>
-                <div class="card exp-card">
-                    <div class="exp-logo">KE</div>
-                    <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Company Monitor</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Client: multi-branch business, Nairobi, Kenya · Sep 2026 – Present · In build</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Secure platform giving management branch-level visibility of messages on company-authorised WhatsApp Business numbers.</p>
-                        <a class="btn small" href="/case-study/?slug=company-monitor">View case study →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
             <div class="section-head"><div class="eyebrow">Education</div><h2>My Background</h2></div>
             <div class="stack">
                 <div class="card exp-card">
@@ -282,7 +180,7 @@ about_body = """
                     <div>
                         <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Specialization Certificate: Artificial Intelligence / Machine Learning / Deep Learning</h3>
                         <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Institute of Business Administration (IBA), Karachi · February 2026 – May 2026</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">Fully funded under the Prime Minister's Hunarmand Pakistan Program (NAVTTC). Machine learning, deep learning and NLP pipelines with scikit-learn, TensorFlow, PyTorch and Keras.</p>
+                        <p style="color:var(--body);font-size:.94rem;margin:0 0 12px;">Fully funded under the Prime Minister's Hunarmand Pakistan Program (NAVTTC). Machine learning, deep learning and NLP pipelines with scikit-learn, TensorFlow, PyTorch and Keras.</p>
                     </div>
                 </div>
                 <div class="card exp-card">
@@ -290,7 +188,7 @@ about_body = """
                     <div>
                         <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Bachelor of Public Administration (BSPA, BS 4-year)</h3>
                         <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">University of Karachi · January 2024 – December 2025 · CGPA 3.37 / 4.00</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">16 years of education. Statistics, research methodology, Power BI, logistics and supply chain management, and public policy.</p>
+                        <p style="color:var(--body);font-size:.94rem;margin:0 0 12px;">16 years of education. Statistics, research methodology, Power BI, logistics and supply chain management, and public policy.</p>
                     </div>
                 </div>
                 <div class="card exp-card">
@@ -298,12 +196,12 @@ about_body = """
                     <div>
                         <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Bachelor of Arts (Psychology)</h3>
                         <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">University of Karachi · November 2009 – December 2011 · 69.32%</p>
-                        <p style="color:#cdd9ec;font-size:.94rem;margin:0 0 12px;">14 years of education.</p>
+                        <p style="color:var(--body);font-size:.94rem;margin:0 0 12px;">14 years of education.</p>
                     </div>
                 </div>
             </div>
             <div class="card" style="margin-top:24px;">
-                <p style="color:#cdd9ec;margin:0;">A background in public administration and psychology alongside a technical AI specialisation gives me a working understanding of how organisations, operations and people actually function, which shapes how I design technology for real-world use, not just the technology in isolation.</p>
+                <p style="color:var(--body);margin:0;">A background in public administration and psychology alongside a technical AI specialisation gives me a working understanding of how organisations, operations and people actually function, which shapes how I design technology for real-world use, not just the technology in isolation.</p>
             </div>
         </section>
 
@@ -312,7 +210,7 @@ about_body = """
             <div class="grid three">
                 <div class="card">
                     <h3 style="font:700 1.02rem var(--display);margin:0 0 12px;">AI &amp; Data</h3>
-                    <ul style="margin:0;padding-left:18px;color:#cdd9ec;font-size:.88rem;display:grid;gap:5px;">
+                    <ul style="margin:0;padding-left:18px;color:var(--body);font-size:.88rem;display:grid;gap:5px;">
                         <li>Google AI Professional Certificate — Coursera</li>
                         <li>AI Fundamentals — Google</li>
                         <li>AI for Data Analysis — Google</li>
@@ -326,7 +224,7 @@ about_body = """
                 </div>
                 <div class="card">
                     <h3 style="font:700 1.02rem var(--display);margin:0 0 12px;">Project &amp; People Management</h3>
-                    <ul style="margin:0;padding-left:18px;color:#cdd9ec;font-size:.88rem;display:grid;gap:5px;">
+                    <ul style="margin:0;padding-left:18px;color:var(--body);font-size:.88rem;display:grid;gap:5px;">
                         <li>Foundations of Agile Project Management — Google</li>
                         <li>Organize Projects and Measure Productivity with Scrum — Google</li>
                         <li>Google People Management Essentials — Google</li>
@@ -338,7 +236,7 @@ about_body = """
                 </div>
                 <div class="card">
                     <h3 style="font:700 1.02rem var(--display);margin:0 0 12px;">Marketing &amp; Design</h3>
-                    <ul style="margin:0;padding-left:18px;color:#cdd9ec;font-size:.88rem;display:grid;gap:5px;">
+                    <ul style="margin:0;padding-left:18px;color:var(--body);font-size:.88rem;display:grid;gap:5px;">
                         <li>Search Engine Optimization (SEO) with Squarespace — Coursera</li>
                         <li>Use Canva to Design Digital Course Collateral — Coursera</li>
                         <li>Start Writing Prompts like a Pro — Google</li>
@@ -349,10 +247,22 @@ about_body = """
         </section>
 
         <section class="wrap section reveal">
-            <div class="card feature center" style="padding:44px;text-align:center;">
-                <h2>See the work behind this background</h2>
-                <p style="max-width:520px;margin:0 auto 24px;">Projects, case studies and research that put this approach into practice.</p>
-                <a class="btn primary" href="/work/">Explore my work</a>
+            <div class="section-head"><div class="eyebrow">Conference Paper · 2024</div><h2>Exploring the Psychological Puzzle of Travelling: A Journey Through Your Thoughts</h2></div>
+            <div class="card">
+                <div class="grid two" style="margin-bottom:18px;">
+                    <div><p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Author</p><p style="color:var(--body);margin:0;">Maria Aziz</p></div>
+                    <div><p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Role</p><p style="color:var(--body);margin:0;">Research Scholar, Department of Public Administration, University of Karachi</p></div>
+                    <div><p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Conference</p><p style="color:var(--body);margin:0;">National Conference on Managing Mega Cities (NCMC), Department of Public Administration, University of Karachi</p></div>
+                    <div><p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Date</p><p style="color:var(--body);margin:0;">14–15 May 2024</p></div>
+                </div>
+                <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Summary</p>
+                <p style="color:var(--body);margin:0 0 12px;">Explores the psychological dimensions of daily commuting and travel behaviour: how routine journeys by walking, cycling, driving or public transport affect mood, stress, attention and reflective thinking.</p>
+                <ul style="margin:0;padding-left:18px;color:var(--body);display:grid;gap:5px;">
+                    <li>The interplay between the mind and daily travel routines</li>
+                    <li>How traffic jams, delays and crowded transport drive stress and annoyance</li>
+                    <li>Moments of calm and self-reflection on familiar routes</li>
+                    <li>Implications for urban mobility and well-being in mega cities</li>
+                </ul>
             </div>
         </section>
 """
@@ -367,64 +277,70 @@ write("/about/index.html", page(
 work_body = """
         <section class="wrap page-hero reveal">
             <div class="eyebrow">Work</div>
-            <h1>Selected Technology Projects</h1>
-            <p>Problem, solution and current status for each project — filter by category to explore.</p>
+            <h1>Problems I've Solved</h1>
+            <p>For every project: the problem in one line, and what I built to solve it.</p>
         </section>
 
-        <section class="wrap section reveal">
-            <div class="filter-bar" id="filter-bar"></div>
-            <div class="grid three" id="work-grid"></div>
-        </section>
+        <div id="work-groups" aria-live="polite">
+            <section class="wrap section"><div class="card"><h2>Loading selected projects…</h2><p>If projects do not appear, check that JavaScript is enabled and reload this page.</p></div></section>
+        </div>
 """
 work_scripts = """    <script src="/assets/projects-data.js"></script>
     <script>
         (function () {
-            var grid = document.getElementById('work-grid');
-            var bar = document.getElementById('filter-bar');
-            if (!grid || !bar || !window.PROJECTS) return;
+            var root = document.getElementById('work-groups');
+            if (!root || !window.PROJECTS) return;
+            var fallback = root.querySelector('.card'); if (fallback) fallback.remove();
 
-            var categoriesPresent = ['featured'];
-            window.PROJECTS.forEach(function (p) {
-                p.categories.forEach(function (c) { if (categoriesPresent.indexOf(c) === -1) categoriesPresent.push(c); });
-            });
+            var GROUPS = [
+                { title: 'Client Work', intro: 'Real businesses, real problems, systems in daily use.', slugs: ['alico', 'uk-logistics-erp', 'uk-logistics-whatsapp', 'renaz', 'company-monitor', 'shah'] },
+                { title: 'My Own Products', intro: 'Products I built for problems I saw around me.', slugs: ['hercommerce', 'child-friendly-city-index'] },
+                { title: 'Hobby Projects', intro: 'What I build, write and try out in my free time, to learn, to experiment and sometimes just for fun.', slugs: ['marist-bot', 'overthinking-journal', 'smart-meal-planner', 'ml-pipeline', 'nlp-sentiment-analysis'], compact: true }
+            ];
 
-            var active = 'featured';
+            GROUPS.forEach(function (g) {
+                var section = document.createElement('section');
+                section.className = 'wrap section';
+                var head = document.createElement('div');
+                head.className = 'section-head';
+                head.innerHTML = '<h2></h2><p class="section-intro"></p>';
+                head.firstChild.textContent = g.title;
+                head.lastChild.textContent = g.intro || '';
+                var grid = document.createElement('div');
+                grid.className = 'grid two';
 
-            function render() {
-                grid.innerHTML = '';
-                var list = active === 'featured'
-                    ? window.PROJECTS.filter(function (p) { return p.featured; })
-                    : window.PROJECTS.filter(function (p) { return p.categories.indexOf(active) !== -1; });
-                list.forEach(function (p) {
+                g.slugs.forEach(function (slug) {
+                    var p = window.getProjectBySlug(slug);
+                    if (!p) return;
                     var a = document.createElement('a');
                     a.href = '/case-study/?slug=' + encodeURIComponent(p.slug);
                     a.className = 'card project-card';
-                    var problem = p.problem || p.solution || '';
+                    var prob = p.plainProblem || p.problem || '', sol = p.plainSolution || p.solution || '';
+                    if (g.compact) {
+                        a.className = 'card project-card hobby-card';
+                        a.innerHTML =
+                            '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
+                            '<h3>' + p.name + '</h3>' +
+                            '<p>' + (p.hobby || sol) + '</p>' +
+                            '<span class="arrow">More →</span>';
+                        grid.appendChild(a);
+                        return;
+                    }
+                    a.className = 'card project-card ps-card';
                     a.innerHTML =
-                        '<div class="project-tag">' + p.tagline + '</div>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
                         '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
-                        '<h3>' + p.name + '</h3>' +
-                        '<p>' + problem + '</p>' +
-                        '<span class="arrow">View case study →</span>';
+                        '<h3>' + p.name + '</h3>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
+                        '<div class="ps">' + (prob ? '<p><b class="ps-l ps-p">Problem</b>' + prob + '</p>' : '') +
+                        (sol ? '<p><b class="ps-l ps-s">Solution</b>' + sol + '</p>' : '') + '</div>' +
+                        (p.letter ? '<span class="letter-badge">\u2713 Client letter</span>' : '') +
+                        '<span class="arrow">Read the case study →</span>';
                     grid.appendChild(a);
                 });
-            }
 
-            categoriesPresent.forEach(function (cat) {
-                var btn = document.createElement('button');
-                btn.className = 'btn small';
-                btn.textContent = window.CATEGORY_LABELS[cat] || cat;
-                btn.setAttribute('aria-pressed', cat === active ? 'true' : 'false');
-                btn.addEventListener('click', function () {
-                    active = cat;
-                    bar.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
-                    btn.setAttribute('aria-pressed', 'true');
-                    render();
-                });
-                bar.appendChild(btn);
+                section.appendChild(head);
+                section.appendChild(grid);
+                root.appendChild(section);
             });
-
-            render();
         })();
     </script>
 """
@@ -436,147 +352,52 @@ write("/work/index.html", page(
     extra_scripts=work_scripts,
 ))
 
-# ------------------------------------------------------------ SOLUTIONS ----
-def solution_card(eyebrow, problem, solutions):
-    return f"""<div class="card"><div class="eyebrow">{eyebrow}</div>
-                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
-                    <p style="color:#cdd9ec;margin:0 0 16px;">{problem}</p>
-                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
-                    <p style="color:#cdd9ec;margin:0;">{solutions}</p>
-                </div>"""
-
-solutions_body = f"""
-        <section class="wrap page-hero reveal">
-            <div class="eyebrow">Solutions</div>
-            <h1>Tell Me Your Problem. Let's Explore the Solution.</h1>
-            <p>Start from the problem, not the technology. Here are the kinds of challenges I work on most often.</p>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="grid two">
-                {solution_card("Business Operations", "Manual workflows and repetitive processes.", "Automation, dashboards and integrated systems.")}
-                {solution_card("Customer Communication", "Teams spend time responding to repetitive inquiries.", "Chatbots and conversational automation.")}
-                {solution_card("Data &amp; Decision Making", "Organisations have data but lack useful insights.", "Analytics, dashboards and machine learning.")}
-                {solution_card("Education Technology", "Learning and progress tracking can be fragmented.", "AI-powered learning platforms and SaaS.")}
-                {solution_card("Logistics &amp; Operations", "Disconnected and manual operational workflows.", "Digital workflows, automation and intelligent systems.")}
-                {solution_card("Community &amp; Social Impact", "Complex public and community challenges need better digital tools.", "Research-driven platforms, data systems and technology solutions.")}
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="card feature center" style="padding:44px;text-align:center;">
-                <h2>Tell Me About Your Challenge</h2>
-                <p style="max-width:520px;margin:0 auto 24px;">You don't need the technical answer yet — just describe what's happening.</p>
-                <a class="btn primary" href="/contact/">Get in touch</a>
-            </div>
-        </section>
-"""
-write("/solutions/index.html", page(
-    "Solutions | Maria Aziz",
-    "Tell Maria Aziz your problem — business operations, customer communication, data, education technology, logistics or social impact — and explore the right technology solution.",
-    "/solutions/",
-    solutions_body,
-))
-
-# ------------------------------------------------------------- RESEARCH ----
-def field(label, value):
-    return f'<div><p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">{label}</p><p style="color:#cdd9ec;margin:0;">{value}</p></div>'
-
-research_body = f"""
-        <section class="wrap page-hero reveal">
-            <div class="eyebrow">Research</div>
-            <h1>Research &amp; Publications</h1>
-            <p>Published academic and written work, alongside the machine learning research behind my projects.</p>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Conference Paper · 2024</div><h2>Exploring the Psychological Puzzle of Travelling: A Journey Through Your Thoughts</h2></div>
-            <div class="card">
-                <div class="grid two" style="margin-bottom:18px;">
-                    {field("Author", "Maria Aziz")}
-                    {field("Role", "Research Scholar, Department of Public Administration, University of Karachi")}
-                    {field("Conference", "National Conference on Managing Mega Cities (NCMC), Department of Public Administration, University of Karachi")}
-                    {field("Date", "14–15 May 2024")}
-                </div>
-                <p style="color:var(--muted);font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 4px;">Summary</p>
-                <p style="color:#cdd9ec;margin:0 0 12px;">Explores the psychological dimensions of daily commuting and travel behaviour: how routine journeys by walking, cycling, driving or public transport affect mood, stress, attention and reflective thinking.</p>
-                <ul style="margin:0;padding-left:18px;color:#cdd9ec;display:grid;gap:5px;">
-                    <li>The interplay between the mind and daily travel routines</li>
-                    <li>How traffic jams, delays and crowded transport drive stress and annoyance</li>
-                    <li>Moments of calm and self-reflection on familiar routes</li>
-                    <li>Implications for urban mobility and well-being in mega cities</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Book · Amazon KDP</div><h2>Overthinking Journal for Women 25–40: A Guided Emotional Reset System</h2></div>
-            <div class="card">
-                <div class="grid two" style="margin-bottom:18px;">
-                    {field("Author", "Mariyah Aziz")}
-                    {field("Format", "Paperback, self-published on Amazon KDP (ASIN B0GZBRLHDD)")}
-                </div>
-                <p style="color:#cdd9ec;margin:0 0 18px;">A guided, structured journal that helps women manage racing thoughts, emotional overwhelm and mental spirals. Targeted prompts and a guided emotional-reset framework help readers slow down, process their thoughts and regain calm and clarity in daily life: a practical, non-clinical tool for everyday emotional regulation.</p>
-                <a class="btn primary small" href="https://www.amazon.com/dp/B0GZBRLHDD" target="_blank" rel="noopener">View on Amazon ↗</a>
-            </div>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="section-head"><div class="eyebrow">Machine learning research</div><h2>AI / ML Projects</h2></div>
-            <div class="grid two">
-                <a class="card project-card" href="/case-study/?slug=nlp-sentiment-analysis"><div class="project-tag">NLP · Research</div><h3>NLP Sentiment Analysis of Travel Blogs</h3><p>Comparing BERT and LSTM models on nuanced emotional sentiment in long-form travel writing.</p><span class="arrow">View case study →</span></a>
-                <a class="card project-card" href="/case-study/?slug=ml-pipeline"><div class="project-tag">ML · IBA Karachi</div><h3>End-to-End Machine Learning Pipeline</h3><p>21 Decision Tree and SVM models trained, tuned and evaluated on accuracy, sensitivity and specificity.</p><span class="arrow">View case study →</span></a>
-            </div>
-        </section>
-"""
-write("/research/index.html", page(
-    "Research | Maria Aziz",
-    "Research and publications by Maria Aziz: a 2024 National Conference on Managing Mega Cities paper, a book on Amazon, and machine learning research.",
-    "/research/",
-    research_body,
-))
-
-# -------------------------------------------------------------------- NOW -
-def now_card(logo, title, meta, slug):
-    return f"""                <div class="card exp-card">
-                    <div class="exp-logo">{logo}</div>
-                    <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">{title}</h3>
-                        <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">{meta}</p>
-                        <a class="btn small" href="/case-study/?slug={slug}">View case study →</a>
-                    </div>
-                </div>
-"""
-now_body = f"""
-        <section class="wrap page-hero reveal">
-            <div class="eyebrow">Now · September 2026</div>
-            <h1>What I'm Building Now</h1>
-            <p>Work actively in progress right now. Everything already delivered lives on the <a href="/work/" style="color:var(--cyan);font-weight:700;">Work</a> page.</p>
-        </section>
-
-        <section class="wrap section reveal">
-            <div class="stack">
-{now_card("KE", "Company Monitor", "Client project, Nairobi, Kenya · In build · QR-login pilot in testing", "company-monitor")}
-{now_card("AI", "IMADI AI Sales Engine", "Co-founded venture · Launching October 2026", "imadi-sales-engine")}
-{now_card("MB", "Marist Bot", "Own product · Conversational AI assistant · ~80% built", "marist-bot")}
-{now_card("HA", "HifzAI", "Own product · Completed · Pilot stage ahead of launch", "hifzai")}
-{now_card("RN", "ReNaz", "Client project, Pakistan · Live · Expanding to commercial bulk scrap", "renaz")}
-            </div>
-        </section>
-"""
-write("/now/index.html", page(
-    "Now | Maria Aziz",
-    "What Maria Aziz is actively building right now.",
-    "/now/",
-    now_body,
-))
-
 # ---------------------------------------------------------------- CONTACT -
 contact_body = """
         <section class="wrap page-hero reveal">
             <div class="eyebrow">Contact</div>
             <h1>Tell Me Your Problem.</h1>
             <p>You don't need to know which technology fits. Describe the challenge and we'll work out the right approach together.</p>
+            <div class="hero-actions"><a class="btn primary" href="#project-enquiry" data-track="contact_cta">Start a Project Enquiry</a><a class="btn" href="mailto:mariyahheal92@gmail.com">Email Directly</a></div>
+        </section>
+
+        <section class="wrap section reveal">
+            <a class="card marist-card" href="https://wa.me/923421393991?text=Hi%20Marist!" target="_blank" rel="noopener" style="text-decoration:none;">
+                <div class="marist-icon"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36A9.4 9.4 0 0 1 2.6 12C2.6 6.8 6.84 2.56 12.06 2.56c2.52 0 4.9.99 6.68 2.77A9.38 9.38 0 0 1 21.5 12c0 5.2-4.24 9.44-9.45 9.44M20.1 3.9A11.3 11.3 0 0 0 12.05.6C5.78.6.67 5.71.67 12c0 2 .52 3.97 1.52 5.7L.57 23.4l5.83-1.53A11.4 11.4 0 0 0 12.04 23.4h.01c6.27 0 11.38-5.11 11.38-11.4 0-3.04-1.18-5.9-3.33-8.1"/></svg></div>
+                <div>
+                    <div class="eyebrow">My AI chat buddy</div>
+                    <h3 style="font:700 1.25rem var(--display);margin:0 0 6px;">Say hi to Marist on WhatsApp ↗</h3>
+                    <p style="color:var(--muted);margin:0 0 6px;">Marist is an AI chat buddy I built in my free time. It chats in Roman Urdu and loves sharing a little motivation. Say hi any time.</p>
+                    <p style="color:var(--body);margin:0;font-weight:600;">+92 342 1393991</p>
+                </div>
+            </a>
+        </section>
+
+        <section class="wrap section reveal" id="project-enquiry">
+            <div class="card enquiry-card">
+                <div class="eyebrow">Project enquiry</div>
+                <h2>What would you like to improve?</h2>
+                <p class="section-intro">Share a little context. This form prepares an email in your email app; it does not send information to a server.</p>
+                <form id="projectEnquiryForm" class="enquiry-form">
+                    <div class="form-grid">
+                        <label>Your name <span aria-hidden="true">*</span><input name="name" autocomplete="name" required maxlength="100" /></label>
+                        <label>Business email <span aria-hidden="true">*</span><input name="email" type="email" autocomplete="email" required maxlength="180" /></label>
+                        <label>What do you need help with? <span aria-hidden="true">*</span>
+                            <select name="service" required>
+                                <option value="" selected disabled>Select a service</option>
+                                <option>Business process automation</option><option>WhatsApp / conversational systems</option><option>ERP or custom business software</option><option>AI product or assistant</option><option>SaaS / web application</option><option>Data analytics / machine learning</option><option>Not sure yet</option>
+                            </select>
+                        </label>
+                        <label>Project budget (optional)
+                            <select name="budget"><option value="Not specified" selected>Prefer to discuss</option><option>Under $1,000</option><option>$1,000–$5,000</option><option>$5,000–$15,000</option><option>$15,000+</option></select>
+                        </label>
+                        <label class="form-wide">Tell me about the problem <span aria-hidden="true">*</span><textarea name="message" rows="5" required maxlength="3000" placeholder="What is happening today, and what would a better outcome look like?"></textarea></label>
+                    </div>
+                    <label class="consent-line"><input type="checkbox" name="consent" required /> I agree that the details I enter can be included in an email to respond to this enquiry.</label>
+                    <button class="btn primary" type="submit">Prepare My Enquiry Email <span aria-hidden="true">↗</span></button>
+                    <p id="enquiryStatus" class="form-status" role="status" aria-live="polite">Your email app will open with your enquiry filled in. Review and send it there.</p>
+                </form>
+            </div>
         </section>
 
         <section class="wrap section reveal">
@@ -596,11 +417,48 @@ contact_body = """
                     <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">github.com/Mariyah52 ↗</h3>
                     <p style="color:var(--muted);margin:0;">Public code and open-source projects.</p>
                 </a>
-                <a class="card" href="/assets/Maria_Aziz_CV.pdf" target="_blank" rel="noopener" style="text-decoration:none;">
-                    <div class="eyebrow">CV</div>
-                    <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">Download my CV (PDF) ↓</h3>
-                    <p style="color:var(--muted);margin:0;">Two pages: experience, products, education and publications.</p>
-                </a>
+            </div>
+        </section>
+
+        <section class="wrap section reveal">
+            <div class="section-head"><div class="eyebrow">Solutions</div><h2>Where I Can Help</h2><p class="section-intro">Start from the problem, not the technology. Here are the kinds of challenges I work on most often.</p></div>
+            <div class="grid two">
+                <div class="card"><div class="eyebrow">Business Operations</div>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
+                    <p style="color:var(--body);margin:0 0 16px;">Manual workflows and repetitive processes.</p>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
+                    <p style="color:var(--body);margin:0;">Automation, dashboards and integrated systems.</p>
+                </div>
+                <div class="card"><div class="eyebrow">Customer Communication</div>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
+                    <p style="color:var(--body);margin:0 0 16px;">Teams spend time responding to repetitive inquiries.</p>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
+                    <p style="color:var(--body);margin:0;">Chatbots and conversational automation.</p>
+                </div>
+                <div class="card"><div class="eyebrow">Data &amp; Decision Making</div>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
+                    <p style="color:var(--body);margin:0 0 16px;">Organisations have data but lack useful insights.</p>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
+                    <p style="color:var(--body);margin:0;">Analytics, dashboards and machine learning.</p>
+                </div>
+                <div class="card"><div class="eyebrow">Education Technology</div>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
+                    <p style="color:var(--body);margin:0 0 16px;">Learning and progress tracking can be fragmented.</p>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
+                    <p style="color:var(--body);margin:0;">AI-powered learning platforms and SaaS.</p>
+                </div>
+                <div class="card"><div class="eyebrow">Logistics &amp; Operations</div>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
+                    <p style="color:var(--body);margin:0 0 16px;">Disconnected and manual operational workflows.</p>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
+                    <p style="color:var(--body);margin:0;">Digital workflows, automation and intelligent systems.</p>
+                </div>
+                <div class="card"><div class="eyebrow">Community &amp; Social Impact</div>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
+                    <p style="color:var(--body);margin:0 0 16px;">Complex public and community challenges need better digital tools.</p>
+                    <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
+                    <p style="color:var(--body);margin:0;">Research-driven platforms, data systems and technology solutions.</p>
+                </div>
             </div>
         </section>
 """
@@ -615,11 +473,30 @@ write("/contact/index.html", page(
 case_study_body = """
         <section class="wrap page-hero reveal">
             <div class="eyebrow" id="case-tagline">Case study</div>
-            <h1 id="case-title">Loading…</h1>
+            <h1 id="case-title">Loading project details…</h1>
+            <p id="case-loading-help" class="case-loading-help">Project details are taking longer than expected. <a href="/work/">Return to all projects</a> or <a href="/contact/">contact Maria directly</a>.</p>
             <div class="case-hero-meta">
                 <span class="project-status" id="case-status" data-status="">Status</span>
                 <span class="case-meta" id="case-client"></span>
                 <span class="case-meta" id="case-period"></span>
+            </div>
+        </section>
+        <section class="wrap" id="case-short" hidden style="padding:16px 0 0;">
+            <div class="card ps-card ps-short">
+                <div class="eyebrow">In short</div>
+                <div class="ps"><p><b class="ps-l ps-p">Problem</b><span id="short-problem"></span></p><p><b class="ps-l ps-s">Solution</b><span id="short-solution"></span></p></div>
+            </div>
+        </section>
+        <section class="wrap section" id="case-letter" hidden style="padding-bottom:0;">
+            <div class="section-head"><div class="eyebrow">Client letter</div><h2>In the client's words</h2></div>
+            <div class="card letter-card">
+                <a class="letter-thumb" id="letter-link" href="#" target="_blank" rel="noopener"><img id="letter-img" alt="Letter from the client confirming delivery" loading="lazy"></a>
+                <div>
+                    <blockquote id="letter-quote"></blockquote>
+                    <p class="letter-by"><strong id="letter-name"></strong><span id="letter-role"></span></p>
+                    <p class="letter-note">Signed and stamped letter confirming the software was developed and delivered<span id="letter-date"></span>. Commercial terms are withheld.</p>
+                    <a class="btn small" id="letter-open" href="#" target="_blank" rel="noopener">View full letter ↗</a>
+                </div>
             </div>
         </section>
         <section class="wrap" style="padding:20px 0 60px;">
@@ -645,16 +522,20 @@ case_study_body = """
         </section>
 """
 case_study_scripts = """    <script src="/assets/projects-data.js"></script>
+    <script src="/assets/media-data.js"></script>
+    <script src="/assets/media-loader.js"></script>
     <script>
         (function () {
             var slug = new URLSearchParams(location.search).get('slug');
             var project = slug ? window.getProjectBySlug(slug) : null;
             if (!project) {
                 document.getElementById('case-title').textContent = 'Case study not found';
+                var missing = document.getElementById('case-loading-help'); if (missing) missing.hidden = false;
                 return;
             }
             document.title = project.name + ' | Maria Aziz';
             document.getElementById('case-title').textContent = project.name;
+            var loadingHelp = document.getElementById('case-loading-help'); if (loadingHelp) loadingHelp.hidden = true;
             document.getElementById('case-tagline').textContent = project.tagline;
             var statusEl = document.getElementById('case-status');
             statusEl.textContent = project.status;
@@ -680,6 +561,22 @@ case_study_scripts = """    <script src="/assets/projects-data.js"></script>
                 });
                 show(field);
             }
+            if (project.plainProblem) {
+                document.getElementById('short-problem').textContent = project.plainProblem;
+                document.getElementById('short-solution').textContent = project.plainSolution || '';
+                document.getElementById('case-short').hidden = false;
+            }
+            if (project.letter) {
+                var L = project.letter;
+                document.getElementById('letter-img').src = L.image;
+                document.getElementById('letter-link').href = L.image;
+                document.getElementById('letter-open').href = L.image;
+                document.getElementById('letter-quote').textContent = '\u201C' + L.quote + '\u201D';
+                document.getElementById('letter-name').textContent = L.name;
+                document.getElementById('letter-role').textContent = L.role ? ' \u00B7 ' + L.role : '';
+                document.getElementById('letter-date').textContent = L.date ? ', dated ' + L.date : '';
+                document.getElementById('case-letter').hidden = false;
+            }
             ['problem', 'challenge', 'solution', 'myRole', 'innovation'].forEach(text);
             list('features', 'case-features', 'li');
             list('results', 'case-results', 'li');
@@ -695,6 +592,30 @@ case_study_scripts = """    <script src="/assets/projects-data.js"></script>
                 });
                 show('evidence');
             }
+            if (window.loadMedia) window.loadMedia().then(function (m) {
+                var vids = (m.videos || []).filter(function (v) { return window.mediaMatchesProject(v, project); });
+                var pics = (m.photos || []).filter(function (v) { return window.mediaMatchesProject(v, project); });
+                if (!vids.length && !pics.length) return;
+                var sec = document.createElement('section');
+                sec.className = 'wrap section reveal in';
+                sec.innerHTML = '<div class="section-head"><div class="eyebrow">Demo</div><h2>See it in action</h2></div><div class="media-grid"></div>';
+                var grid = sec.querySelector('.media-grid');
+                vids.forEach(function (v) { grid.appendChild(window.mediaVideoCard({ title: v.title, caption: v.caption, src: v.src, webm: v.webm, poster: v.poster })); });
+                pics.forEach(function (v) {
+                    var card = document.createElement('a');
+                    card.className = 'media-card media-pic'; card.href = window.mediaImageUrl(v.src); card.target = '_blank'; card.rel = 'noopener';
+                    var img = document.createElement('img'); img.src = window.mediaImageUrl(v.src); img.alt = v.title || 'Demo picture'; img.loading = 'lazy';
+                    var c = document.createElement('div'); c.className = 'cap';
+                    var t = document.createElement('strong'); t.textContent = v.title || ''; c.appendChild(t);
+                    if (v.caption) { var sp = document.createElement('span'); sp.textContent = v.caption; c.appendChild(sp); }
+                    card.appendChild(img); card.appendChild(c); grid.appendChild(card);
+                });
+                if (pics.length && !vids.length) sec.querySelector('.media-grid').classList.add('single');
+                var main = document.getElementById('main');
+                var letterBox = document.getElementById('case-letter');
+                var anchor = (letterBox && !letterBox.hidden) ? letterBox : document.getElementById('case-short');
+                main.insertBefore(sec, anchor ? anchor.nextSibling : null);
+            });
         })();
     </script>
 """
@@ -706,12 +627,136 @@ write("/case-study/index.html", page(
     extra_scripts=case_study_scripts,
 ))
 
+
+# ---------------------------------------------------------------- MEDIA ----
+media_body = """
+        <section class="wrap page-hero">
+            <div class="eyebrow">Demos</div>
+            <h1>Demos &amp; Work in Pictures</h1>
+            <p>Short walkthroughs of the products I build, and pictures of the work in use.</p>
+        </section>
+
+        <section class="wrap section" style="padding-top:12px;">
+            <div class="section-head"><h2>Demo videos</h2></div>
+            <div class="add-demo" data-edit hidden>
+                <a class="btn primary" id="add-demo-link" href="#" target="_blank" rel="noopener">+ Add a demo link</a>
+                <span style="color:var(--muted);font-size:.86rem;">Opens your form. Paste a YouTube, LinkedIn, Loom, Vimeo or Google Drive link, submit, and refresh this page in a few minutes.</span>
+            </div>
+            <div class="media-grid" id="video-grid"></div>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><h2>Work in pictures</h2></div>
+            <div class="media-grid" id="photo-grid"></div>
+        </section>
+
+        <dialog class="lightbox" id="lightbox"><img alt=""><p></p></dialog>
+"""
+media_scripts = """    <script src="/assets/projects-data.js"></script>
+    <script src="/assets/media-data.js"></script>
+    <script src="/assets/media-loader.js"></script>
+    <script>
+        window.loadMedia().then(function (data) {
+            var edit = new URLSearchParams(location.search).get('edit') === '1';
+            var vGrid = document.getElementById('video-grid');
+            var pGrid = document.getElementById('photo-grid');
+            var box = document.getElementById('lightbox');
+
+            if (edit) document.querySelectorAll('[data-edit]').forEach(function (el) { el.hidden = false; });
+            var formBtn = document.getElementById('add-demo-link');
+            if (formBtn) {
+                if (window.MEDIA_FORM_URL) formBtn.href = window.MEDIA_FORM_URL;
+                else { formBtn.removeAttribute('target'); formBtn.addEventListener('click', function (e) { e.preventDefault(); formBtn.textContent = 'Form link not set yet (MEDIA_FORM_URL in assets/media-data.js)'; }); }
+            }
+
+            function cap(item) {
+                var c = document.createElement('div');
+                c.className = 'cap';
+                var t = document.createElement('strong');
+                t.textContent = item.title || '';
+                c.appendChild(t);
+                var sub = item.caption || projectLabel(item);
+                if (sub) { var s = document.createElement('span'); s.textContent = sub; c.appendChild(s); }
+                return c;
+            }
+            function embedUrl(src) {
+                var m;
+                if ((m = src.match(/youtu\\.be\\/([\\w-]{6,})/)) || (m = src.match(/[?&]v=([\\w-]{6,})/)) || (m = src.match(/youtube\\.com\\/embed\\/([\\w-]{6,})/)))
+                    return 'https://www.youtube-nocookie.com/embed/' + m[1];
+                if ((m = src.match(/vimeo\\.com\\/(\\d+)/))) return 'https://player.vimeo.com/video/' + m[1];
+                if ((m = src.match(/loom\\.com\\/(?:share|embed)\\/(\\w+)/))) return 'https://www.loom.com/embed/' + m[1];
+                return null;
+            }
+            function projectLabel(item) {
+                var p = item.project && window.getProjectBySlug ? window.getProjectBySlug(item.project.trim().toLowerCase()) : null;
+                return p ? p.name : item.project;
+            }
+            function addVideo(item) {
+                vGrid.appendChild(window.mediaVideoCard({ title: item.title, caption: item.caption, project: projectLabel(item), src: item.src, webm: item.webm, poster: item.poster }));
+            }
+            function addPhoto(item) {
+                var card = document.createElement('div');
+                card.className = 'media-card';
+                var img = document.createElement('img');
+                img.className = 'ph'; img.src = window.mediaImageUrl(item.src); img.alt = item.title || 'Work picture'; img.loading = 'lazy';
+                img.addEventListener('click', function () {
+                    box.querySelector('img').src = window.mediaImageUrl(item.src);
+                    box.querySelector('img').alt = img.alt;
+                    box.querySelector('p').textContent = [item.title, item.caption].filter(Boolean).join(' — ');
+                    box.showModal();
+                });
+                card.appendChild(img);
+                card.appendChild(cap(item));
+                pGrid.appendChild(card);
+            }
+            box.addEventListener('click', function () { box.close(); });
+
+            function empty(grid, text) {
+                if (grid.children.length) return;
+                var d = document.createElement('div');
+                d.className = 'media-empty'; d.textContent = text;
+                grid.parentNode.insertBefore(d, grid);
+                grid.dataset.empty = '1';
+            }
+            (data.videos || []).forEach(addVideo);
+            (data.photos || []).forEach(addPhoto);
+            if (!edit) {
+                empty(vGrid, 'Demo videos are coming soon.');
+                empty(pGrid, 'Project pictures are coming soon.');
+            }
+
+        });
+    </script>
+"""
+write("/media/index.html", page(
+    "Demos | Maria Aziz",
+    "Demo videos and pictures of the AI products, automation and SaaS platforms built by Maria Aziz.",
+    "/media/",
+    media_body,
+    extra_scripts=media_scripts,
+))
+
+# ------------------------------------------------------------------ 404 ----
+# Old or mistyped addresses go straight to Home instead of showing an error.
+write("/404.html", page(
+    "Maria Aziz",
+    "Maria Aziz builds AI-powered products, intelligent automation, conversational systems and scalable SaaS solutions.",
+    "/",
+    """
+        <section class="wrap page-hero">
+            <h1>Taking you to the home page</h1>
+            <p><a class="btn primary" href="/">Go to Home</a></p>
+        </section>
+""",
+    extra_head='    <meta http-equiv="refresh" content="0; url=/">\n    <meta name="robots" content="noindex">\n',
+))
+
 # ------------------------------------------------------------ SEO FILES --
 # No live domain is confirmed yet for this site. Rather than guess one, the
 # sitemap uses an obvious placeholder token — find-and-replace it with the
 # real domain once this site is actually hosted somewhere.
-SITE_URL_PLACEHOLDER = "https://maria-aziz-portfolio.onrender.com"
-sitemap_paths = ["/", "/about/", "/work/", "/solutions/", "/research/", "/now/", "/contact/"]
+SITE_URL_PLACEHOLDER = "https://www.imadi.tech"
+sitemap_paths = ["/", "/about/", "/work/", "/media/", "/contact/"]
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for p in sitemap_paths:
     sitemap_xml += f"  <url><loc>{SITE_URL_PLACEHOLDER}{p}</loc></url>\n"

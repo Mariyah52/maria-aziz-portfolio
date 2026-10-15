@@ -6,23 +6,19 @@ just host the folder as-is (see **Hosting** below).
 ## Structure
 
 ```
-index.html            Home
-about/index.html      About
+index.html            Home (hero, stats, what I do, how I build)
+about/index.html      About (bio, experience, skills, education, certifications, research)
 work/index.html       Work (filtered project index)
-case-study/index.html Case study template — reads ?slug=... from the URL
-solutions/index.html  Solutions
-research/index.html   Research & Publications
-writing/index.html    Writing & Insights
-recognition/index.html Recognition & Media
-now/index.html        Now
-contact/index.html    Contact
-assets/               Shared CSS, JS, project data, photo, favicon
-build/                Python scripts that generated every page (see below)
+case-study/index.html Case study template, reads ?slug=... from the URL
+media/index.html      Demos: demo videos and work pictures
+contact/index.html    Contact (contact details and challenges I work on)
+assets/               Shared CSS, JS, project data, photo, favicon, media
+build/                Python scripts that generate every page
 ```
 
 ## Updating a project, or adding a new one
 
-Everything project-related — Home's featured work, the Work page's filtered
+Everything project-related — the Work page's filtered
 grid, and every case study — reads from **`assets/projects-data.js`**. To add
 a new project or correct one, edit that one file only; no other page needs
 to change, and no rebuild step is required (it's read directly by the
@@ -60,7 +56,7 @@ links and the shared CSS/JS won't resolve correctly without a real server
 — run a local server (e.g. `python3 -m http.server`) from this folder to
 preview it properly before deploying.
 
-The live domain is https://maria-aziz-portfolio.onrender.com, set in
+The live domain is https://www.imadi.tech, set in
 `SITE_URL` (`build/generate.py`) and `SITE_URL_PLACEHOLDER` (`build/pages.py`).
 If the domain changes, update both and regenerate.
 
@@ -72,8 +68,28 @@ If the domain changes, update both and regenerate.
 - The Writing and Recognition pages were removed until real articles or media
   coverage exist. Re-add them in `build/generate.py` (NAV_ITEMS) and
   `build/pages.py` when there is something to publish.
-- The CV PDF lives at `assets/Maria_Aziz_CV.pdf` and is linked from the nav
-  and the Contact page. Replace that one file whenever the CV changes.
-- Status labels to update when things change: IMADI AI Sales Engine
-  ("Launching Oct 2026" -> "Live"), Company Monitor ("In build"), Marist Bot
-  ("In build"), HifzAI ("Pilot").
+- The CV is not offered for download on the site.
+- Status labels to update when things change: Company Monitor ("In build"),
+  Marist Bot ("In build").
+
+## Design (October 2026)
+
+Layout follows the Brittany Chiang style: sticky left sidebar (photo, name,
+title, IMADI Tech logo, navigation, social links, light/dark toggle) and a scrolling right
+column, with a soft cursor spotlight and dimming of sibling cards on hover.
+Colours are lighter shades and live in one place: the `:root` and
+`:root[data-theme="dark"]` blocks at the top of `assets/site.css`.
+Page text and `assets/projects-data.js` were not changed.
+
+## Demo videos and work pictures
+
+1. Put files in `assets/media/` (.mp4/.webm videos, .jpg/.png/.webp pictures).
+2. List them in `assets/media-data.js` (YouTube, Vimeo and Loom links also work).
+3. Open `/media/?edit=1` for owner mode: "Add demo video", "Add video link" and
+   "Add pictures" buttons preview files and generate the entries to paste into
+   `media-data.js`. Visitors never see these buttons.
+
+
+## Paid-ad readiness update
+
+See `ADS-LAUNCH-CHECKLIST.md` for the conversion-focused enquiry form, analytics setup requirements, SEO checks, and launch checklist. The enquiry form currently prepares an email in the visitor's mail app; it is not a server-backed submission. Google Ads / GTM IDs have intentionally not been invented or inserted. Add genuine, client-approved project screenshots to `assets/media/` and `assets/media-data.js` before advertising if visual proof is available.

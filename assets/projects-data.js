@@ -44,13 +44,13 @@ window.PROJECTS = [
       "WhatsApp sharing of documents",
       "Digital or physical stamp and signature on print-ready documents"
     ],
-    myRole: "Founder & AI Specialist, IMADI Technologies. Gathered requirements from the owner in Roman Urdu, then designed, built and deployed the system using an LLM-assisted development workflow.",
+    myRole: "Founder & AI Specialist. Gathered requirements from the owner in Roman Urdu, then designed, built and deployed the system using an LLM-assisted development workflow.",
     technology: ["HTML5", "CSS3", "JavaScript (PWA)", "Firebase Firestore", "Firebase Authentication", "IndexedDB", "LocalStorage", "Netlify"],
     architecture: ["Installable PWA (iOS & Android)", "IndexedDB offline store", "Firebase Authentication", "Firestore real-time sync", "Print-ready documents", "Netlify hosting"],
     innovation: "Offline-first architecture that keeps working without internet and syncs automatically, custom AL-XXXX-YY document numbering, and a development process that turned Roman Urdu business requirements into production software with AI assistance.",
     results: [
       "Live and in daily use by ALICO Enterprises since May 2026",
-      "Became the foundation for a second client deployment (SHAH Enterprise) and the MAflow SaaS product"
+      "Became the foundation for a second client deployment (SHAH Enterprise)"
     ],
     evidence: []
   },
@@ -58,7 +58,7 @@ window.PROJECTS = [
     slug: "uk-logistics-erp",
     name: "ERP & Accounting Platform",
     tagline: "Client Work · Enterprise ERP",
-    client: "Logistics company · United Kingdom",
+    client: "IMADI Fulfilment & Logistics · United Kingdom",
     period: "Jun 2026 – Present",
     categories: ["client", "ai-automation"],
     featured: true,
@@ -79,7 +79,7 @@ window.PROJECTS = [
       "AI assistant: invoice and receipt OCR, duplicate-invoice detection, expense categorisation, cash-flow forecast and financial Q&A",
       "Security: 2FA, argon2 password hashing, role permissions, field-level encryption, CSRF protection, rate limiting, audit logs, backup and restore"
     ],
-    myRole: "Founder & AI Specialist, IMADI Technologies. Led the architecture, module design and delivery; co-built with IMADI co-founder Burhanuddin Patanwala.",
+    myRole: "Founder & AI Specialist. Led the architecture, module design and delivery.",
     technology: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Alembic", "Pydantic", "Tesseract OCR", "ReportLab", "JWT / TOTP 2FA"],
     architecture: ["API routers", "Services (business logic)", "Repositories (data access)", "PostgreSQL", "Shared accounting engine", "Reports & PDF/Excel export"],
     innovation: "A single shared accounting engine enforces double entry and period locks for every module, so no part of the system can post an unbalanced or back-dated entry.",
@@ -109,11 +109,18 @@ window.PROJECTS = [
       "Weekly, monthly and yearly sales, receivables and low-stock reports",
       "Customer ledger, bank accounts, expenses, audit log and role-based access"
     ],
-    myRole: "Founder & AI Specialist, IMADI Technologies. Adapted and extended the platform for the client and deployed it.",
+    myRole: "Founder & AI Specialist. Adapted and extended the platform for the client and deployed it.",
     technology: ["JavaScript (PWA)", "Firebase Firestore", "Firebase Authentication", "IndexedDB"],
     architecture: null,
     innovation: "Shows the platform is reusable: a second business was onboarded by adapting the product rather than rebuilding it.",
     results: ["Live and in daily use since July 2026"],
+    letter: {
+      quote: "We appreciate Ms. Maria Aziz's professional services and technical contribution in developing this customized business solution for our organization.",
+      name: "Haseeb",
+      role: "Owner, SHAH Enterprise",
+      date: "3 September 2026",
+      image: "/assets/media/shah-letter.jpg"
+    },
     evidence: []
   },
   {
@@ -134,7 +141,7 @@ window.PROJECTS = [
       "Category-based pricing in PKR per kg",
       "React admin dashboard tracking the full pickup lifecycle"
     ],
-    myRole: "Founder & AI Specialist, IMADI Technologies. Designed the conversation flows and architecture, built the platform and launched it for the client.",
+    myRole: "Founder & AI Specialist. Designed the conversation flows and architecture, built the platform and launched it for the client.",
     technology: ["Python", "FastAPI", "React", "TypeScript", "WhatsApp Business API", "Render"],
     architecture: ["Customer WhatsApp flow", "Collector WhatsApp flow", "FastAPI backend", "Database", "Admin REST API", "React dashboard"],
     innovation: "Runs entirely on WhatsApp, with no app to install, serving two user types through separate flows on one system.",
@@ -150,7 +157,7 @@ window.PROJECTS = [
     slug: "uk-logistics-whatsapp",
     name: "WhatsApp Automation & Operations Platform",
     tagline: "Client Work · Conversational Systems",
-    client: "Logistics company · United Kingdom (repeat client)",
+    client: "IMADI Fulfilment & Logistics · United Kingdom (returning client)",
     period: "Sep 2026 – Present",
     categories: ["client", "chatbots", "ai-automation"],
     featured: true,
@@ -165,7 +172,7 @@ window.PROJECTS = [
       "Claims approval workflow with automatic WhatsApp notifications",
       "Operations dashboard: orders, claims review, evidence, company administration and role-based admin access"
     ],
-    myRole: "Founder & AI Specialist, IMADI Technologies. Designed the conversation flows and architecture and built the bot and dashboard.",
+    myRole: "Founder & AI Specialist. Designed the conversation flows and architecture and built the bot and dashboard.",
     technology: ["Python", "Flask", "PostgreSQL", "Meta WhatsApp Cloud API", "Google Sheets API"],
     architecture: ["WhatsApp", "Cloud API webhook", "Intent router (rate / order / claim)", "Flask backend + PostgreSQL", "Google Sheets rate card", "Admin dashboard", "WhatsApp notifications"],
     innovation: "One WhatsApp number serves two audiences: it recognises registered companies automatically, and every claim runs from first message to final decision with its evidence attached. Built for reliability with persistent conversation state, idempotent webhook processing, secure media handling and audit logging.",
@@ -194,7 +201,7 @@ window.PROJECTS = [
       "Management sees all company accounts; branch staff see only their assigned branches",
       "Disconnect erases access and hides stored messages until re-authorisation"
     ],
-    myRole: "Founder & AI Specialist, IMADI Technologies. Architecture and build.",
+    myRole: "Founder & AI Specialist. Architecture and build.",
     technology: ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "Meta WhatsApp Cloud API"],
     architecture: null,
     innovation: "Consent and security built in from the start: numbers connect only with explicit company authorisation, and disconnecting erases access.",
@@ -204,28 +211,10 @@ window.PROJECTS = [
 
   // ---------------------------------------------- PRODUCTS & VENTURES --
   {
-    slug: "maflow",
-    name: "MAflow",
-    tagline: "Product · SaaS",
-    client: "Co-founded venture",
-    period: "Jul 2026 – Present",
-    categories: ["saas"],
-    featured: true,
-    status: "Live",
-    problem: "Small businesses manage documents, ledgers and reports across scattered files and tools, with no shared, branded home for their records.",
-    solution: "A SaaS ERP for SMEs, evolved from the ALICO platform: every document, ledger, report and audit log in one private workspace branded to the company using it.",
-    myRole: "Co-founder. Led product and AI.",
-    technology: ["Firebase"],
-    architecture: null,
-    innovation: "Turns a proven client system into a multi-company product built for teams rather than a single user.",
-    results: ["Live since July 2026 with 4 active users"],
-    evidence: [{ label: "IMADI Technologies products", href: "https://imadi-technologies.com/products/" }]
-  },
-  {
     slug: "hercommerce",
     name: "HerCommerce",
     tagline: "Product · SaaS · Women Entrepreneurs",
-    client: "Co-founded venture",
+    client: "Own product",
     period: null,
     categories: ["saas", "social-impact"],
     featured: true,
@@ -241,102 +230,87 @@ window.PROJECTS = [
       "Customer CRM, vouchers and gift cards",
       "Platform admin dashboard: seller management, categories and analytics"
     ],
-    myRole: "Co-founder. Led product and AI.",
+    myRole: "Founder. Led product and AI.",
     technology: ["React", "TypeScript", "Firebase Firestore", "Firebase Authentication", "Firebase Hosting", "Cloudinary"],
     architecture: ["Mobile-first React app", "Firebase Authentication", "Firestore (multi-tenant)", "Security Rules validation", "Cloudinary images", "WhatsApp order links"],
     innovation: "No backend server at all: every write, including a customer placing an order without an account, goes straight to Firestore inside a transaction and is validated by Security Rules, so the platform runs at zero cost.",
-    results: ["Live with 12 users", "All 6 build phases complete: foundation, store builder, selling, customer tools, platform admin"],
-    evidence: []
-  },
-  {
-    slug: "imadi-sales-engine",
-    name: "IMADI AI Sales Engine",
-    tagline: "Product · AI & Automation",
-    client: "Co-founded venture",
-    period: null,
-    categories: ["saas", "ai-automation"],
-    featured: false,
-    status: "Launching Oct 2026",
-    problem: null,
-    solution: "An AI sales and business development platform combining sales automation, a CRM and a sales intelligence dashboard.",
-    myRole: "Co-founder. Led product and AI.",
-    technology: null,
-    architecture: null,
-    innovation: null,
-    results: null,
-    evidence: []
-  },
-  {
-    slug: "hifzai",
-    name: "HifzAI",
-    tagline: "Product · AI-Powered SaaS",
-    client: "Own product",
-    period: null,
-    categories: ["saas", "ai-automation"],
-    featured: true,
-    status: "Pilot",
-    problem: "Structured Quran memorisation support for students, teachers and parents is often fragmented across separate tools, notebooks and informal tracking.",
-    solution: "An AI-powered learning and Quran memorisation platform supporting students, teachers and parents through structured learning workflows, progress tracking and intelligent insights.",
-    myRole: "Founder. Product, design and build.",
-    technology: null,
-    architecture: null,
-    innovation: null,
-    results: ["Completed; in pilot stage ahead of public launch"],
+    results: ["Live with 18 active subscriptions", "All 6 build phases complete: foundation, store builder, selling, customer tools, platform admin"],
     evidence: []
   },
   {
     slug: "marist-bot",
-    name: "Marist Bot",
-    tagline: "Product · Conversational AI",
-    client: "Own product",
+    name: "Marist",
+    tagline: "Hobby · Conversational AI",
+    client: "Hobby project",
     period: null,
     categories: ["chatbots"],
     featured: false,
-    status: "In build",
-    problem: null,
-    solution: "A conversational AI assistant, currently around 80% built. Coming soon.",
-    myRole: "Founder. Product and build.",
-    technology: null,
+    status: "Live",
+    hobby: "A WhatsApp chat buddy I built for fun. It chats in Roman Urdu and shares a little motivation whenever someone needs it.",
+    problem: "Sometimes people just need a kind, upbeat word at the end of a long day.",
+    solution: "Marist is a friendly WhatsApp chat buddy I built in my free time. It chats in Roman Urdu, keeps the conversation positive and shares a little motivation. Say hi on WhatsApp: 0342 1393991.",
+    myRole: "Built it end to end in my free time.",
+    technology: ["Python", "Flask", "WhatsApp Cloud API", "Claude API"],
     architecture: null,
     innovation: null,
-    results: null,
-    evidence: []
+    results: ["Live on WhatsApp: 0342 1393991"],
+    evidence: [{ label: "Say hi to Marist on WhatsApp", href: "https://wa.me/923421393991?text=Hi%20Marist!" }]
   },
   {
     slug: "child-friendly-city-index",
     name: "Child-Friendly City Index",
-    tagline: "Product · Data & Social Impact",
-    client: "Independent open-source project",
+    tagline: "Open Source · Data & Social Impact",
+    client: "Open-source contribution · free for anyone to use",
     period: "May 2026",
     categories: ["social-impact"],
     featured: false,
     status: "Live",
     problem: "Cities are rarely designed or evaluated from a child's perspective, and there is no simple way to score how child-friendly a neighbourhood is.",
     challenge: "Comparing neighbourhoods fairly needs a real benchmark and sourced data; without that, a scoring tool is just an opinion.",
-    solution: "An open-source tool that scores a neighbourhood for children in seconds, benchmarked against the Swedish child-friendly-city model, with around 60 real places pre-scored and sourced recommendations for improvement.",
+    solution: "A conversational bot for parents: ask which places are child-friendly (for example, for Asian children in New Zealand) and it gathers data on each area and scores it against the Swedish child-friendly-city model. 1,683 cities and districts, organised country → city → neighbourhood → postal code.",
     myRole: "Creator: from the vision deck (\"If Children Designed Our Cities: Reimagining Karachi\") to the working tool.",
-    technology: ["Python"],
+    technology: ["React", "TypeScript", "Node.js / Express", "OpenAI API", "Python (data preparation)"],
     architecture: null,
     innovation: "Grounded in sourced data and a published benchmark, and open about the limits of what the index can tell you.",
-    results: ["Live and publicly accessible since May 2026"],
-    evidence: [{ label: "Open the live tool", href: "https://child-friendly-city-index-v2.netlify.app/" }]
+    results: ["Live and publicly accessible since May 2026", "Open source: anyone can use it, adapt it or build on it"],
+    evidence: [{ label: "Open the live tool", href: "https://child-friendly-city-index-v2.netlify.app/" }, { label: "View source code on GitHub", href: "https://github.com/Mariyah52/child-friendly-city-index-v2" }]
   },
   {
     slug: "smart-meal-planner",
     name: "Smart Meal Planner",
-    tagline: "Product · AI Application",
-    client: "Own product",
-    period: "May 2026 – Present",
+    tagline: "Hobby · AI Application",
+    client: "Hobby project",
+    period: null,
     categories: ["ai-automation"],
     featured: false,
     status: "Prototype",
-    problem: null,
+    hobby: "An AI app I'm playing with that suggests meal plans based on each person's nutrition needs.",
+    problem: "Planning healthy meals that suit each person's nutrition needs takes time.",
     solution: "An AI-based meal planning app with personalised nutrition and meal recommendations.",
-    myRole: "Creator. Product and build.",
+    myRole: "Built it in my free time.",
     technology: null,
     architecture: null,
     innovation: null,
     results: null,
+    evidence: []
+  },
+  {
+    slug: "overthinking-journal",
+    name: "Overthinking Journal for Women",
+    tagline: "Hobby · Writing & Digital Product",
+    client: "Hobby project · Amazon",
+    period: null,
+    categories: ["social-impact"],
+    featured: false,
+    status: "In progress",
+    hobby: "A guided journal for women aged 25–40 who overthink. It's on Amazon as a paperback, and I'm now designing a digital version.",
+    problem: "Many women aged 25–40 get stuck in loops of overthinking and have no simple, guided way to reset.",
+    solution: "\"Overthinking Journal for Women 25–40: A Guided Emotional Reset System\", a guided journal with prompts and exercises, published as a paperback on Amazon under the name Mariyah Aziz. I'm now designing a digital version for Amazon.",
+    myRole: "Author and designer.",
+    technology: null,
+    architecture: null,
+    innovation: null,
+    results: ["Paperback published on Amazon KDP (as Mariyah Aziz)", "Digital version in design"],
     evidence: []
   },
 
@@ -344,12 +318,13 @@ window.PROJECTS = [
   {
     slug: "ml-pipeline",
     name: "End-to-End Machine Learning Pipeline",
-    tagline: "AI / ML · IBA Karachi",
-    client: "Academic project, IBA Karachi",
+    tagline: "Hobby · Machine Learning",
+    client: "Hobby project · started during my IBA AI course",
     period: "May 2026",
     categories: ["ml-nlp"],
     featured: false,
-    status: "Academic",
+    status: "Hobby",
+    hobby: "A practice project from my AI course: I cleaned a dataset, then trained and compared 21 models to find the most accurate one.",
     problem: "Choosing a reliable classifier means comparing many models fairly on data that hasn't been seen during training.",
     solution: "A four-notebook pipeline covering data cleaning, a 3-way train/validation/test split, and training 21 Decision Tree and SVM models with hyperparameter tuning, evaluated on accuracy, sensitivity and specificity to select the top performers.",
     myRole: "Data preparation, modelling and evaluation.",
@@ -362,12 +337,13 @@ window.PROJECTS = [
   {
     slug: "nlp-sentiment-analysis",
     name: "NLP Sentiment Analysis of Travel Blogs",
-    tagline: "AI / ML · Research",
-    client: "Independent research project",
+    tagline: "Hobby · NLP",
+    client: "Hobby project",
     period: null,
     categories: ["ml-nlp"],
     featured: false,
-    status: "Research",
+    status: "Hobby",
+    hobby: "Out of curiosity about travel writing, I compared BERT and LSTM models to spot emotions like joy, frustration and nostalgia in travel blogs.",
     problem: "Travellers express emotions like joy, frustration and nostalgia in long-form writing, which standard positive/negative sentiment scoring flattens.",
     challenge: "Comparing a transformer model against a sequence model fairly requires careful, consistent evaluation.",
     solution: "A comparison of BERT and LSTM models for detecting nuanced emotional sentiment in travel blogs, with full training logs and confusion matrices for both.",
@@ -379,6 +355,63 @@ window.PROJECTS = [
     evidence: []
   }
 ];
+
+/* Plain-language "problem in one line, solution in two" used on cards, the home page and the top of each case study. */
+window.PLAIN = {
+  "alico": {
+    "problem": "Staff spent about 2 hours every day in Excel making quotations, invoices and bills, and tracking stock, payments and customer accounts.",
+    "solution": "I built one app that does all of this, works even without internet and shares print-ready documents on WhatsApp. The same daily work now takes about 20 minutes."
+  },
+  "uk-logistics-erp": {
+    "problem": "The company did its accounting by hand and, when moving to software, wanted a system built around the way it works.",
+    "solution": "I built a custom accounting system with the features they asked for: credit notes, UK VAT and emailing invoices straight from the software, plus automatic invoice reading and delivery tracking."
+  },
+  "shah": {
+    "problem": "A second trading business needed the same control over quotes, deliveries, invoices and stock, under its own name.",
+    "solution": "I adapted the ALICO system for them, adding one-click conversion from quotation to invoice and automatic stock updates."
+  },
+  "renaz": {
+    "problem": "The client needed data on how much scrap comes from across Karachi, an easy way to collect it, and verified collectors who can enter gated communities.",
+    "solution": "Customers and collectors do everything through a WhatsApp conversation, and the data reaches a dashboard automatically. Collectors register with their CNIC. 23+ pickups completed."
+  },
+  "uk-logistics-whatsapp": {
+    "problem": "As a B2B company, staff had to sort through emails to find and handle damage claims.",
+    "solution": "A WhatsApp bot now runs the whole claims process, and staff raise, approve or reject claims from one dashboard. It saves time and keeps all data in sync."
+  },
+  "company-monitor": {
+    "problem": "Salesmen were taking leads from WhatsApp, delivering goods from outside the company and keeping the commission.",
+    "solution": "Each branch scans a QR code to connect its WhatsApp to a dashboard, so management sees every lead and conversation for every branch and salesman."
+  },
+  "hercommerce": {
+    "problem": "Women who sell on WhatsApp often cannot set up or afford an online store.",
+    "solution": "HerCommerce lets them open their own shop and take orders on WhatsApp, at no running cost. 18 active subscriptions."
+  },
+  "marist-bot": {
+    "problem": "Sometimes people just need a kind, upbeat word at the end of a long day.",
+    "solution": "Marist is a friendly WhatsApp chat buddy I built for fun. It chats in Roman Urdu and shares a little motivation."
+  },
+  "child-friendly-city-index": {
+    "problem": "Parents have no simple way to know which neighbourhoods are good for children.",
+    "solution": "Ask the bot about any area and it scores how child-friendly it is. 1,683 cities and districts. Open source: anyone can use it for free."
+  },
+  "overthinking-journal": {
+    "problem": "Many women aged 25–40 get stuck in loops of overthinking and have no simple, guided way to reset.",
+    "solution": "A guided journal with prompts and exercises, on Amazon as a paperback. A digital version is in design."
+  },
+  "smart-meal-planner": {
+    "problem": "Planning healthy meals that suit each person's nutrition needs takes time.",
+    "solution": "An AI app that suggests meal plans based on personal nutrition needs."
+  },
+  "ml-pipeline": {
+    "problem": "Picking the right prediction model means comparing many models fairly.",
+    "solution": "I built a 4-step pipeline that cleaned the data and tested 21 models to find the most accurate one."
+  },
+  "nlp-sentiment-analysis": {
+    "problem": "Simple positive/negative scoring misses the real emotions in travel writing.",
+    "solution": "I compared two AI models (BERT and LSTM) to detect emotions like joy, frustration and nostalgia in travel blogs."
+  }
+};
+(window.PROJECTS || []).forEach(function (p) { var x = window.PLAIN[p.slug]; if (x) { p.plainProblem = x.problem; p.plainSolution = x.solution; } });
 
 window.getProjectBySlug = function (slug) {
   return window.PROJECTS.find(function (p) { return p.slug === slug; }) || null;
