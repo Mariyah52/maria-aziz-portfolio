@@ -358,7 +358,7 @@ contact_body = """
             <div class="eyebrow">Contact</div>
             <h1>Tell Me Your Problem.</h1>
             <p>You don't need to know which technology fits. Describe the challenge and we'll work out the right approach together.</p>
-            <div class="hero-actions"><a class="btn primary" href="#project-enquiry" data-track="contact_cta">Start a Project Enquiry</a><a class="btn" href="mailto:mariyahheal92@gmail.com">Email Directly</a></div>
+            <div class="hero-actions"><a class="btn primary" href="#project-enquiry" data-track="contact_cta">Start a Project Enquiry</a><a class="btn" href="mailto:maria@imadi.tech">Email Directly</a></div>
         </section>
 
         <section class="wrap section reveal">
@@ -402,9 +402,9 @@ contact_body = """
 
         <section class="wrap section reveal">
             <div class="grid two">
-                <a class="card" href="mailto:mariyahheal92@gmail.com" style="text-decoration:none;">
+                <a class="card" href="mailto:maria@imadi.tech" style="text-decoration:none;">
                     <div class="eyebrow">Email</div>
-                    <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">mariyahheal92@gmail.com</h3>
+                    <h3 style="font:700 1.15rem var(--display);margin:0 0 6px;">maria@imadi.tech</h3>
                     <p style="color:var(--muted);margin:0;">The best way to describe a project or problem in detail.</p>
                 </a>
                 <a class="card" href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener" style="text-decoration:none;">

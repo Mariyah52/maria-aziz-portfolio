@@ -50,9 +50,9 @@
                 '',
                 'Sent from imadi.tech project enquiry form.'
             ].join('\n');
-            var mailto = 'mailto:mariyahheal92@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            var mailto = 'mailto:maria@imadi.tech?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
             var status = document.getElementById('enquiryStatus');
-            if (status) status.textContent = 'Your email app should open now. Review the message and press Send to submit your enquiry. If it does not open, email mariyahheal92@gmail.com directly.';
+            if (status) status.textContent = 'Your email app should open now. Review the message and press Send to submit your enquiry. If it does not open, email maria@imadi.tech directly.';
             trackPortfolioEvent('project_enquiry_email_prepared', { service: service });
             window.location.href = mailto;
         });

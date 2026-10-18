@@ -90,7 +90,7 @@ def page(title, description, path, body, extra_head="", extra_scripts=""):
                 <ul class="social">
                     <li><a href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener" aria-label="LinkedIn">{ICON_LINKEDIN}</a></li>
                     <li><a href="https://github.com/Mariyah52" target="_blank" rel="noopener" aria-label="GitHub">{ICON_GITHUB}</a></li>
-                    <li><a href="mailto:mariyahheal92@gmail.com" aria-label="Email">{ICON_MAIL}</a></li>
+                    <li><a href="mailto:maria@imadi.tech" aria-label="Email">{ICON_MAIL}</a></li>
                     <li><button type="button" id="themeToggle" aria-label="Switch between light and dark">{ICON_THEME}</button></li>
                 </ul>
             </div>
