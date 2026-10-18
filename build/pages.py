@@ -74,7 +74,7 @@ home_body = """
             </div>
             <div class="grid three">
                 <div class="card project-card"><div class="project-icon">✦</div><h3>AI-Powered Products</h3><p>Products designed so intelligence solves a real workflow problem, not just a demo.</p></div>
-                <div class="card project-card"><div class="project-icon">↻</div><h3>Intelligent Automation</h3><p>Removing repetitive, manual steps so teams spend time on judgment, not data entry.</p></div>
+                <div class="card project-card"><div class="project-icon">↻</div><h3>Intelligent Automation</h3><p>Removing repetitive, manual steps so teams spend time on judgement, not data entry.</p></div>
                 <div class="card project-card"><div class="project-icon">◇</div><h3>Chatbots &amp; Conversational Systems</h3><p>Conversational interfaces that meet people where they already are, like WhatsApp.</p></div>
                 <div class="card project-card"><div class="project-icon">◌</div><h3>Machine Learning &amp; NLP</h3><p>Applying ML and NLP where it genuinely improves a decision or an understanding of language.</p></div>
                 <div class="card project-card"><div class="project-icon">▣</div><h3>Scalable SaaS Platforms</h3><p>Multi-tenant products built for a team's real workflow, not a single user's.</p></div>
@@ -129,7 +129,7 @@ about_body = """
                 <span>📍 Karachi, Sindh, Pakistan</span>
                 <span>🏢 Founder &amp; AI Specialist</span>
                 <span>🌍 Clients in Pakistan, UK &amp; Kenya</span>
-                <span>🎓 AI/ML/DL Specialization, IBA Karachi</span>
+                <span>🎓 AI/ML/DL Specialisation, IBA Karachi</span>
             </div>
         </section>
 
@@ -149,7 +149,7 @@ about_body = """
                 <div class="card"><h3 style="font:700 .95rem var(--display);margin:0 0 14px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Artificial Intelligence &amp; Machine Learning</h3>
                     <div class="chip-row">
                         <span class="chip">Machine Learning</span><span class="chip">Generative AI</span><span class="chip">Natural Language Processing</span>
-                        <span class="chip">Sentiment Analysis</span><span class="chip">Predictive Modeling</span><span class="chip">Regression &amp; Logistic Regression</span>
+                        <span class="chip">Sentiment Analysis</span><span class="chip">Predictive Modelling</span><span class="chip">Regression &amp; Logistic Regression</span>
                         <span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">Scikit-Learn</span><span class="chip">Chatbots &amp; Conversational AI</span>
                     </div>
                 </div>
@@ -166,7 +166,7 @@ about_body = """
                 <div class="card"><h3 style="font:700 .95rem var(--display);margin:0 0 14px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Data &amp; Analytics</h3>
                     <div class="chip-row">
                         <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Pandas</span><span class="chip">Data Analytics</span>
-                        <span class="chip">Data Visualization</span><span class="chip">Dashboard Building</span><span class="chip">Microsoft Power BI</span>
+                        <span class="chip">Data Visualisation</span><span class="chip">Dashboard Building</span><span class="chip">Microsoft Power BI</span>
                     </div>
                 </div>
             </div>
@@ -178,7 +178,7 @@ about_body = """
                 <div class="card exp-card">
                     <div class="exp-logo">IBA</div>
                     <div>
-                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Specialization Certificate: Artificial Intelligence / Machine Learning / Deep Learning</h3>
+                        <h3 style="font:700 1.1rem var(--display);margin:0 0 4px;">Specialisation Certificate: Artificial Intelligence / Machine Learning / Deep Learning</h3>
                         <p style="color:var(--muted);font-size:.86rem;margin:0 0 10px;">Institute of Business Administration (IBA), Karachi · February 2026 – May 2026</p>
                         <p style="color:var(--body);font-size:.94rem;margin:0 0 12px;">Fully funded under the Prime Minister's Hunarmand Pakistan Program (NAVTTC). Machine learning, deep learning and NLP pipelines with scikit-learn, TensorFlow, PyTorch and Keras.</p>
                     </div>
@@ -243,7 +243,7 @@ about_body = """
                     </ul>
                 </div>
             </div>
-            <p style="color:var(--muted);font-size:.84rem;margin-top:16px;">A full list of licenses and certifications (21 total) is available on LinkedIn.</p>
+            <p style="color:var(--muted);font-size:.84rem;margin-top:16px;">A full list of licences and certifications (21 total) is available on LinkedIn.</p>
         </section>
 
         <section class="wrap section reveal">
@@ -431,7 +431,7 @@ contact_body = """
                 </div>
                 <div class="card"><div class="eyebrow">Customer Communication</div>
                     <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Problem</p>
-                    <p style="color:var(--body);margin:0 0 16px;">Teams spend time responding to repetitive inquiries.</p>
+                    <p style="color:var(--body);margin:0 0 16px;">Teams spend time responding to repetitive enquiries.</p>
                     <p style="color:var(--muted);font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin:0 0 6px;">Potential solutions</p>
                     <p style="color:var(--body);margin:0;">Chatbots and conversational automation.</p>
                 </div>
