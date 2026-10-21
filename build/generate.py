@@ -107,7 +107,7 @@ def page(title, description, path, body, extra_head="", extra_scripts=""):
             </footer>
         </div>
     </div>
-    <a class="wa-fab" href="{WA_LINK}" target="_blank" rel="noopener" aria-label="Say hi to Marist, my AI chat buddy, on WhatsApp">{ICON_WA}<span class="wa-fab-text"><strong>Say hi to Marist</strong><small>AI chat buddy · WhatsApp</small></span></a>
+    <a class="wa-fab" href="{WA_LINK}" target="_blank" rel="noopener" aria-label="Say hi to Marist, my AI assistant, on WhatsApp">{ICON_WA}<span class="wa-fab-text"><strong>Say hi to Marist</strong><small>AI assistant · WhatsApp</small></span></a>
     <script src="/assets/site.js"></script>
     <script src="/assets/marist-chat.js"></script>
 {extra_scripts}</body>

@@ -23,7 +23,7 @@ window.PROJECTS = [
     featured: true,
     status: "Live",
     problem: "A Karachi general order supplier was running quotations, delivery challans, tax invoices, stock and payments across paper and spreadsheets, with no single record and no way to keep working when the internet dropped.",
-    challenge: "Requirements came directly from the business owner in Roman Urdu, and the system had to follow Pakistani business practice (PKR, NTN/STRN, GST) while staying reliable offline.",
+    challenge: "Requirements came directly from the business owner, and the system had to follow Pakistani business practice (PKR, NTN/STRN, GST) while staying reliable offline.",
     solution: "A complete business management system for ALICO Enterprises covering the full sales and purchase cycle (quote, challan, invoice, payment), with stock, ledgers and bank accounts in one installable app that works offline and syncs in real time across devices.",
     features: [
       "Quotations: create and send professional quotes",
@@ -44,10 +44,10 @@ window.PROJECTS = [
       "WhatsApp sharing of documents",
       "Digital or physical stamp and signature on print-ready documents"
     ],
-    myRole: "Founder & AI Specialist. Gathered requirements from the owner in Roman Urdu, then designed, built and deployed the system using an LLM-assisted development workflow.",
+    myRole: "Founder & AI Specialist. Gathered requirements directly from the owner, then designed, built and deployed the system using an LLM-assisted development workflow.",
     technology: ["HTML5", "CSS3", "JavaScript (PWA)", "Firebase Firestore", "Firebase Authentication", "IndexedDB", "LocalStorage", "Netlify"],
     architecture: ["Installable PWA (iOS & Android)", "IndexedDB offline store", "Firebase Authentication", "Firestore real-time sync", "Print-ready documents", "Netlify hosting"],
-    innovation: "Offline-first architecture that keeps working without internet and syncs automatically, custom AL-XXXX-YY document numbering, and a development process that turned Roman Urdu business requirements into production software with AI assistance.",
+    innovation: "Offline-first architecture that keeps working without internet and syncs automatically, custom AL-XXXX-YY document numbering, and a development process that turned the owner's spoken business requirements into production software with AI assistance.",
     results: [
       "Live and in daily use by ALICO Enterprises since May 2026",
       "Became the foundation for a second client deployment (SHAH Enterprise)"
@@ -246,9 +246,9 @@ window.PROJECTS = [
     categories: ["chatbots"],
     featured: false,
     status: "Live",
-    hobby: "A WhatsApp chat buddy I built for fun. It chats in Roman Urdu and shares a little motivation whenever someone needs it.",
-    problem: "Sometimes people just need a kind, upbeat word at the end of a long day.",
-    solution: "Marist is a friendly WhatsApp chat buddy I built in my free time. It chats in Roman Urdu, keeps the conversation positive and shares a little motivation. Say hi on WhatsApp: 0342 1393991.",
+    hobby: "A WhatsApp AI assistant I built myself. It asks about your business and suggests which automation could help.",
+    problem: "Business owners often know something takes too much time, but not which automation would actually fix it.",
+    solution: "Marist is my AI assistant on WhatsApp. It asks about your business and what you want to automate, then suggests practical ideas, such as a WhatsApp bot, automatic follow-ups or a dashboard, and helps you scope the project. Message it on WhatsApp: 0342 1393991.",
     myRole: "Built it end to end in my free time.",
     technology: ["Python", "Flask", "WhatsApp Cloud API", "Claude API"],
     architecture: null,
@@ -387,8 +387,8 @@ window.PLAIN = {
     "solution": "HerCommerce lets them open their own shop and take orders on WhatsApp, at no running cost. 18 active subscriptions."
   },
   "marist-bot": {
-    "problem": "Sometimes people just need a kind, upbeat word at the end of a long day.",
-    "solution": "Marist is a friendly WhatsApp chat buddy I built for fun. It chats in Roman Urdu and shares a little motivation."
+    "problem": "Business owners often know something takes too much time, but not which automation would actually fix it.",
+    "solution": "Marist is my AI assistant on WhatsApp. It asks what you want to automate and suggests practical ideas for your project."
   },
   "child-friendly-city-index": {
     "problem": "Parents have no simple way to know which neighbourhoods are good for children.",

@@ -15,7 +15,7 @@ window.MARIST_API_URL = "https://marist-ai.onrender.com";
     if (!API || !fab || !window.fetch) return;
 
     var WA = fab.getAttribute('href');
-    var GREETING = 'Hi! Main Marist hoon, Maria ka AI assistant. Aap ka business kya hai, aur kahan mushkil aa rahi hai?';
+    var GREETING = "Hi! I'm Marist, Maria's AI assistant. What does your business do, and where are you getting stuck?";
 
     function sessionId() {
         var id = null;
@@ -48,7 +48,7 @@ window.MARIST_API_URL = "https://marist-ai.onrender.com";
         '</header>' +
         '<div class="mchat-log" aria-live="polite"></div>' +
         '<form class="mchat-form">' +
-            '<input type="text" maxlength="1000" placeholder="Apna sawal likhein…" aria-label="Your message" autocomplete="off">' +
+            '<input type="text" maxlength="1000" placeholder="Type your question…" aria-label="Your message" autocomplete="off">' +
             '<button type="submit">Send</button>' +
         '</form>' +
         '<p class="mchat-foot">AI can make mistakes. Prefer WhatsApp? <a href="' + WA + '" target="_blank" rel="noopener">Open WhatsApp</a></p>';
