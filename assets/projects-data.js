@@ -45,8 +45,8 @@ window.PROJECTS = [
       "Digital or physical stamp and signature on print-ready documents"
     ],
     myRole: "Founder & AI Specialist. Gathered requirements directly from the owner, then designed, built and deployed the system using an LLM-assisted development workflow.",
-    technology: ["HTML5", "CSS3", "JavaScript (PWA)", "Firebase Firestore", "Firebase Authentication", "IndexedDB", "LocalStorage", "Netlify"],
-    architecture: ["Installable PWA (iOS & Android)", "IndexedDB offline store", "Firebase Authentication", "Firestore real-time sync", "Print-ready documents", "Netlify hosting"],
+    technology: ["HTML5", "CSS3", "JavaScript (PWA)", "Firebase Firestore", "Firebase Authentication", "IndexedDB", "LocalStorage", "Cloudflare Pages"],
+    architecture: ["Installable PWA (iOS & Android)", "IndexedDB offline store", "Firebase Authentication", "Firestore real-time sync", "Print-ready documents", "Cloudflare Pages hosting"],
     innovation: "Offline-first architecture that keeps working without internet and syncs automatically, custom AL-XXXX-YY document numbering, and a development process that turned the owner's spoken business requirements into production software with AI assistance.",
     results: [
       "Live and in daily use by ALICO Enterprises since May 2026",
@@ -58,7 +58,7 @@ window.PROJECTS = [
     slug: "uk-logistics-erp",
     name: "ERP & Accounting Platform",
     tagline: "Client Work · Enterprise ERP",
-    client: "IMADI Fulfilment & Logistics · United Kingdom",
+    client: "UK Logistics · United Kingdom",
     period: "Jun 2026 – Present",
     categories: ["client", "ai-automation"],
     featured: true,
@@ -157,7 +157,7 @@ window.PROJECTS = [
     slug: "uk-logistics-whatsapp",
     name: "WhatsApp Automation & Operations Platform",
     tagline: "Client Work · Conversational Systems",
-    client: "IMADI Fulfilment & Logistics · United Kingdom (returning client)",
+    client: "UK Logistics · United Kingdom (returning client)",
     period: "Sep 2026 – Present",
     categories: ["client", "chatbots", "ai-automation"],
     featured: true,
@@ -190,7 +190,7 @@ window.PROJECTS = [
     period: "Sep 2026 – Present",
     categories: ["client", "chatbots"],
     featured: false,
-    status: "In build",
+    status: "Live",
     problem: "A multi-branch business had no visibility of customer enquiries reaching branch WhatsApp numbers, so leads could be missed or diverted.",
     solution: "A central platform where company-authorised WhatsApp Business numbers feed one secure inbox, visible by branch and by role.",
     features: [
@@ -205,7 +205,7 @@ window.PROJECTS = [
     technology: ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "Meta WhatsApp Cloud API"],
     architecture: null,
     innovation: "Consent and security built in from the start: numbers connect only with explicit company authorisation, and disconnecting erases access.",
-    results: ["Phase 4 (Cloud API receiver) complete; QR-login pilot in testing"],
+    results: ["Live: every branch WhatsApp number feeds one management dashboard, by branch and by salesman"],
     evidence: []
   },
 
