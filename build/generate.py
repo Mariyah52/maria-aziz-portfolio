@@ -32,7 +32,7 @@ SITE_GRAPH = [
         "url": SITE_URL + "/",
         "logo": SITE_URL + "/assets/favicon-imadi.png",
         "email": "maria@imadi.tech",
-        "telephone": "+92 342 1393991",
+        "telephone": "+92 315 3205484",
         "foundingDate": "2026-05",
         "founder": {"@id": PERSON_ID},
         "description": ("IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz. "
@@ -168,7 +168,7 @@ def page(title, description, path, body, extra_head="", extra_scripts="", ld=Non
 
             <footer class="foot">
                 <span>© <span id="year"></span> IMADI Tech · Maria Aziz · Karachi, Pakistan</span>
-                <span class="foot-links"><a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/faq/">FAQ</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a></span>
+                <span class="foot-links"><a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/faq/">FAQ</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · WhatsApp <a href="https://wa.me/923153205484" target="_blank" rel="noopener">0315 3205484</a></span>
                 <span class="foot-brand"><img src="/assets/imadi-mark.png" alt="" width="18" height="16"> Founder, IMADI Tech</span>
             </footer>
         </div>
