@@ -1,0 +1,23 @@
+# IMADI Tech
+
+> IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. It builds WhatsApp chatbots and lead follow-up automation, custom ERP and business management systems, and SaaS products for small and mid-sized businesses. It has delivered projects in Pakistan, the UK and Kenya and also takes on clients in the UAE.
+
+Contact: maria@imadi.tech · Website: https://www.imadi.tech
+
+## Services
+- [WhatsApp & Instagram lead automation](https://www.imadi.tech/whatsapp-automation/): an AI assistant that replies to every enquiry instantly, shares designs and price ranges, sends PDF quotations, follows up automatically and tracks every lead in a dashboard. Best fit: furniture, kitchen, interior, building supply and logistics businesses.
+- [FAQ](https://www.imadi.tech/faq/): pricing model, setup, languages, WhatsApp number questions.
+
+## Case studies
+- [ALICO Business Suite](https://www.imadi.tech/case-study/alico/): A complete business management system for ALICO Enterprises covering the full sales and purchase cycle (quote, challan, invoice, payment), with stock, ledgers and bank accounts in one installable app that works offline…
+- [ERP & Accounting Platform](https://www.imadi.tech/case-study/uk-logistics-erp/): One integrated platform where posting an invoice automatically reduces stock and writes a balanced journal entry, supplier bills post to the ledger on approval, and every report reads live from the same accounting…
+- [SHAH Enterprise Business Suite](https://www.imadi.tech/case-study/shah/): A dedicated business suite built on the ALICO platform, extended with linked document conversion, automatic stock updates and a guided self-service cloud setup.
+- [ReNaz: WhatsApp Scrap Collection Platform](https://www.imadi.tech/case-study/renaz/): Customers book pickups by chatting on WhatsApp, choosing a waste category, date and timeslot with per-kg pricing in PKR. Collectors receive and complete jobs on WhatsApp, and administrators see every pickup from…
+- [WhatsApp Automation & Operations Platform](https://www.imadi.tech/case-study/uk-logistics-whatsapp/): A WhatsApp-first system on Meta's Cloud API. Customers get instant pallet-rate quotes and place order enquiries; registered corporate clients file damage claims step by step with photos and invoices, and administrators…
+- [Company Monitor](https://www.imadi.tech/case-study/company-monitor/): A central platform where company-authorised WhatsApp Business numbers feed one secure inbox, visible by branch and by role.
+- [HerCommerce](https://www.imadi.tech/case-study/hercommerce/): A mobile-first, multi-tenant SaaS platform where a woman can create and run an online business: a guided 4-step onboarding, her own storefront, products with variants, WhatsApp ordering, order management, vouchers and…
+
+## About
+- [Maria Aziz, founder](https://www.imadi.tech/about/)
+- [All work](https://www.imadi.tech/work/)
+- [Contact](https://www.imadi.tech/contact/)

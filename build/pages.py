@@ -11,11 +11,11 @@ _CLIENTS = dict((m[0], m[1]) for m in _re.findall(r'slug: "([^"]+)",[\s\S]*?clie
 
 def ps_card(slug):
     x = PLAIN[slug]
-    return (f'<a class="card ps-card" href="/case-study/?slug={slug}">'
+    return (f'<a class="card ps-card" href="/case-study/{slug}/">'
             f'<h3>{_NAMES[slug]}</h3><div class="project-client">{_CLIENTS.get(slug, "")}</div>'
             f'<div class="ps"><p><b class="ps-l ps-p">Problem</b>{x["problem"]}</p>'
             f'<p><b class="ps-l ps-s">Solution</b>{x["solution"]}</p></div>'
-            f'<span class="arrow">Read the case study →</span></a>')
+            f'<span class="arrow">Read the {_NAMES[slug].split(":")[0]} case study →</span></a>')
 
 HOME_SOLVED = "".join(ps_card(s_) for s_ in ["alico", "uk-logistics-whatsapp", "company-monitor", "renaz", "uk-logistics-erp", "hercommerce"])
 
@@ -23,7 +23,7 @@ HOME_SOLVED = "".join(ps_card(s_) for s_ in ["alico", "uk-logistics-whatsapp", "
 home_body = """
         <section class="wrap hero-grid reveal">
             <div>
-                <div class="eyebrow">Maria Aziz</div>
+                <div class="eyebrow">Maria Aziz · Founder, IMADI Tech · Karachi</div>
                 <h1 style="font:700 clamp(2.4rem,5.6vw,4.2rem)/1.05 var(--display);letter-spacing:-.03em;margin:8px 0 20px;">AI Product Founder<br>&amp; Technology Entrepreneur</h1>
                 <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">I build AI-powered business software: WhatsApp chatbots and automation, custom ERP and business management systems, and SaaS products. Since May 2026 I have delivered 6 client platforms for businesses in Pakistan, the UK and Kenya, all live and in daily use, working across Python, FastAPI, JavaScript, Firebase, PostgreSQL and LLM integration.</p>
                 <p style="color:var(--body);max-width:580px;margin:0 0 30px;">My work begins with understanding the problem. I analyse workflows, users and operational challenges, then design practical technology solutions that can be built, tested and improved.</p>
@@ -34,6 +34,15 @@ home_body = """
                     <a class="btn" href="https://wa.me/923153205484?text=Hi%20Maria%2C%20I%20found%20you%20on%20imadi.tech." target="_blank" rel="noopener" data-track="whatsapp_maria"><svg viewBox="0 0 24 24" aria-hidden="true" width="16" height="16" style="vertical-align:-3px;margin-right:6px"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36A9.4 9.4 0 0 1 2.6 12C2.6 6.8 6.84 2.56 12.06 2.56c2.52 0 4.9.99 6.68 2.77A9.38 9.38 0 0 1 21.5 12c0 5.2-4.24 9.44-9.45 9.44M20.1 3.9A11.3 11.3 0 0 0 12.05.6C5.78.6.67 5.71.67 12c0 2 .52 3.97 1.52 5.7L.57 23.4l5.83-1.53A11.4 11.4 0 0 0 12.04 23.4h.01c6.27 0 11.38-5.11 11.38-11.4 0-3.04-1.18-5.9-3.33-8.1"/></svg>WhatsApp Me</a>
                 </div>
                 <p class="hero-note">From workflow discovery to a tested, practical solution.</p>
+            </div>
+        </section>
+
+        <section class="wrap section reveal" aria-labelledby="in-short">
+            <div class="card">
+                <div class="eyebrow">IMADI Tech in short</div>
+                <h2 id="in-short" style="margin-top:6px;">What IMADI Tech does</h2>
+                <p>IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. It builds WhatsApp chatbots and lead automation, custom ERP and business management systems, and SaaS products for small and mid-sized businesses, with projects delivered in Pakistan, the UK and Kenya.</p>
+                <p style="margin-bottom:0;">For businesses that sell through WhatsApp, Instagram and Facebook ads, IMADI Tech sets up an assistant that replies to every enquiry instantly, shares designs and price ranges, sends quotations, follows up with customers who go quiet, and shows every lead in one dashboard. <a href="/whatsapp-automation/">See how WhatsApp lead automation works</a> or read the <a href="/faq/">frequently asked questions</a>.</p>
             </div>
         </section>
 
@@ -98,24 +107,16 @@ home_body = """
         </section>
 """
 
-home_extra = """    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Maria Aziz",
-      "jobTitle": "AI Product Founder & Technology Entrepreneur",
-      "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"]
-    }
-    </script>
-"""
 
 home_body = home_body.replace("__HOME_SOLVED__", HOME_SOLVED)
 write("/index.html", page(
-    "Maria Aziz | AI Product Founder & Technology Entrepreneur",
-    "Maria Aziz builds AI-powered products, intelligent automation, conversational systems and scalable SaaS solutions for real-world problems.",
+    "IMADI Tech by Maria Aziz | AI WhatsApp Automation, Karachi",
+    "IMADI Tech, founded by Maria Aziz in Karachi, builds AI WhatsApp automation, chatbots, ERP and SaaS so businesses never miss a lead or a follow-up.",
     "/",
     home_body,
-    extra_head=home_extra,
+    ld=[{"@type": "WebPage", "@id": "https://www.imadi.tech/#webpage", "url": "https://www.imadi.tech/",
+         "name": "IMADI Tech by Maria Aziz", "isPartOf": {"@id": "https://www.imadi.tech/#website"},
+         "about": {"@id": "https://www.imadi.tech/#organization"}}],
 ))
 
 # ---------------------------------------------------------------- ABOUT ----
@@ -268,7 +269,7 @@ about_body = """
         </section>
 """
 write("/about/index.html", page(
-    "About | Maria Aziz",
+    "About Maria Aziz, Founder | IMADI Tech",
     "Maria Aziz is an AI Product Founder and Technology Entrepreneur building practical technology around real-world problems.",
     "/about/",
     about_body,
@@ -314,7 +315,7 @@ work_scripts = """    <script src="/assets/projects-data.js"></script>
                     var p = window.getProjectBySlug(slug);
                     if (!p) return;
                     var a = document.createElement('a');
-                    a.href = '/case-study/?slug=' + encodeURIComponent(p.slug);
+                    a.href = '/case-study/' + encodeURIComponent(p.slug) + '/';
                     a.className = 'card project-card';
                     var prob = p.plainProblem || p.problem || '', sol = p.plainSolution || p.solution || '';
                     if (g.compact) {
@@ -346,7 +347,7 @@ work_scripts = """    <script src="/assets/projects-data.js"></script>
     </script>
 """
 write("/work/index.html", page(
-    "Work | Maria Aziz",
+    "Client Work & Case Studies | IMADI Tech",
     "Selected AI, automation, chatbot, SaaS, machine learning and social-impact technology projects by Maria Aziz.",
     "/work/",
     work_body,
@@ -473,8 +474,8 @@ contact_body = """
         </section>
 """
 write("/contact/index.html", page(
-    "Contact | Maria Aziz",
-    "Get in touch with Maria Aziz to discuss an AI product, automation or SaaS problem.",
+    "Contact IMADI Tech | Book a Free Demo",
+    "Contact Maria Aziz at IMADI Tech, Karachi, to discuss WhatsApp automation, a chatbot, an ERP or a SaaS product, or to book a free 10-minute demo.",
     "/contact/",
     contact_body,
 ))
@@ -543,6 +544,8 @@ case_study_scripts = """    <script src="/assets/projects-data.js"></script>
                 var missing = document.getElementById('case-loading-help'); if (missing) missing.hidden = false;
                 return;
             }
+            location.replace('/case-study/' + encodeURIComponent(project.slug) + '/' + location.hash);
+            return;
             document.title = project.name + ' | Maria Aziz';
             document.getElementById('case-title').textContent = project.name;
             var loadingHelp = document.getElementById('case-loading-help'); if (loadingHelp) loadingHelp.hidden = true;
@@ -630,7 +633,7 @@ case_study_scripts = """    <script src="/assets/projects-data.js"></script>
     </script>
 """
 write("/case-study/index.html", page(
-    "Case Study | Maria Aziz",
+    "Case Study | IMADI Tech",
     "A detailed case study: problem, solution, technology, and results.",
     "/case-study/",
     case_study_body,
@@ -739,7 +742,7 @@ media_scripts = """    <script src="/assets/projects-data.js"></script>
     </script>
 """
 write("/media/index.html", page(
-    "Demos | Maria Aziz",
+    "Demo Videos | IMADI Tech",
     "Demo videos and pictures of the AI products, automation and SaaS platforms built by Maria Aziz.",
     "/media/",
     media_body,
@@ -762,11 +765,10 @@ write("/404.html", page(
 ))
 
 # ------------------------------------------------------------ SEO FILES --
-# No live domain is confirmed yet for this site. Rather than guess one, the
-# sitemap uses an obvious placeholder token — find-and-replace it with the
-# real domain once this site is actually hosted somewhere.
+# Live domain: www.imadi.tech (the apex domain should redirect to www).
 SITE_URL_PLACEHOLDER = "https://www.imadi.tech"
-sitemap_paths = ["/", "/about/", "/work/", "/media/", "/contact/"]
+import seo_pages
+sitemap_paths = ["/", "/about/", "/work/", "/media/", "/contact/"] + seo_pages.build()
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for p in sitemap_paths:
     sitemap_xml += f"  <url><loc>{SITE_URL_PLACEHOLDER}{p}</loc></url>\n"

@@ -460,3 +460,17 @@ a.card:hover, .exp-card:hover { box-shadow: var(--shadow); border-color: var(--a
 .mchat-foot { margin: 0; padding: 0 12px 10px; font-size: .72rem; color: var(--muted); background: var(--surface); }
 .mchat-foot a { color: var(--accent); }
 @media (max-width: 640px) { .mchat { right: 16px; bottom: 76px; height: min(560px, calc(100vh - 100px)); } }
+
+/* FAQ page */
+.faq-list { display: grid; gap: 10px; max-width: 780px; }
+.faq-item { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 0 22px; }
+.faq-item summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 0; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; font: 600 1.3rem/1 var(--display); color: var(--accent); flex: none; }
+.faq-item[open] summary::after { content: "–"; }
+.faq-item summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
+.faq-q { font: 600 1.05rem/1.4 var(--display); margin: 0; color: var(--ink); }
+.faq-item p { margin: 0 0 18px; color: var(--body); max-width: 68ch; }
+
+/* Footer links */
+.foot .foot-links a { color: inherit; }

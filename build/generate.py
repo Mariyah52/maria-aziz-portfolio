@@ -10,11 +10,71 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 NAV_ITEMS = [
     ("Home", "/"),
+    ("WhatsApp Automation", "/whatsapp-automation/"),
     ("About", "/about/"),
     ("Work", "/work/"),
     ("Demos", "/media/"),
+    ("FAQ", "/faq/"),
     ("Contact", "/contact/"),
 ]
+
+ORG_ID = SITE_URL + "/#organization"
+PERSON_ID = SITE_URL + "/#maria-aziz"
+WEBSITE_ID = SITE_URL + "/#website"
+
+# Shared structured data on every page: who IMADI Tech is, who Maria Aziz is,
+# and the website they publish. Only facts that are already stated on the site.
+SITE_GRAPH = [
+    {
+        "@type": "Organization",
+        "@id": ORG_ID,
+        "name": "IMADI Tech",
+        "url": SITE_URL + "/",
+        "logo": SITE_URL + "/assets/favicon-imadi.png",
+        "email": "maria@imadi.tech",
+        "telephone": "+92 342 1393991",
+        "foundingDate": "2026-05",
+        "founder": {"@id": PERSON_ID},
+        "description": ("IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz. "
+                        "It builds WhatsApp chatbots and lead automation, custom ERP and business management "
+                        "systems, and SaaS products for small and mid-sized businesses."),
+        "address": {"@type": "PostalAddress", "addressLocality": "Karachi", "addressRegion": "Sindh", "addressCountry": "PK"},
+        "areaServed": ["Pakistan", "United Arab Emirates", "United Kingdom", "Kenya"],
+        "knowsAbout": ["WhatsApp chatbots", "WhatsApp Business API", "Lead follow-up automation",
+                       "Business process automation", "ERP systems", "SaaS development", "AI chatbots"],
+        "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"],
+    },
+    {
+        "@type": "Person",
+        "@id": PERSON_ID,
+        "name": "Maria Aziz",
+        "jobTitle": "Founder & AI Specialist",
+        "worksFor": {"@id": ORG_ID},
+        "url": SITE_URL + "/about/",
+        "image": SITE_URL + "/assets/maria-aziz.jpg",
+        "email": "maria@imadi.tech",
+        "homeLocation": {"@type": "Place", "name": "Karachi, Pakistan"},
+        "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of Karachi"}],
+        "knowsAbout": ["AI automation", "WhatsApp chatbots", "Conversational AI", "SaaS", "Python", "FastAPI"],
+        "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"],
+    },
+    {
+        "@type": "WebSite",
+        "@id": WEBSITE_ID,
+        "url": SITE_URL + "/",
+        "name": "IMADI Tech",
+        "publisher": {"@id": ORG_ID},
+        "inLanguage": "en",
+    },
+]
+
+
+def ld_script(nodes):
+    import json
+    data = {"@context": "https://schema.org", "@graph": nodes}
+    body = json.dumps(data, ensure_ascii=False, indent=2).replace("</", "<\\/")
+    return f'    <script type="application/ld+json">\n{body}\n    </script>\n'
+
 
 SIDE_NAME = "Maria Aziz"
 SIDE_TITLE = "AI Product Founder & Technology Entrepreneur"
@@ -37,7 +97,7 @@ def nav_html(current_path):
     return "\n                    ".join(links)
 
 
-def head(title, description, path, extra=""):
+def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.jpg"):
     return f"""<!doctype html>
 <html lang="en" data-theme="light">
 
@@ -51,20 +111,25 @@ def head(title, description, path, extra=""):
     <link rel="canonical" href="{SITE_URL}{path}">
     <meta property="og:title" content="{title}">
     <meta property="og:description" content="{description}">
+    <meta property="og:site_name" content="IMADI Tech">
+    <meta property="og:locale" content="en_PK">
     <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:description" content="{description}">
+    <meta name="twitter:image" content="{SITE_URL}{image}">
     <link rel="icon" href="/assets/favicon-imadi.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <meta property="og:image" content="https://www.imadi.tech/assets/maria-aziz.jpg">
+    <meta property="og:image" content="{SITE_URL}{image}">
     <script>try{{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="stylesheet" href="/assets/site.css">
-{extra}</head>
+{ld_script(SITE_GRAPH + (ld or []))}{extra}</head>
 """
 
 
-def page(title, description, path, body, extra_head="", extra_scripts=""):
-    return head(title, description, path, extra_head) + f"""
+def page(title, description, path, body, extra_head="", extra_scripts="", ld=None, image="/assets/maria-aziz.jpg"):
+    return head(title, description, path, extra_head, ld, image) + f"""
 <body{' class="home"' if path == "/" else ''}>
     <div class="spotlight" id="spotlight" aria-hidden="true"></div>
     <a class="skip" href="#main">Skip to content</a>
@@ -77,7 +142,7 @@ def page(title, description, path, body, extra_head="", extra_scripts=""):
                     <span class="side-name">{SIDE_NAME}</span>
                 </a>
                 <div class="brand" aria-label="Founder, IMADI Tech">
-                    <img src="/assets/imadi-mark.png" alt="" width="30" height="26">
+                    <img src="/assets/imadi-mark.png" alt="IMADI Tech logo" width="30" height="26">
                     <span class="brand-text"><span class="brand-name">IMADI<span>TECH</span></span><span class="brand-role">Founder</span></span>
                 </div>
                 <p class="side-title">{SIDE_TITLE}</p>
@@ -102,7 +167,8 @@ def page(title, description, path, body, extra_head="", extra_scripts=""):
             </main>
 
             <footer class="foot">
-                <span>© <span id="year"></span> Maria Aziz</span>
+                <span>© <span id="year"></span> IMADI Tech · Maria Aziz · Karachi, Pakistan</span>
+                <span class="foot-links"><a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/faq/">FAQ</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a></span>
                 <span class="foot-brand"><img src="/assets/imadi-mark.png" alt="" width="18" height="16"> Founder, IMADI Tech</span>
             </footer>
         </div>
