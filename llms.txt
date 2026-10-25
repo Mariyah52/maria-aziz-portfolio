@@ -8,6 +8,15 @@ Contact: maria@imadi.tech · Website: https://www.imadi.tech
 - [WhatsApp & Instagram lead automation](https://www.imadi.tech/whatsapp-automation/): an AI assistant that replies to every enquiry instantly, shares designs and price ranges, sends PDF quotations, follows up automatically and tracks every lead in a dashboard. Best fit: furniture, kitchen, interior, building supply and logistics businesses.
 - [FAQ](https://www.imadi.tech/faq/): pricing model, setup, languages, WhatsApp number questions.
 
+## By industry
+- [A WhatsApp assistant for furniture and interior businesses](https://www.imadi.tech/whatsapp-automation/furniture/): WhatsApp automation for furniture showrooms and interior firms in Karachi: instant replies with designs and prices, size questions, PDF quotes and automatic follow-ups.
+- [A WhatsApp assistant for kitchen and wardrobe companies](https://www.imadi.tech/whatsapp-automation/kitchens-wardrobes/): WhatsApp automation for kitchen, cabinet and wardrobe makers: collect measurements and photos, book site visits, send quotations and follow up automatically.
+- [WhatsApp bots for logistics and delivery companies](https://www.imadi.tech/whatsapp-automation/logistics/): WhatsApp bots for logistics companies: rate questions, order inquiries, damage claims with photos and documents, and a dashboard to approve or reject them.
+- [WhatsApp automation for businesses in Dubai and the UAE](https://www.imadi.tech/whatsapp-automation/dubai-uae/): WhatsApp chatbots and lead follow-up automation for UAE businesses: instant replies to ad inquiries, quotations, follow-ups and a lead dashboard, built remotely by IMADI Tech.
+
+## Blog
+- [How much does a WhatsApp chatbot cost in Pakistan?](https://www.imadi.tech/blog/whatsapp-chatbot-cost-pakistan/): What you actually pay for when you set up a WhatsApp chatbot in Pakistan: the build, monthly support, and Meta's own per-message charges, explained simply.
+
 ## Case studies
 - [ALICO Business Suite](https://www.imadi.tech/case-study/alico/): A complete business management system for ALICO Enterprises covering the full sales and purchase cycle (quote, challan, invoice, payment), with stock, ledgers and bank accounts in one installable app that works offline…
 - [ERP & Accounting Platform](https://www.imadi.tech/case-study/uk-logistics-erp/): One integrated platform where posting an invoice automatically reduces stock and writes a balanced journal entry, supplier bills post to the ledger on approval, and every report reads live from the same accounting…

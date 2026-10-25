@@ -387,6 +387,12 @@ def llms_txt(projects):
         "tracks every lead in a dashboard. Best fit: furniture, kitchen, interior, building supply and logistics businesses.",
         f"- [FAQ]({SITE_URL}/faq/): pricing model, setup, languages, WhatsApp number questions.",
         "",
+        "## By industry",
+    ] + [f"- [{i['h1']}]({SITE_URL}/whatsapp-automation/{i['slug']}/): {i['description']}" for i in __import__('growth_pages').INDUSTRIES] + [
+        "",
+        "## Blog",
+    ] + [f"- [{b['title']}]({SITE_URL}/blog/{b['slug']}/): {b['description']}" for b in __import__('growth_pages').POSTS] + [
+        "",
         "## Case studies",
     ]
     for p in projects:
@@ -400,15 +406,16 @@ def llms_txt(projects):
 
 
 def build():
+    import growth_pages
     projects = load_projects()
     paths = [case_study(p) for p in projects]
     write("/whatsapp-automation/index.html", page(
         "WhatsApp Chatbot & Lead Automation in Karachi | IMADI Tech",
         "AI WhatsApp and Instagram automation for furniture, kitchen, interior and supply businesses: instant replies, PDF quotations, auto follow-ups and one lead dashboard.",
-        "/whatsapp-automation/", SERVICE_BODY, ld=SERVICE_LD))
+        "/whatsapp-automation/", SERVICE_BODY + growth_pages.industry_links(), ld=SERVICE_LD))
     write("/faq/index.html", page(
         "WhatsApp Chatbot FAQ | IMADI Tech, Karachi",
         "Answers about WhatsApp chatbots and lead automation from IMADI Tech: cost, setup time, Urdu replies, quotations, Instagram and your WhatsApp number.",
         "/faq/", faq_body(), ld=FAQ_LD))
     llms_txt(projects)
-    return ["/whatsapp-automation/", "/faq/"] + paths
+    return ["/whatsapp-automation/", "/faq/"] + growth_pages.build(projects) + paths
