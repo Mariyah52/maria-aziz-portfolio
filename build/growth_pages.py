@@ -335,6 +335,7 @@ def blog_index():
 def build(projects):
     by_slug = {p["slug"]: p for p in projects}
     paths = [industry_page(i, by_slug) for i in INDUSTRIES]
+    paths.append(developer_page(by_slug))
     paths.append(blog_index())
     paths += [blog_post(p) for p in POSTS]
     return paths
@@ -352,3 +353,102 @@ def industry_links():
             <div class="grid two">{cards}</div>
         </section>
 '''
+
+
+# --------------------------------------------------------- DEVELOPER PAGE ---
+DEV_PATH = "/whatsapp-chatbot-developer-pakistan/"
+DEV_STACK = [
+    ("WhatsApp & chatbots", "Meta WhatsApp Cloud API, WhatsApp Business API, conversation flows, PDF quotations, follow-up automation"),
+    ("Backend", "Python, FastAPI, Flask, PostgreSQL, SQLAlchemy, Alembic, Pydantic, JWT and TOTP two-factor login"),
+    ("Frontend & apps", "React, TypeScript, JavaScript progressive web apps (PWA) with offline mode, IndexedDB"),
+    ("Cloud & data", "Firebase (Firestore, Authentication, Hosting), Google Sheets API, Cloudinary, Render, Cloudflare Pages"),
+    ("Marketing automation", "Meta Graph API for Instagram and Facebook publishing, Playwright, ffmpeg, neural voiceovers, GitHub Actions schedules"),
+    ("AI & documents", "Large language model assistants, Tesseract OCR, ReportLab PDFs, machine learning and NLP pipelines"),
+]
+DEV_WORK = [
+    ("uk-logistics-whatsapp", "WhatsApp claims bot for a UK logistics company", "Python, Flask, PostgreSQL, Meta WhatsApp Cloud API"),
+    ("uk-logistics-erp", "ERP and accounting platform with UK VAT", "Python, FastAPI, PostgreSQL, OCR, PDF generation"),
+    ("company-monitor", "WhatsApp lead monitoring for a multi-branch business in Nairobi, Kenya", "FastAPI, PostgreSQL, React, TypeScript"),
+    ("renaz", "WhatsApp-first scrap collection platform, Karachi", "FastAPI, React, TypeScript, WhatsApp Business API"),
+    ("alico", "Business management PWA for a Karachi supply company", "JavaScript PWA, Firebase, offline sync"),
+    ("hercommerce", "SaaS for women entrepreneurs, with its own Instagram and Facebook marketing bot", "React, TypeScript, Firebase"),
+]
+DEV_FAQ = [
+    ("Who builds WhatsApp chatbots in Pakistan?", "Maria Aziz, founder of IMADI Tech in Karachi, is a developer who builds WhatsApp chatbots and automation on Meta's official WhatsApp Cloud API, with live systems for clients in Pakistan, the UK and Kenya."),
+    ("What does Maria Aziz build with?", "Mainly Python (FastAPI and Flask), PostgreSQL, React with TypeScript, Firebase, and Meta's WhatsApp Cloud API and Graph API."),
+    ("Can you work as a developer for my agency or company?", "Yes. IMADI Tech takes on full projects and also builds WhatsApp bots, dashboards and automations as a development partner for agencies and companies."),
+    ("Do you build Instagram and Facebook automation too?", "Yes. IMADI Tech builds bots that design posts, carousels and reels and publish them to Instagram and Facebook on a schedule, as it did for HerCommerce and its own pages."),
+]
+
+
+def developer_page(projects_by_slug):
+    stack = "".join(f'<div class="card"><h3>{e(t)}</h3><p>{e(d)}</p></div>' for t, d in DEV_STACK)
+    work = "".join(
+        f'<a class="card project-card" href="/case-study/{s}/"><h3>{e(t)}</h3><p>{e(st)}</p>'
+        f'<span class="arrow">Read the {e(projects_by_slug[s]["name"].split(":")[0])} case study →</span></a>'
+        for s, t, st in DEV_WORK if s in projects_by_slug)
+    body = f'''
+        <section class="wrap page-hero">
+            <div class="eyebrow">Maria Aziz · Developer & founder, IMADI Tech · Karachi</div>
+            <h1>WhatsApp chatbot and AI automation developer in Pakistan</h1>
+            <p>Maria Aziz is a Karachi-based developer and the founder of IMADI Tech. She designs and builds WhatsApp chatbots on Meta's official Cloud API,
+            lead follow-up automation, Instagram and Facebook marketing bots, and custom ERP and business software, from the database to the dashboard.
+            Her systems are live for businesses in Pakistan, the United Kingdom and Kenya.</p>
+            <div class="hero-actions" style="margin-top:22px;">
+                <a class="btn primary" href="{WA_MARIA}" target="_blank" rel="noopener" data-track="developer_whatsapp">Discuss your project on WhatsApp</a>
+                <a class="btn" href="/work/">See all work</a>
+            </div>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">Tech stack</div><h2>What I build with</h2></div>
+            <div class="grid three">{stack}</div>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">Shipped work</div><h2>Systems I've built</h2></div>
+            <div class="grid two">{work}</div>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">How I work</div><h2>From first call to live system</h2></div>
+            <ul class="feature-list">
+                <li>A short call to map your workflow and the questions your customers ask</li>
+                <li>A working demo on your own WhatsApp flow before the full build</li>
+                <li>Built on official Meta APIs, so your business number stays safe</li>
+                <li>Hosting, monitoring and changes after launch</li>
+                <li>Full projects, or development work for agencies and companies</li>
+            </ul>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">FAQ</div><h2>Questions developers get asked</h2></div>
+            <div class="faq-list">{_faq(DEV_FAQ)}</div>
+        </section>
+
+        <section class="wrap section">
+            <div class="card feature center" style="padding:44px;text-align:center;">
+                <h2>Need a WhatsApp or automation developer?</h2>
+                <p style="max-width:520px;margin:0 auto 24px;">Tell me what you want to automate. I'll reply with how I'd build it.</p>
+                <a class="btn primary" href="{WA_MARIA}" target="_blank" rel="noopener">Message Maria on WhatsApp</a>
+                <p style="margin:18px 0 0;">Or email <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · <a href="https://github.com/Mariyah52" target="_blank" rel="noopener">GitHub</a></p>
+            </div>
+        </section>
+'''
+    ld = [
+        {"@type": "ProfilePage", "@id": SITE_URL + DEV_PATH + "#page", "url": SITE_URL + DEV_PATH,
+         "name": "Maria Aziz, WhatsApp chatbot and AI automation developer in Pakistan", "mainEntity": {"@id": PERSON_ID}},
+        {"@type": "Person", "@id": PERSON_ID, "name": "Maria Aziz", "jobTitle": "Founder and developer, IMADI Tech",
+         "worksFor": {"@id": ORG_ID}, "url": SITE_URL + "/about/",
+         "knowsAbout": ["WhatsApp chatbot development", "Meta WhatsApp Cloud API", "Business process automation",
+                        "Instagram and Facebook marketing automation", "Python", "FastAPI", "Flask", "PostgreSQL",
+                        "React", "TypeScript", "Firebase", "ERP development", "Machine learning", "Natural language processing"]},
+        {"@type": "FAQPage", "@id": SITE_URL + DEV_PATH + "#faq",
+         "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in DEV_FAQ]},
+        breadcrumb([("Home", "/"), ("WhatsApp chatbot developer", DEV_PATH)]),
+    ]
+    write(DEV_PATH + "index.html", page(
+        "WhatsApp Chatbot & AI Automation Developer in Pakistan | Maria Aziz, IMADI Tech",
+        "Maria Aziz, founder of IMADI Tech in Karachi, builds WhatsApp chatbots, lead automation, Instagram and Facebook marketing bots and custom ERP. Python, FastAPI, React, Meta APIs.",
+        DEV_PATH, body, ld=ld))
+    return DEV_PATH

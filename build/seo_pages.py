@@ -387,6 +387,8 @@ def llms_txt(projects):
         "tracks every lead in a dashboard. Best fit: furniture, kitchen, interior, building supply and logistics businesses.",
         f"- [FAQ]({SITE_URL}/faq/): pricing model, setup, languages, WhatsApp number questions.",
         "",
+        f"- [WhatsApp chatbot and AI automation developer in Pakistan]({SITE_URL}/whatsapp-chatbot-developer-pakistan/): Maria Aziz's developer profile, tech stack (Python, FastAPI, Flask, PostgreSQL, React, TypeScript, Firebase, Meta WhatsApp Cloud API and Graph API) and shipped systems.",
+        "",
         "## By industry",
     ] + [f"- [{i['h1']}]({SITE_URL}/whatsapp-automation/{i['slug']}/): {i['description']}" for i in __import__('growth_pages').INDUSTRIES] + [
         "",

@@ -8,6 +8,8 @@ Contact: maria@imadi.tech · Website: https://www.imadi.tech
 - [WhatsApp & Instagram lead automation](https://www.imadi.tech/whatsapp-automation/): an AI assistant that replies to every enquiry instantly, shares designs and price ranges, sends PDF quotations, follows up automatically and tracks every lead in a dashboard. Best fit: furniture, kitchen, interior, building supply and logistics businesses.
 - [FAQ](https://www.imadi.tech/faq/): pricing model, setup, languages, WhatsApp number questions.
 
+- [WhatsApp chatbot and AI automation developer in Pakistan](https://www.imadi.tech/whatsapp-chatbot-developer-pakistan/): Maria Aziz's developer profile, tech stack (Python, FastAPI, Flask, PostgreSQL, React, TypeScript, Firebase, Meta WhatsApp Cloud API and Graph API) and shipped systems.
+
 ## By industry
 - [A WhatsApp assistant for furniture and interior businesses](https://www.imadi.tech/whatsapp-automation/furniture/): WhatsApp automation for furniture showrooms and interior firms in Karachi: instant replies with designs and prices, size questions, PDF quotes and automatic follow-ups.
 - [A WhatsApp assistant for kitchen and wardrobe companies](https://www.imadi.tech/whatsapp-automation/kitchens-wardrobes/): WhatsApp automation for kitchen, cabinet and wardrobe makers: collect measurements and photos, book site visits, send quotations and follow up automatically.
