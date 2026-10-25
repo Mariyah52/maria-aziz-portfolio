@@ -42,7 +42,7 @@ SITE_GRAPH = [
         "areaServed": ["Pakistan", "United Arab Emirates", "United Kingdom", "Kenya"],
         "knowsAbout": ["WhatsApp chatbots", "WhatsApp Business API", "Lead follow-up automation",
                        "Business process automation", "ERP systems", "SaaS development", "AI chatbots"],
-        "sameAs": ["https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"],
+        "sameAs": ["https://www.facebook.com/profile.php?id=61595887345917", "https://www.instagram.com/imadi.tech/", "https://www.linkedin.com/in/maria-aziz-ai/", "https://github.com/Mariyah52"],
     },
     {
         "@type": "Person",
