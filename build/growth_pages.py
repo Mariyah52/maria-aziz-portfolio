@@ -42,7 +42,7 @@ INDUSTRIES = [
                  ("in", "7 seater, in grey"),
                  ("out", "Great choice. Which city should we deliver to? I'll send your quotation right away.")],
         "proof": [("alico", "One business app for quotations, invoices, stock and payments."),
-                  ("company-monitor", "See every WhatsApp lead and conversation across branches and salespeople.")],
+                  ("company-monitor", "For a multi-branch business in Nairobi, Kenya: see every WhatsApp lead and conversation across branches and salespeople.")],
         "faq": [
             ("Can the assistant show my furniture designs?", "Yes. It shares photos and price ranges from a catalog and price sheet that you update yourself, so new designs and price changes go live without calling a developer."),
             ("Can it handle custom sizes and fabrics?", "Yes. It collects the size, fabric or wood, color and city, then either sends a quotation from your price list or hands the chat to your team for a custom quote."),
@@ -145,10 +145,10 @@ INDUSTRIES = [
                  ("out", "Hi! Yes, we deliver across the UAE. Which product and size do you need?"),
                  ("in", "The 60cm model"),
                  ("out", "Thanks! I'm preparing your quotation now and will send it here in a moment.")],
-        "proof": [("company-monitor", "Every WhatsApp lead and conversation across branches, in one dashboard."),
+        "proof": [("company-monitor", "For a multi-branch business in Nairobi, Kenya: every WhatsApp lead and conversation across branches, in one dashboard."),
                   ("uk-logistics-whatsapp", "A WhatsApp bot running a full claims process for an international client.")],
         "faq": [
-            ("Do you work with clients in the UAE?", "Yes. IMADI Tech works remotely with clients outside Pakistan and has delivered projects for businesses in the UK and Kenya."),
+            ("Do you work with clients in the UAE?", "Yes. IMADI Tech works remotely with clients outside Pakistan and has delivered projects for international clients: a WhatsApp claims bot and ERP for a logistics company in the UK, and Company Monitor, a WhatsApp lead-monitoring dashboard for a multi-branch business in Nairobi, Kenya."),
             ("Can the assistant reply in Arabic?", "The assistant can be set up for English, Arabic and Urdu replies, depending on your customers."),
             ("Can it follow up on email inquiries too?", "Yes. Follow-up automation can cover both WhatsApp and email inquiries, with every lead tracked in one dashboard."),
         ],
