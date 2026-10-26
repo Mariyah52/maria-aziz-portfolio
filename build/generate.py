@@ -52,7 +52,7 @@ SITE_GRAPH = [
         "jobTitle": "Founder & AI Specialist",
         "worksFor": {"@id": ORG_ID},
         "url": SITE_URL + "/about/",
-        "image": SITE_URL + "/assets/maria-aziz.jpg",
+        "image": SITE_URL + "/assets/maria-aziz.jpg?v=2",
         "email": "maria@imadi.tech",
         "homeLocation": {"@type": "Place", "name": "Karachi, Pakistan"},
         "alumniOf": [{"@type": "CollegeOrUniversity", "name": "University of Karachi"}],
@@ -98,7 +98,7 @@ def nav_html(current_path):
     return "\n                    ".join(links)
 
 
-def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.jpg"):
+def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.jpg?v=2"):
     return f"""<!doctype html>
 <html lang="en" data-theme="light">
 
@@ -129,7 +129,7 @@ def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.
 """
 
 
-def page(title, description, path, body, extra_head="", extra_scripts="", ld=None, image="/assets/maria-aziz.jpg"):
+def page(title, description, path, body, extra_head="", extra_scripts="", ld=None, image="/assets/maria-aziz.jpg?v=2"):
     return head(title, description, path, extra_head, ld, image) + f"""
 <body{' class="home"' if path == "/" else ''}>
     <div class="spotlight" id="spotlight" aria-hidden="true"></div>
@@ -139,7 +139,7 @@ def page(title, description, path, body, extra_head="", extra_scripts="", ld=Non
         <header class="side">
             <div class="side-top">
                 <a class="side-id" href="/">
-                    <img class="side-photo" src="/assets/maria-aziz.jpg" alt="Maria Aziz" width="88" height="88">
+                    <img class="side-photo" src="/assets/maria-aziz.jpg?v=2" alt="Maria Aziz" width="88" height="88">
                     <span class="side-name">{SIDE_NAME}</span>
                 </a>
                 <div class="brand" aria-label="Founder, IMADI Tech">
