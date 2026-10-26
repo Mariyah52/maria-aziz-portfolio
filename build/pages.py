@@ -637,8 +637,17 @@ write("/case-study/index.html", page(
     "A detailed case study: problem, solution, technology, and results.",
     "/case-study/",
     case_study_body,
+    extra_head='<meta name="robots" content="noindex, follow">',
     extra_scripts=case_study_scripts,
 ))
+
+# Old pages from the earlier site. They now point visitors and Google to the current pages.
+for old, new, label in [("/now/", "/about/", "About"), ("/research/", "/work/", "Work"), ("/solutions/", "/services/", "Services")]:
+    write(old + "index.html", f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>Moved | IMADI Tech</title><meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.imadi.tech{new}"><meta http-equiv="refresh" content="0; url={new}">
+<script>location.replace("{new}")</script></head>
+<body><p>This page has moved to <a href="{new}">{label}</a>.</p></body></html>""")
 
 
 # ---------------------------------------------------------------- MEDIA ----
