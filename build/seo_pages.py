@@ -375,7 +375,7 @@ def llms_txt(projects):
         "# IMADI Tech",
         "",
         "> IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. "
-        "It builds WhatsApp chatbots and lead follow-up automation, custom ERP and business management systems, "
+        "It builds WhatsApp chatbots and lead follow-up automation, Instagram and Facebook marketing automation, email follow-up automation, custom ERP and business management systems, "
         "and SaaS products for small and mid-sized businesses. It has delivered projects in Pakistan, the UK and Kenya "
         "and also takes on clients in the UAE.",
         "",
@@ -388,6 +388,8 @@ def llms_txt(projects):
         f"- [FAQ]({SITE_URL}/faq/): pricing model, setup, languages, WhatsApp number questions.",
         "",
         f"- [WhatsApp chatbot and AI automation developer in Pakistan]({SITE_URL}/whatsapp-chatbot-developer-pakistan/): Maria Aziz's developer profile, tech stack (Python, FastAPI, Flask, PostgreSQL, React, TypeScript, Firebase, Meta WhatsApp Cloud API and Graph API) and shipped systems.",
+        f"- [All services]({SITE_URL}/services/): overview of every IMADI Tech service.",
+    ] + [f"- [{x['nav']}]({SITE_URL}/{x['slug']}/): {x['description']}" for x in __import__('services_pages').SERVICES] + [
         "",
         "## By industry",
     ] + [f"- [{i['h1']}]({SITE_URL}/whatsapp-automation/{i['slug']}/): {i['description']}" for i in __import__('growth_pages').INDUSTRIES] + [
@@ -420,4 +422,5 @@ def build():
         "Answers about WhatsApp chatbots and lead automation from IMADI Tech: cost, setup time, Urdu replies, quotations, Instagram and your WhatsApp number.",
         "/faq/", faq_body(), ld=FAQ_LD))
     llms_txt(projects)
-    return ["/whatsapp-automation/", "/faq/"] + growth_pages.build(projects) + paths
+    import services_pages
+    return ["/whatsapp-automation/", "/faq/"] + growth_pages.build(projects) + services_pages.build(projects) + paths

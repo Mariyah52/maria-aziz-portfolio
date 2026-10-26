@@ -1,6 +1,6 @@
 # IMADI Tech
 
-> IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. It builds WhatsApp chatbots and lead follow-up automation, custom ERP and business management systems, and SaaS products for small and mid-sized businesses. It has delivered projects in Pakistan, the UK and Kenya and also takes on clients in the UAE.
+> IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. It builds WhatsApp chatbots and lead follow-up automation, Instagram and Facebook marketing automation, email follow-up automation, custom ERP and business management systems, and SaaS products for small and mid-sized businesses. It has delivered projects in Pakistan, the UK and Kenya and also takes on clients in the UAE.
 
 Contact: maria@imadi.tech · Website: https://www.imadi.tech
 
@@ -9,6 +9,10 @@ Contact: maria@imadi.tech · Website: https://www.imadi.tech
 - [FAQ](https://www.imadi.tech/faq/): pricing model, setup, languages, WhatsApp number questions.
 
 - [WhatsApp chatbot and AI automation developer in Pakistan](https://www.imadi.tech/whatsapp-chatbot-developer-pakistan/): Maria Aziz's developer profile, tech stack (Python, FastAPI, Flask, PostgreSQL, React, TypeScript, Firebase, Meta WhatsApp Cloud API and Graph API) and shipped systems.
+- [All services](https://www.imadi.tech/services/): overview of every IMADI Tech service.
+- [Instagram & Facebook marketing automation](https://www.imadi.tech/marketing-automation/): Marketing bots that design branded posts, carousels and voiced reels and publish them to Instagram and Facebook on schedule, with a WhatsApp button on every post.
+- [Email follow-up automation](https://www.imadi.tech/email-follow-up-automation/): Automation that replies to email enquiries, sends quotations, follows up with customers who go silent, and tracks every lead in one dashboard, alongside WhatsApp.
+- [Custom ERP & business software](https://www.imadi.tech/erp-business-software/): Custom ERP and business management software for small and mid-sized businesses: quotations, invoices, stock, ledgers, payments and accounting, built around your workflow.
 
 ## By industry
 - [A WhatsApp assistant for furniture and interior businesses](https://www.imadi.tech/whatsapp-automation/furniture/): WhatsApp automation for furniture showrooms and interior firms in Karachi: instant replies with designs and prices, size questions, PDF quotes and automatic follow-ups.
