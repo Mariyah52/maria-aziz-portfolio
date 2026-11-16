@@ -22,6 +22,8 @@ Contact: maria@imadi.tech · Website: https://www.imadi.tech
 
 ## Blog
 - [How much does a WhatsApp chatbot cost in Pakistan?](https://www.imadi.tech/blog/whatsapp-chatbot-cost-pakistan/): What you actually pay for when you set up a WhatsApp chatbot in Pakistan: the build, monthly support, and Meta's own per-message charges, explained simply.
+- [WhatsApp Business app or a WhatsApp chatbot: which does your business need?](https://www.imadi.tech/blog/whatsapp-business-app-vs-chatbot/): When the free WhatsApp Business app is enough, when a chatbot on the WhatsApp Business Platform is worth it, and how to tell which stage your business is at.
+- [5 reasons businesses lose WhatsApp leads, and how to fix each one](https://www.imadi.tech/blog/why-businesses-lose-whatsapp-leads/): Slow first replies, no follow-up, late quotations, no lead record and one overloaded phone: the five places WhatsApp inquiries are lost, with a practical fix for each.
 
 ## Case studies
 - [ALICO Business Suite](https://www.imadi.tech/case-study/alico/): A complete business management system for ALICO Enterprises covering the full sales and purchase cycle (quote, challan, invoice, payment), with stock, ledgers and bank accounts in one installable app that works offline…
