@@ -32,7 +32,7 @@ SITE_GRAPH = [
         "name": "IMADI Tech",
         "alternateName": ["IMADI Tech by Maria Aziz", "imadi.tech"],
         "disambiguatingDescription": ("The AI automation company founded and run by Maria Aziz in Karachi, at "
-                                      "www.imadi.tech. Not connected to any other business with a similar name."),
+                                      "www.imadi.tech. Not connected to Imadi Technologies, Imadi Innovations or any other business with a similar name."),
         "url": SITE_URL + "/",
         "logo": SITE_URL + "/assets/favicon-imadi.png",
         "email": "maria@imadi.tech",
