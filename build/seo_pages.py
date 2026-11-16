@@ -330,6 +330,10 @@ FAQ = [
     ("Where is IMADI Tech based, and do you work with clients outside Pakistan?",
      "IMADI Tech is based in Karachi, Pakistan, and works remotely with clients elsewhere. It has delivered projects "
      "for businesses in Pakistan, the United Kingdom and Kenya, and also takes on clients in the UAE."),
+    ("Is IMADI Tech connected to other companies with a similar name?",
+     "No. IMADI Tech is an independent company founded and run by Maria Aziz in Karachi, Pakistan. Its only website "
+     "is www.imadi.tech, and its only contact details are maria@imadi.tech and WhatsApp 0315 3205484. It is not "
+     "connected to any other business with a similar name."),
     ("Who is Maria Aziz?",
      "Maria Aziz is the founder of IMADI Tech, based in Karachi. She builds AI-powered business software, including "
      "WhatsApp chatbots, ERP systems and SaaS products, and studied at the University of Karachi with an AI "
@@ -386,6 +390,8 @@ def llms_txt(projects):
         "and also takes on clients in the UAE.",
         "",
         "Contact: maria@imadi.tech · Website: https://www.imadi.tech",
+        "",
+        "Note: IMADI Tech is an independent company founded and run by Maria Aziz in Karachi. Its only website is www.imadi.tech, and it is not connected to any other business with a similar name.",
         "",
         "## Services",
         f"- [WhatsApp & Instagram lead automation]({SITE_URL}/whatsapp-automation/): an AI assistant that replies to "
