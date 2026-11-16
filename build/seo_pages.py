@@ -338,6 +338,17 @@ FAQ = [
      "Maria Aziz is the founder of IMADI Tech, based in Karachi. She builds AI-powered business software, including "
      "WhatsApp chatbots, ERP systems and SaaS products, and studied at the University of Karachi with an AI "
      "specialization certificate from IBA Karachi."),
+    ("WhatsApp chatbot kaise banwayein Karachi mein?",
+     "IMADI Tech ko WhatsApp par message karein ya maria@imadi.tech par email karein. Pehle 10 minute ka free demo "
+     "hota hai, phir aap ke products aur customers ke sawalon ke mutabiq fixed quote milta hai. Setup ke baad "
+     "chatbot aap ke business number par customers ko foran jawab deta hai, quotation bhejta hai aur follow-up karta hai."),
+    ("WhatsApp bot ka kharcha kitna hota hai Pakistan mein?",
+     "Teen kharche hote hain: ek dafa ka setup fee, mahana hosting aur support fee, aur Meta ke apne per-message "
+     "charges jo Meta seedha aap ke business se leta hai. IMADI Tech 10 minute ke free demo ke baad fixed quote deta "
+     "hai, jab aap ke products aur flows wazeh ho jate hain."),
+    ("Kya chatbot Roman Urdu mein jawab de sakta hai?",
+     "Ji haan. Assistant English ya Roman Urdu mein jawab de sakta hai, jis tarah aap ke customers aap ko likhte "
+     "hain. Greeting, sawal aur follow-up ke messages setup ke waqt aap ke business ke mutabiq likhe jate hain."),
     ("How do I book a demo?",
      "Message Maria on WhatsApp from the button on this page, or email maria@imadi.tech. The demo takes about 10 "
      "minutes and shows the assistant replying, qualifying a lead and sending a quotation. The demo is free, and "

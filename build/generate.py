@@ -145,7 +145,7 @@ def page(title, description, path, body, extra_head="", extra_scripts="", ld=Non
         <header class="side">
             <div class="side-top">
                 <a class="side-id" href="/">
-                    <img class="side-photo" src="/assets/maria-aziz.jpg?v=3" alt="Maria Aziz" width="88" height="88">
+                    <img class="side-photo" src="/assets/maria-aziz.jpg?v=3" alt="Maria Aziz, founder of IMADI Tech, Karachi" width="88" height="88">
                     <span class="side-name">{SIDE_NAME}</span>
                 </a>
                 <div class="brand" aria-label="Founder, IMADI Tech">
