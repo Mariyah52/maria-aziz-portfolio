@@ -309,19 +309,24 @@ FAQ = [
      "IMADI Tech checks with you whether your number can stay on the WhatsApp Business app alongside the platform or "
      "whether a separate number is better, so you know exactly what happens to your existing chats."),
     ("Can the chatbot reply in Roman Urdu?",
-     "Yes. The assistant can be set up to reply in English or Roman Urdu, matching how your customers write to you."),
+     "Yes. The assistant can be set up to reply in English or Roman Urdu, matching how your customers write to you. "
+     "Greetings, qualifying questions and follow-ups are written around your business during setup, so replies sound "
+     "like your own team rather than a generic bot."),
     ("Can it send quotations and price lists?",
      "Yes. The assistant can share your catalogue and price ranges from a sheet you update yourself, and send "
-     "quotations as PDF documents on WhatsApp."),
+     "quotations as PDF documents on WhatsApp. Because prices live in your own sheet, you can change them at any "
+     "time without needing a developer."),
     ("Can IMADI Tech automate Instagram messages too?",
      "Yes, as an add-on. Instagram direct messages and replies to comments can be answered automatically and added "
      "to the same lead list as WhatsApp. This needs an Instagram professional account linked to your Facebook Page."),
     ("How long does setup take?",
      "Setup time depends on how many products and flows you need, and Meta's business verification can add time. "
-     "You get a timeline in writing before work starts."),
-    ("How much does it cost?",
-     "Pricing is a one-time setup fee plus monthly support, quoted after a free 10-minute demo once your products and "
-     "flows are clear. Meta bills its WhatsApp messaging charges directly to your business."),
+     "The work covers mapping your products and common questions, writing the conversation and connecting your "
+     "number to Meta's WhatsApp Business Platform. You get a timeline in writing before work starts."),
+    ("How much does a WhatsApp chatbot cost in Pakistan?",
+     "A WhatsApp chatbot in Pakistan has three costs: a one-time setup fee, a monthly fee for hosting and support, "
+     "and Meta's own per-message charges, which Meta bills to your business directly. IMADI Tech gives a fixed quote "
+     "after a free 10-minute demo, once your products and flows are clear."),
     ("Where is IMADI Tech based, and do you work with clients outside Pakistan?",
      "IMADI Tech is based in Karachi, Pakistan, and works remotely with clients elsewhere. It has delivered projects "
      "for businesses in Pakistan, the United Kingdom and Kenya, and also takes on clients in the UAE."),
@@ -331,7 +336,8 @@ FAQ = [
      "specialization certificate from IBA Karachi."),
     ("How do I book a demo?",
      "Message Maria on WhatsApp from the button on this page, or email maria@imadi.tech. The demo takes about 10 "
-     "minutes and shows the assistant replying, qualifying a lead and sending a quotation."),
+     "minutes and shows the assistant replying, qualifying a lead and sending a quotation. The demo is free, and "
+     "you get a fixed quote afterwards."),
 ]
 
 
