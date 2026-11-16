@@ -423,10 +423,106 @@ def blog_index():
     return "/blog/"
 
 
+# ------------------------------------------------------- US landing page ---
+# Landing page for ads aimed at US businesses. Leads with international
+# client work (UK, Kenya) rather than local positioning.
+US_PATH = "/ai-automation-for-business/"
+US_PROBLEMS = [
+    ("Leads that never get a reply", "Inquiries arrive from ads, your website and email at all hours, and the ones that wait until morning often go to a competitor."),
+    ("Follow-up that depends on memory", "A customer asks for a quote and goes quiet. Without a system, nobody contacts them again."),
+    ("Work spread across too many tools", "Quotes, invoices, stock and accounts live in separate apps and spreadsheets, so nobody sees the full picture."),
+]
+US_FEATURES = [
+    "Instant replies to new inquiries, with qualifying questions",
+    "Quotations sent automatically by email or WhatsApp",
+    "Follow-up sequences for customers who go quiet, stopping as soon as they reply",
+    "One dashboard showing every lead and its status",
+    "Custom ERP and business software: quotations, invoices, stock, ledgers and accounting",
+    "Built and supported remotely by the person who designs it",
+]
+US_PROOF = [
+    ("uk-logistics-erp", "For a logistics company in the United Kingdom: 13 integrated modules with double-entry accounting, UK VAT reporting, inventory and bank reconciliation, covered by 358 automated tests."),
+    ("uk-logistics-whatsapp", "For the same UK client: instant rate quotes, order inquiries and a step-by-step damage claims process, with one dashboard to review and approve claims."),
+    ("company-monitor", "For a multi-branch business in Nairobi, Kenya: every customer inquiry reaching branch numbers feeds one secure management dashboard."),
+]
+US_FAQ = [
+    ("Do you work with clients in the United States?",
+     "Yes. IMADI Tech works remotely with clients outside Pakistan and has delivered live platforms for a logistics company in the United Kingdom and a multi-branch business in Nairobi, Kenya. Projects are scoped, built and supported online."),
+    ("What does a project cost?",
+     "Each project gets a fixed quote after a free 10-minute call about your workflow. Automation projects have a one-time setup fee plus monthly support; custom software is quoted by scope."),
+    ("How do we work together across time zones?",
+     "Work is agreed in writing before it starts, with a timeline. Day-to-day communication runs over email and messaging, and calls are scheduled at a time that suits both sides."),
+    ("Who builds the system?",
+     "Maria Aziz, the founder of IMADI Tech, designs the architecture and builds the system herself, using Python, FastAPI, PostgreSQL, React and TypeScript, with large language models where AI adds real value."),
+]
+
+
+def us_page(projects_by_slug):
+    proof = "".join(
+        f'<a class="card project-card" href="/case-study/{s}/"><h3>{e(projects_by_slug[s]["name"].split(":")[0])}</h3>'
+        f'<p>{e(text)}</p><span class="arrow">Read the case study →</span></a>'
+        for s, text in US_PROOF if s in projects_by_slug)
+    title = "AI Automation & Custom Business Software | IMADI Tech"
+    description = ("AI lead-response automation and custom ERP software for small and mid-sized businesses, "
+                   "built remotely by IMADI Tech with live client platforms in the UK and Kenya.")
+    h1 = "AI automation and custom software for growing businesses"
+    body = f"""
+        <section class="wrap page-hero">
+            <div class="eyebrow">AI automation · Custom software · International clients</div>
+            <h1>{e(h1)}</h1>
+            <p>IMADI Tech builds systems that answer every inquiry, send quotations, follow up automatically and keep your operations in one place. Our client platforms are live and in daily use in the United Kingdom and Kenya.</p>
+            <div class="hero-actions" style="margin-top:22px;">
+                <a class="btn primary" href="/contact/?source=us-landing" data-track="us_contact">Book a free 10-minute call</a>
+                <a class="btn" href="mailto:maria@imadi.tech">Email maria@imadi.tech</a>
+            </div>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">The problem</div><h2>Where businesses lose time and sales</h2></div>
+            <div class="grid three">{_card_grid(US_PROBLEMS)}</div>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">What we build</div><h2>Systems that do the repetitive work</h2></div>
+            <ul class="feature-list">{"".join(f"<li>{e(f)}</li>" for f in US_FEATURES)}</ul>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">Proof</div><h2>Live systems for international clients</h2></div>
+            <div class="grid three">{proof}</div>
+        </section>
+
+        <section class="wrap section">
+            <div class="section-head"><div class="eyebrow">FAQ</div><h2>Common questions</h2></div>
+            <div class="faq-list">{_faq(US_FAQ)}</div>
+        </section>
+
+        <section class="wrap section">
+            <div class="card feature center" style="padding:44px;text-align:center;">
+                <h2>Tell us what is slowing your team down</h2>
+                <p style="max-width:520px;margin:0 auto 24px;">A free 10-minute call, then a fixed quote in writing.</p>
+                <a class="btn primary" href="/contact/?source=us-landing">Book a call</a>
+            </div>
+        </section>
+"""
+    ld = [
+        {"@type": "Service", "@id": SITE_URL + US_PATH + "#service", "name": h1,
+         "serviceType": "AI automation and custom business software", "description": description,
+         "provider": {"@id": ORG_ID}, "url": SITE_URL + US_PATH,
+         "areaServed": ["United States", "United Kingdom", "Kenya"]},
+        {"@type": "FAQPage", "@id": SITE_URL + US_PATH + "#faq",
+         "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in US_FAQ]},
+        breadcrumb([("Home", "/"), ("AI automation for business", US_PATH)]),
+    ]
+    write(US_PATH + "index.html", page(title, description, US_PATH, body, ld=ld))
+    return US_PATH
+
+
 def build(projects):
     by_slug = {p["slug"]: p for p in projects}
     paths = [industry_page(i, by_slug) for i in INDUSTRIES]
     paths.append(developer_page(by_slug))
+    paths.append(us_page(by_slug))
     paths.append(blog_index())
     paths += [blog_post(p) for p in POSTS]
     return paths
