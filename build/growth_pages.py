@@ -37,8 +37,8 @@ INDUSTRIES = [
             "Hands serious buyers to your salesperson with the full chat attached",
             "Shows every lead, its status and its salesperson in one dashboard",
         ],
-        "chat": [("in", "Assalam o Alaikum, what's the price of this L-shaped sofa? 👇"),
-                 ("out", "Walaikum Assalam! It starts from the range on our price list. Which size do you need: 5, 6 or 7 seater?"),
+        "chat": [("in", "Hi, what's the price of this L-shaped sofa? 👇"),
+                 ("out", "Hello! It starts from the range on our price list. Which size do you need: 5, 6 or 7 seater?"),
                  ("in", "7 seater, in grey"),
                  ("out", "Great choice. Which city should we deliver to? I'll send your quotation right away.")],
         "proof": [("alico", "One business app for quotations, invoices, stock and payments."),
@@ -125,7 +125,7 @@ INDUSTRIES = [
         "description": "WhatsApp chatbots and lead follow-up automation for UAE businesses: instant replies to ad inquiries, quotations, follow-ups and a lead dashboard, built remotely by IMADI Tech.",
         "eyebrow": "WhatsApp automation · Dubai & UAE",
         "h1": "WhatsApp automation for businesses in Dubai and the UAE",
-        "intro": ("In the UAE, customers expect a fast reply on WhatsApp, often in English, sometimes in Arabic or Urdu. "
+        "intro": ("In the UAE, customers expect a fast reply on WhatsApp, often in English, sometimes in Arabic. "
                   "IMADI Tech builds AI assistants and follow-up automation that answer every inquiry from your ads instantly, "
                   "qualify the lead, send a quotation, and keep following up, with every lead visible in one dashboard."),
         "problems": [
@@ -134,7 +134,7 @@ INDUSTRIES = [
             ("No view of the pipeline", "Leads arriving by WhatsApp and email are hard to track from first message to sale."),
         ],
         "features": [
-            "Instant WhatsApp replies in English, with Arabic or Urdu where needed",
+            "Instant WhatsApp replies in English, with Arabic where needed",
             "Lead qualification: product, quantity, emirate and timeline",
             "Quotations sent on WhatsApp or email",
             "Automatic follow-ups for inquiries that go quiet",
@@ -149,7 +149,7 @@ INDUSTRIES = [
                   ("uk-logistics-whatsapp", "A WhatsApp bot running a full claims process for an international client.")],
         "faq": [
             ("Do you work with clients in the UAE?", "Yes. IMADI Tech works remotely with clients outside Pakistan and has delivered projects for international clients: a WhatsApp claims bot and ERP for a logistics company in the UK, and Company Monitor, a WhatsApp lead-monitoring dashboard for a multi-branch business in Nairobi, Kenya."),
-            ("Can the assistant reply in Arabic?", "The assistant can be set up for English, Arabic and Urdu replies, depending on your customers."),
+            ("Can the assistant reply in Arabic?", "The assistant can be set up for English and Arabic replies, depending on your customers."),
             ("Can it follow up on email inquiries too?", "Yes. Follow-up automation can cover both WhatsApp and email inquiries, with every lead tracked in one dashboard."),
         ],
     },

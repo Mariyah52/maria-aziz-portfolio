@@ -8,7 +8,7 @@ Note: IMADI Tech is an independent company founded and run by Maria Aziz in Kara
 
 ## Services
 - [WhatsApp & Instagram lead automation](https://www.imadi.tech/whatsapp-automation/): an AI assistant that replies to every enquiry instantly, shares designs and price ranges, sends PDF quotations, follows up automatically and tracks every lead in a dashboard. Best fit: furniture, kitchen, interior, building supply and logistics businesses.
-- [FAQ](https://www.imadi.tech/faq/): pricing model, setup, languages, WhatsApp number questions.
+- [FAQ](https://www.imadi.tech/faq/): pricing model, setup, WhatsApp number questions.
 
 - [WhatsApp chatbot and AI automation developer in Pakistan](https://www.imadi.tech/whatsapp-chatbot-developer-pakistan/): Maria Aziz's developer profile, tech stack (Python, FastAPI, Flask, PostgreSQL, React, TypeScript, Firebase, Meta WhatsApp Cloud API and Graph API) and shipped systems.
 - [All services](https://www.imadi.tech/services/): overview of every IMADI Tech service.

@@ -209,7 +209,7 @@ SERVICE_BODY = f'''
                 <h2>What the WhatsApp lead system does</h2>
             </div>
             <ul class="feature-list">
-                <li>Instant replies on WhatsApp in English or Roman Urdu, set up around your products, prices and questions</li>
+                <li>Instant replies on WhatsApp, set up around your products, prices and questions</li>
                 <li>Shares your catalogue, designs and price ranges from a sheet you can update yourself</li>
                 <li>Asks qualifying questions such as product, size, city and budget</li>
                 <li>Sends quotations as PDF documents on WhatsApp</li>
@@ -308,10 +308,6 @@ FAQ = [
      "You keep your business number, but it is connected to Meta's official WhatsApp Business Platform. Before setup, "
      "IMADI Tech checks with you whether your number can stay on the WhatsApp Business app alongside the platform or "
      "whether a separate number is better, so you know exactly what happens to your existing chats."),
-    ("Can the chatbot reply in Roman Urdu?",
-     "Yes. The assistant can be set up to reply in English or Roman Urdu, matching how your customers write to you. "
-     "Greetings, qualifying questions and follow-ups are written around your business during setup, so replies sound "
-     "like your own team rather than a generic bot."),
     ("Can it send quotations and price lists?",
      "Yes. The assistant can share your catalogue and price ranges from a sheet you update yourself, and send "
      "quotations as PDF documents on WhatsApp. Because prices live in your own sheet, you can change them at any "
@@ -397,7 +393,7 @@ def llms_txt(projects):
         f"- [WhatsApp & Instagram lead automation]({SITE_URL}/whatsapp-automation/): an AI assistant that replies to "
         "every enquiry instantly, shares designs and price ranges, sends PDF quotations, follows up automatically and "
         "tracks every lead in a dashboard. Best fit: furniture, kitchen, interior, building supply and logistics businesses.",
-        f"- [FAQ]({SITE_URL}/faq/): pricing model, setup, languages, WhatsApp number questions.",
+        f"- [FAQ]({SITE_URL}/faq/): pricing model, setup, WhatsApp number questions.",
         "",
         f"- [WhatsApp chatbot and AI automation developer in Pakistan]({SITE_URL}/whatsapp-chatbot-developer-pakistan/): Maria Aziz's developer profile, tech stack (Python, FastAPI, Flask, PostgreSQL, React, TypeScript, Firebase, Meta WhatsApp Cloud API and Graph API) and shipped systems.",
         f"- [All services]({SITE_URL}/services/): overview of every IMADI Tech service.",
@@ -431,7 +427,7 @@ def build():
         "/whatsapp-automation/", SERVICE_BODY + growth_pages.industry_links(), ld=SERVICE_LD))
     write("/faq/index.html", page(
         "WhatsApp Chatbot FAQ | IMADI Tech, Karachi",
-        "Answers about WhatsApp chatbots and lead automation from IMADI Tech: cost, setup time, Urdu replies, quotations, Instagram and your WhatsApp number.",
+        "Answers about WhatsApp chatbots and lead automation from IMADI Tech: cost, setup time, quotations, Instagram and your WhatsApp number.",
         "/faq/", faq_body(), ld=FAQ_LD))
     llms_txt(projects)
     import services_pages
