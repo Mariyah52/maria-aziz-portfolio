@@ -109,6 +109,42 @@ home_body = """
 
 
 home_body = home_body.replace("__HOME_SOLVED__", HOME_SOLVED)
+
+# Short answer-first FAQ on the home page (visible text + matching FAQPage data).
+HOME_FAQ = [
+    ("Who builds WhatsApp chatbots and automation in Karachi?",
+     "IMADI Tech, founded by Maria Aziz in Karachi, Pakistan, builds WhatsApp chatbots and automation for lead "
+     "capture, quotations and follow-ups. Since May 2026 it has delivered client platforms for businesses in "
+     "Pakistan, the UK and Kenya, all live and in daily use."),
+    ("Who is Maria Aziz?",
+     "Maria Aziz is the founder of IMADI Tech, based in Karachi, Pakistan. She builds AI-powered business software, "
+     "including WhatsApp chatbots, ERP systems and SaaS products, and studied at the University of Karachi with an "
+     "AI specialization certificate from IBA Karachi."),
+    ("What can a WhatsApp AI bot do for my business?",
+     "A WhatsApp AI bot replies to customer questions at any hour, captures and qualifies leads, sends quotations "
+     "and follows up automatically with people who go quiet, so a business stops losing enquiries that arrive "
+     "after hours or get missed by staff."),
+    ("Does IMADI Tech work with clients outside Pakistan?",
+     "Yes. IMADI Tech works remotely from Karachi and has delivered WhatsApp bots, ERP systems and SaaS platforms "
+     "for businesses in Pakistan, the United Kingdom and Kenya. It also takes on clients in the UAE."),
+    ("What technology does IMADI Tech use?",
+     "IMADI Tech builds with Python, FastAPI, Flask, PostgreSQL, React, TypeScript and Firebase, connects to "
+     "Meta's WhatsApp Cloud API, and integrates large language models for AI chat and automation."),
+]
+home_body += """
+        <section class="wrap section reveal" id="faq" aria-labelledby="home-faq">
+            <h2 id="home-faq">Frequently asked questions</h2>
+            <div class="faq-list">""" + "".join(
+    f"""
+                <details class="faq-item"{' open' if i == 0 else ''}>
+                    <summary><h3 class="faq-q">{q}</h3></summary>
+                    <p>{a}</p>
+                </details>""" for i, (q, a) in enumerate(HOME_FAQ)) + """
+            </div>
+            <p style="margin:18px 0 0;"><a href="/faq/">More questions and answers →</a></p>
+        </section>
+"""
+
 write("/index.html", page(
     "IMADI Tech by Maria Aziz | AI WhatsApp Automation, Karachi",
     "IMADI Tech, founded by Maria Aziz in Karachi, builds AI WhatsApp automation, chatbots, ERP and SaaS so businesses never miss a lead or a follow-up.",
@@ -116,7 +152,9 @@ write("/index.html", page(
     home_body,
     ld=[{"@type": "WebPage", "@id": "https://www.imadi.tech/#webpage", "url": "https://www.imadi.tech/",
          "name": "IMADI Tech by Maria Aziz", "isPartOf": {"@id": "https://www.imadi.tech/#website"},
-         "about": {"@id": "https://www.imadi.tech/#organization"}}],
+         "about": {"@id": "https://www.imadi.tech/#organization"}},
+        {"@type": "FAQPage", "@id": "https://www.imadi.tech/#faq",
+         "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in HOME_FAQ]}],
 ))
 
 # ---------------------------------------------------------------- ABOUT ----
@@ -785,6 +823,16 @@ sitemap_xml += "</urlset>\n"
 write("/sitemap.xml", sitemap_xml)
 
 robots_txt = f"""User-agent: *
+Allow: /
+
+# AI search crawlers are welcome too
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: {SITE_URL_PLACEHOLDER}/sitemap.xml

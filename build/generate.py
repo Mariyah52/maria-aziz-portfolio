@@ -118,6 +118,9 @@ def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.
     <meta name="twitter:title" content="{title}">
     <meta name="twitter:description" content="{description}">
     <meta name="twitter:image" content="{SITE_URL}{image}">
+    <meta name="author" content="Maria Aziz">
+    <meta name="geo.region" content="PK-SD">
+    <meta name="geo.placename" content="Karachi">
     <link rel="icon" href="/assets/favicon-imadi.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# AI search crawlers are welcome too
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://www.imadi.tech/sitemap.xml
