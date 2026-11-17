@@ -122,6 +122,9 @@ def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.
     <meta name="twitter:description" content="{description}">
     <meta name="twitter:image" content="{SITE_URL}{image}">
     <meta name="author" content="Maria Aziz">
+    <!-- Google tag (Analytics: IMADI Tech / imadi.tech) -->
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KM4TM5SP"></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){{dataLayer.push(arguments);}}gtag('js', new Date());</script>
     <meta name="geo.region" content="PK-SD">
     <meta name="geo.placename" content="Karachi">
     <link rel="icon" href="/assets/favicon-imadi.png" type="image/png">
