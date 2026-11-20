@@ -392,6 +392,18 @@ def blog_post(post):
             <h1>{e(post["title"])}</h1>
             <p class="post-byline">By <a href="/about/">Maria Aziz</a>, founder of IMADI Tech</p>
             <div class="post-body">{post["body"]}</div>
+
+            <aside class="card" style="margin-top:36px;" aria-labelledby="author-bio">
+                <h2 id="author-bio" style="margin-top:0;">About the author</h2>
+                <p><strong>Maria Aziz</strong> is the founder of IMADI Tech, an AI automation company in Karachi,
+                Pakistan. She builds WhatsApp chatbots and lead automation, custom ERP systems and SaaS products,
+                designing the architecture and writing the software herself. Her client platforms are live and in
+                daily use in Pakistan, the United Kingdom and Kenya. She holds a specialisation certificate in
+                AI, machine learning and deep learning from IBA Karachi.</p>
+                <p style="margin-bottom:0;"><a href="/about/">More about Maria</a> ·
+                <a href="/work/">See the work</a> ·
+                <a href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">LinkedIn</a></p>
+            </aside>
         </article>
 '''
     ld = [
