@@ -147,7 +147,7 @@ SERVICE_FAQ_LD = {
 
 def build():
     write(GLOSSARY_PATH + "index.html", page(
-        "What Is WhatsApp Automation? Plain-Language Guide | IMADI Tech",
-        "What WhatsApp automation, chatbots, the WhatsApp Business Platform, message templates and automated follow-ups actually mean, explained in plain language by IMADI Tech.",
+        "What Is WhatsApp Automation? A Plain Guide | IMADI Tech",
+        "What WhatsApp automation, chatbots, the WhatsApp Business Platform, message templates and automated follow-ups actually mean, in plain language.",
         GLOSSARY_PATH, glossary_body(), ld=GLOSSARY_LD))
     return [GLOSSARY_PATH]

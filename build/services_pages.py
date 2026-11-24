@@ -16,8 +16,8 @@ SERVICES = [
         "slug": "marketing-automation",
         "nav": "Instagram & Facebook marketing automation",
         "short": "Marketing automation",
-        "title": "Instagram & Facebook Marketing Automation in Pakistan | IMADI Tech",
-        "description": "Marketing bots that design branded posts, carousels and voiced reels and publish them to Instagram and Facebook on schedule, with a WhatsApp button on every post.",
+        "title": "Instagram & Facebook Marketing Automation | IMADI Tech",
+        "description": "Marketing bots that design branded posts, carousels and reels and publish them to Instagram and Facebook on schedule, with a WhatsApp button on every post.",
         "eyebrow": "Services · Marketing automation",
         "h1": "Instagram and Facebook marketing automation",
         "intro": ("Posting every day takes hours most business owners don't have. IMADI Tech builds marketing bots that design your posts, carousels and reels "
@@ -58,8 +58,8 @@ SERVICES = [
         "slug": "email-follow-up-automation",
         "nav": "Email follow-up automation",
         "short": "Email follow-up",
-        "title": "Email Follow-up & Enquiry Automation for Businesses | IMADI Tech",
-        "description": "Automation that replies to email enquiries, sends quotations, follows up with customers who go silent, and tracks every lead in one dashboard, alongside WhatsApp.",
+        "title": "Email Follow-up & Enquiry Automation | IMADI Tech",
+        "description": "Automation that replies to email enquiries, sends quotations, follows up with customers who go silent and tracks every lead in one dashboard.",
         "eyebrow": "Services · Email automation",
         "h1": "Email follow-up automation for sales enquiries",
         "intro": ("Many B2B buyers send an enquiry by email, receive a quotation, and then go quiet. IMADI Tech builds automation that answers email enquiries quickly, "
@@ -97,8 +97,8 @@ SERVICES = [
         "slug": "erp-business-software",
         "nav": "Custom ERP & business software",
         "short": "ERP & business software",
-        "title": "Custom ERP & Business Management Software in Pakistan | IMADI Tech",
-        "description": "Custom ERP and business management software for small and mid-sized businesses: quotations, invoices, stock, ledgers, payments and accounting, built around your workflow.",
+        "title": "Custom ERP & Business Software, Pakistan | IMADI Tech",
+        "description": "Custom ERP and business software for small and mid-sized businesses: quotations, invoices, stock, ledgers and accounting, built around your workflow.",
         "eyebrow": "Services · ERP & business software",
         "h1": "Custom ERP and business management software",
         "intro": ("Off-the-shelf software rarely fits how a growing business actually works. IMADI Tech builds business management systems around your own workflow: "
@@ -252,8 +252,8 @@ def services_hub():
          "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": t, "url": SITE_URL + u} for i, (u, t, _) in enumerate(HUB)]},
         breadcrumb([("Home", "/"), ("Services", "/services/")]),
     ]
-    write("/services/index.html", page("Services: WhatsApp, Marketing & Business Automation | IMADI Tech",
-                                       "IMADI Tech services: WhatsApp chatbots, Instagram and Facebook marketing automation, email follow-up automation, and custom ERP and business software, from Karachi.",
+    write("/services/index.html", page("Services: WhatsApp, Marketing & Automation | IMADI Tech",
+                                       "IMADI Tech services: WhatsApp chatbots, Instagram and Facebook marketing bots, email follow-up automation and custom ERP software, from Karachi.",
                                        "/services/", body, ld=ld))
     return "/services/"
 

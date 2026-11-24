@@ -171,10 +171,16 @@ def case_study(p):
          "keywords": ", ".join(p.get("technology") or [])},
         breadcrumb([("Home", "/"), ("Work", "/work/"), (short, path)]),
     ]
-    write(path + "index.html", page(
-        f"{short} Case Study | IMADI Tech",
-        clip(p.get("plainProblem") or p.get("problem")),
-        path, body, extra_scripts=scripts, ld=ld))
+    cs_title = f"{short} Case Study | IMADI Tech"
+    if len(cs_title) > 60:
+        cs_title = f"{short} | IMADI Tech"
+    # Description: the problem, then what was built — a bare problem line is too
+    # short for Google's snippet and wastes the space.
+    probl = " ".join(((p.get("plainProblem") or p.get("problem")) or "").split())
+    soln = " ".join(((p.get("plainSolution") or p.get("solution")) or "").split())
+    cs_desc = clip(f"{probl} {soln}".strip() if soln else probl)
+    write(path + "index.html", page(cs_title, cs_desc, path, body,
+                                    extra_scripts=scripts, ld=ld))
     return path
 
 
@@ -319,7 +325,7 @@ FAQ = [
      "Setup time depends on how many products and flows you need, and Meta's business verification can add time. "
      "The work covers mapping your products and common questions, writing the conversation and connecting your "
      "number to Meta's WhatsApp Business Platform. You get a timeline in writing before work starts."),
-    ("How much does a WhatsApp chatbot cost in Pakistan?",
+    ("How much does a WhatsApp chatbot cost in Pakistan",
      "A WhatsApp chatbot in Pakistan has three costs: a one-time setup fee, a monthly fee for hosting and support, "
      "and Meta's own per-message charges, which Meta bills to your business directly. IMADI Tech gives a fixed quote "
      "after a free 10-minute demo, once your products and flows are clear."),
@@ -456,7 +462,7 @@ def build():
     paths = [case_study(p) for p in projects]
     write("/whatsapp-automation/index.html", page(
         "WhatsApp Chatbot & Lead Automation in Karachi | IMADI Tech",
-        "AI WhatsApp and Instagram automation for furniture, kitchen, interior and supply businesses: instant replies, PDF quotations, auto follow-ups and one lead dashboard.",
+        "AI WhatsApp automation for furniture, kitchen, interior and supply businesses: instant replies, PDF quotations, auto follow-ups and one lead dashboard.",
         "/whatsapp-automation/", SERVICE_BODY + growth_pages.industry_links() + aeo_pages.service_faq_section(),
         ld=SERVICE_LD + [aeo_pages.SERVICE_FAQ_LD]))
     write("/faq/index.html", page(

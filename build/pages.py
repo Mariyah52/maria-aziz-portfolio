@@ -672,7 +672,7 @@ case_study_scripts = """    <script src="/assets/projects-data.js"></script>
 """
 write("/case-study/index.html", page(
     "Case Study | IMADI Tech",
-    "A detailed case study: problem, solution, technology, and results.",
+    "A real client project from IMADI Tech: the problem, what was built, the technology behind it, and what changed for the business afterwards.",
     "/case-study/",
     case_study_body,
     extra_head='<meta name="robots" content="noindex, follow">',

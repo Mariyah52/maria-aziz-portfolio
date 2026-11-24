@@ -17,8 +17,8 @@ INDUSTRIES = [
     {
         "slug": "furniture",
         "nav": "Furniture & interiors",
-        "title": "WhatsApp Chatbot for Furniture & Interior Businesses | IMADI Tech",
-        "description": "WhatsApp automation for furniture showrooms and interior firms in Karachi: instant replies with designs and prices, size questions, PDF quotes and automatic follow-ups.",
+        "title": "WhatsApp Chatbot for Furniture & Interiors | IMADI Tech",
+        "description": "WhatsApp automation for furniture showrooms and interior firms in Karachi: instant replies with designs and prices, PDF quotes and automatic follow-ups.",
         "eyebrow": "WhatsApp automation · Furniture & interiors",
         "h1": "A WhatsApp assistant for furniture and interior businesses",
         "intro": ("Furniture buyers message several showrooms at once, usually in the evening, asking for photos, sizes and prices. "
@@ -52,7 +52,7 @@ INDUSTRIES = [
     {
         "slug": "kitchens-wardrobes",
         "nav": "Kitchens & wardrobes",
-        "title": "WhatsApp Chatbot for Kitchen & Wardrobe Companies | IMADI Tech",
+        "title": "WhatsApp Chatbot for Kitchen & Wardrobe Firms | IMADI Tech",
         "description": "WhatsApp automation for kitchen, cabinet and wardrobe makers: collect measurements and photos, book site visits, send quotations and follow up automatically.",
         "eyebrow": "WhatsApp automation · Kitchens & wardrobes",
         "h1": "A WhatsApp assistant for kitchen and wardrobe companies",
@@ -121,8 +121,8 @@ INDUSTRIES = [
     {
         "slug": "dubai-uae",
         "nav": "Dubai & UAE",
-        "title": "WhatsApp Automation for Businesses in Dubai & the UAE | IMADI Tech",
-        "description": "WhatsApp chatbots and lead follow-up automation for UAE businesses: instant replies to ad inquiries, quotations, follow-ups and a lead dashboard, built remotely by IMADI Tech.",
+        "title": "WhatsApp Automation for Dubai & UAE Businesses | IMADI Tech",
+        "description": "WhatsApp chatbots and lead follow-up for UAE businesses: instant replies to ad enquiries, quotations, follow-ups and a lead dashboard, built remotely.",
         "eyebrow": "WhatsApp automation · Dubai & UAE",
         "h1": "WhatsApp automation for businesses in Dubai and the UAE",
         "intro": ("In the UAE, customers expect a fast reply on WhatsApp, often in English, sometimes in Arabic. "
@@ -244,7 +244,7 @@ def industry_page(ind, projects_by_slug):
 POSTS = [
     {
         "slug": "whatsapp-chatbot-cost-pakistan",
-        "title": "How much does a WhatsApp chatbot cost in Pakistan?",
+        "title": "What a WhatsApp chatbot costs in Pakistan",
         "description": "What you actually pay for when you set up a WhatsApp chatbot in Pakistan: the build, monthly support, and Meta's own per-message charges, explained simply.",
         "date": "2026-10-25",
         "body": f'''
@@ -292,7 +292,7 @@ POSTS = [
     },
     {
         "slug": "whatsapp-business-app-vs-chatbot",
-        "title": "WhatsApp Business app or a WhatsApp chatbot: which does your business need?",
+        "title": "WhatsApp Business App vs Chatbot",
         "description": "When the free WhatsApp Business app is enough, when a chatbot on the WhatsApp Business Platform is worth it, and how to tell which stage your business is at.",
         "date": "2026-11-16",
         "body": f'''
@@ -346,8 +346,8 @@ POSTS = [
     },
     {
         "slug": "why-businesses-lose-whatsapp-leads",
-        "title": "5 reasons businesses lose WhatsApp leads, and how to fix each one",
-        "description": "Slow first replies, no follow-up, late quotations, no lead record and one overloaded phone: the five places WhatsApp inquiries are lost, with a practical fix for each.",
+        "title": "5 Reasons Businesses Lose WhatsApp Leads",
+        "description": "Slow first replies, no follow-up, late quotations, no lead record, one overloaded phone: the five places WhatsApp enquiries are lost, and how to fix each.",
         "date": "2026-11-16",
         "body": f'''
             <p class="post-lead"><strong>Short answer:</strong> most WhatsApp leads are not lost on price. They are lost because the first reply came late, nobody followed up, the quotation took too long, the inquiry was never written down, or one phone could not keep up.</p>
@@ -475,8 +475,8 @@ def us_page(projects_by_slug):
         f'<p>{e(text)}</p><span class="arrow">Read the case study →</span></a>'
         for s, text in US_PROOF if s in projects_by_slug)
     title = "AI Automation & Custom Business Software | IMADI Tech"
-    description = ("AI lead-response automation and custom ERP software for small and mid-sized businesses, "
-                   "built remotely by IMADI Tech with live client platforms in the UK and Kenya.")
+    description = ("AI lead-response automation and custom ERP software for small and mid-sized "
+                   "businesses, with live client platforms in the UK and Kenya.")
     h1 = "AI automation and custom software for growing businesses"
     body = f"""
         <section class="wrap page-hero">
@@ -647,7 +647,7 @@ def developer_page(projects_by_slug):
         breadcrumb([("Home", "/"), ("WhatsApp chatbot developer", DEV_PATH)]),
     ]
     write(DEV_PATH + "index.html", page(
-        "WhatsApp Chatbot & AI Automation Developer in Pakistan | Maria Aziz, IMADI Tech",
-        "Maria Aziz, founder of IMADI Tech in Karachi, builds WhatsApp chatbots, lead automation, Instagram and Facebook marketing bots and custom ERP. Python, FastAPI, React, Meta APIs.",
+        "WhatsApp Chatbot Developer in Pakistan | Maria Aziz",
+        "Maria Aziz, founder of IMADI Tech in Karachi, builds WhatsApp chatbots, lead automation, marketing bots and custom ERP with Python, FastAPI and Meta APIs.",
         DEV_PATH, body, ld=ld))
     return DEV_PATH
