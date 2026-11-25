@@ -847,8 +847,10 @@ SITE_URL_PLACEHOLDER = "https://www.imadi.tech"
 import seo_pages
 sitemap_paths = ["/", "/about/", "/work/", "/media/", "/contact/"] + seo_pages.build()
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+from generate import lastmod as _lastmod
 for p in sitemap_paths:
-    sitemap_xml += f"  <url><loc>{SITE_URL_PLACEHOLDER}{p}</loc></url>\n"
+    sitemap_xml += (f"  <url><loc>{SITE_URL_PLACEHOLDER}{p}</loc>"
+                    f"<lastmod>{_lastmod(p)}</lastmod></url>\n")
 sitemap_xml += "</urlset>\n"
 write("/sitemap.xml", sitemap_xml)
 

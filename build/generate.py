@@ -247,9 +247,42 @@ def page(title, description, path, body, extra_head="", extra_scripts="", ld=Non
 """
 
 
+CHANGED = set()  # paths whose content this build actually altered
+
+
 def write(path, content):
     full = os.path.join(ROOT, path.lstrip("/"))
     os.makedirs(os.path.dirname(full), exist_ok=True)
+    # Leave an unchanged file alone. Its modification date is what tells the
+    # sitemap when the page really last changed, and rewriting identical
+    # bytes every build would reset that and make <lastmod> meaningless.
+    if os.path.exists(full):
+        with open(full, encoding="utf-8") as f:
+            if f.read() == content:
+                print("unchanged", path)
+                return False
     with open(full, "w", encoding="utf-8") as f:
         f.write(content)
+    CHANGED.add(path if path.endswith("/") else path.replace("index.html", ""))
     print("wrote", path)
+    return True
+
+
+def lastmod(path):
+    """The date this page's content last changed, as YYYY-MM-DD.
+
+    Changed in this build means today. Otherwise ask git when the file was
+    last committed, so <lastmod> reflects the page and not the build run."""
+    import datetime
+    import subprocess
+    today = datetime.date.today().isoformat()
+    if path in CHANGED:
+        return today
+    rel = (path.lstrip("/") + "index.html") if path.endswith("/") else path.lstrip("/")
+    try:
+        out = subprocess.run(["git", "log", "-1", "--format=%cs", "--", rel],
+                             cwd=ROOT, capture_output=True, text=True,
+                             check=True).stdout.strip()
+        return out or today
+    except Exception:
+        return today
