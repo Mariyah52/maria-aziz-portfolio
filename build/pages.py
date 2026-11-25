@@ -1,13 +1,31 @@
 #!/usr/bin/env python3
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from generate import page, write
+from generate import page, write, related
 
 import json as _json, re as _re
 _pd = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "projects-data.js"), encoding="utf-8").read()
 PLAIN = _json.loads(_re.search(r"window\.PLAIN = (\{.*?\n\});", _pd, _re.S).group(1))
 _NAMES = dict(_re.findall(r'slug: "([^"]+)",\s*name: "([^"]+)"', _pd))
 _CLIENTS = dict((m[0], m[1]) for m in _re.findall(r'slug: "([^"]+)",[\s\S]*?client: "([^"]+)"', _pd))
+
+def load_projects():
+    """Read assets/projects-data.js through Node so the build can render the
+    project grid into the HTML. Googlebot does not run the page's JavaScript,
+    so anything only drawn client-side is invisible to it and the pages it
+    links to end up orphaned."""
+    import subprocess
+    js = ("global.window={};require(process.argv[1]);"
+          "process.stdout.write(JSON.stringify(window.PROJECTS))")
+    src = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..",
+                       "assets", "projects-data.js")
+    out = subprocess.run(["node", "-e", js, src], check=True,
+                         capture_output=True, text=True).stdout
+    return {p["slug"]: p for p in _json.loads(out)}
+
+
+PROJECTS = load_projects()
+
 
 def ps_card(slug):
     x = PLAIN[slug]
@@ -310,7 +328,11 @@ write("/about/index.html", page(
     "About Maria Aziz, Founder | IMADI Tech",
     "Maria Aziz is an AI Product Founder and Technology Entrepreneur building practical technology around real-world problems.",
     "/about/",
-    about_body,
+    about_body + related(
+        ("/work/", "The projects behind this"),
+        ("/services/", "What IMADI Tech builds"),
+        ("/whatsapp-chatbot-developer-pakistan/", "WhatsApp chatbot developer in Pakistan"),
+        ("/contact/", "Book a free 10-minute demo")),
 ))
 
 # ----------------------------------------------------------------- WORK ----
@@ -321,75 +343,75 @@ work_body = """
             <p>For every project: the problem in one line, and what I built to solve it.</p>
         </section>
 
-        <div id="work-groups" aria-live="polite">
-            <section class="wrap section"><div class="card"><h2>Loading selected projects…</h2><p>If projects do not appear, check that JavaScript is enabled and reload this page.</p></div></section>
+        <div id="work-groups">
+__WORK_GROUPS__
         </div>
 """
-work_scripts = """    <script src="/assets/projects-data.js"></script>
-    <script>
-        (function () {
-            var root = document.getElementById('work-groups');
-            if (!root || !window.PROJECTS) return;
-            var fallback = root.querySelector('.card'); if (fallback) fallback.remove();
 
-            var GROUPS = [
-                { title: 'Client Work', intro: 'Real businesses, real problems, systems in daily use.', slugs: ['alico', 'uk-logistics-erp', 'uk-logistics-whatsapp', 'renaz', 'company-monitor', 'shah'] },
-                { title: 'My Own Products', intro: 'Products I built for problems I saw around me.', slugs: ['hercommerce', 'child-friendly-city-index'] },
-                { title: 'Hobby Projects', intro: 'What I build, write and try out in my free time, to learn, to experiment and sometimes just for fun.', slugs: ['marist-bot', 'overthinking-journal', 'smart-meal-planner', 'ml-pipeline', 'nlp-sentiment-analysis'], compact: true }
-            ];
 
-            GROUPS.forEach(function (g) {
-                var section = document.createElement('section');
-                section.className = 'wrap section';
-                var head = document.createElement('div');
-                head.className = 'section-head';
-                head.innerHTML = '<h2></h2><p class="section-intro"></p>';
-                head.firstChild.textContent = g.title;
-                head.lastChild.textContent = g.intro || '';
-                var grid = document.createElement('div');
-                grid.className = 'grid two';
+def _esc(s):
+    import html as _html
+    return _html.escape(s or "")
 
-                g.slugs.forEach(function (slug) {
-                    var p = window.getProjectBySlug(slug);
-                    if (!p) return;
-                    var a = document.createElement('a');
-                    a.href = '/case-study/' + encodeURIComponent(p.slug) + '/';
-                    a.className = 'card project-card';
-                    var prob = p.plainProblem || p.problem || '', sol = p.plainSolution || p.solution || '';
-                    if (g.compact) {
-                        a.className = 'card project-card hobby-card';
-                        a.innerHTML =
-                            '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
-                            '<h3>' + p.name + '</h3>' +
-                            '<p>' + (p.hobby || sol) + '</p>' +
-                            '<span class="arrow">More →</span>';
-                        grid.appendChild(a);
-                        return;
-                    }
-                    a.className = 'card project-card ps-card';
-                    a.innerHTML =
-                        '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
-                        '<h3>' + p.name + '</h3>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
-                        '<div class="ps">' + (prob ? '<p><b class="ps-l ps-p">Problem</b>' + prob + '</p>' : '') +
-                        (sol ? '<p><b class="ps-l ps-s">Solution</b>' + sol + '</p>' : '') + '</div>' +
-                        (p.letter ? '<span class="letter-badge">\u2713 Client letter</span>' : '') +
-                        '<span class="arrow">Read the case study →</span>';
-                    grid.appendChild(a);
-                });
 
-                section.appendChild(head);
-                section.appendChild(grid);
-                root.appendChild(section);
-            });
-        })();
-    </script>
-"""
+WORK_GROUPS = [
+    {"title": "Client Work",
+     "intro": "Real businesses, real problems, systems in daily use.",
+     "slugs": ["alico", "uk-logistics-erp", "uk-logistics-whatsapp", "renaz",
+               "company-monitor", "shah"]},
+    {"title": "My Own Products",
+     "intro": "Products I built for problems I saw around me.",
+     "slugs": ["hercommerce", "child-friendly-city-index"]},
+    {"title": "Hobby Projects",
+     "intro": "What I build, write and try out in my free time, to learn, to "
+              "experiment and sometimes just for fun.",
+     "slugs": ["marist-bot", "overthinking-journal", "smart-meal-planner",
+               "ml-pipeline", "nlp-sentiment-analysis"],
+     "compact": True},
+]
+
+
+def work_card(slug, compact=False):
+    p = PROJECTS.get(slug)
+    if not p:
+        return ""
+    status = _esc(p.get("status", ""))
+    badge = (f'<div class="project-status" data-status="{status}">{status}</div>'
+             if status else "")
+    name = _esc(p.get("name", ""))
+    href = f'/case-study/{slug}/'
+    if compact:
+        line = _esc(p.get("hobby") or p.get("plainSolution") or p.get("solution"))
+        return (f'<a class="card project-card hobby-card" href="{href}">{badge}'
+                f'<h3>{name}</h3><p>{line}</p>'
+                f'<span class="arrow">More about {name} →</span></a>')
+    client = _esc(p.get("client", ""))
+    prob = _esc(p.get("plainProblem") or p.get("problem"))
+    soln = _esc(p.get("plainSolution") or p.get("solution"))
+    letter = ('<span class="letter-badge">✓ Client letter</span>'
+              if p.get("letter") else "")
+    return (f'<a class="card project-card ps-card" href="{href}">{badge}'
+            f'<h3>{name}</h3>'
+            + (f'<div class="project-client">{client}</div>' if client else "")
+            + f'<div class="ps">'
+            + (f'<p><b class="ps-l ps-p">Problem</b>{prob}</p>' if prob else "")
+            + (f'<p><b class="ps-l ps-s">Solution</b>{soln}</p>' if soln else "")
+            + f'</div>{letter}'
+            f'<span class="arrow">Read the {name} case study →</span></a>')
+
+
+work_body = work_body.replace("__WORK_GROUPS__", "".join(
+    f'''        <section class="wrap section">
+            <div class="section-head"><h2>{g["title"]}</h2>
+            <p class="section-intro">{g["intro"]}</p></div>
+            <div class="grid two">{"".join(work_card(s, g.get("compact", False)) for s in g["slugs"])}</div>
+        </section>
+''' for g in WORK_GROUPS))
 write("/work/index.html", page(
     "Client Work & Case Studies | IMADI Tech",
     "Selected AI, automation, chatbot, SaaS, machine learning and social-impact technology projects by Maria Aziz.",
     "/work/",
     work_body,
-    extra_scripts=work_scripts,
 ))
 
 # ---------------------------------------------------------------- CONTACT -
@@ -515,7 +537,11 @@ write("/contact/index.html", page(
     "Contact IMADI Tech | Book a Free Demo",
     "Contact Maria Aziz at IMADI Tech, Karachi, to discuss WhatsApp automation, a chatbot, an ERP or a SaaS product, or to book a free 10-minute demo.",
     "/contact/",
-    contact_body,
+    contact_body + related(
+        ("/whatsapp-automation/", "WhatsApp lead automation"),
+        ("/faq/", "Questions people ask before they get in touch"),
+        ("/work/", "Case studies from real clients"),
+        ("/what-is-whatsapp-automation/", "What WhatsApp automation actually means")),
 ))
 
 # ------------------------------------------------------------ CASE STUDY --
@@ -792,7 +818,11 @@ write("/media/index.html", page(
     "Demo Videos | IMADI Tech",
     "Demo videos and pictures of the AI products, automation and SaaS platforms built by Maria Aziz.",
     "/media/",
-    media_body,
+    media_body + related(
+        ("/work/", "The case study behind each demo"),
+        ("/services/", "What IMADI Tech builds"),
+        ("/whatsapp-automation/", "WhatsApp lead automation"),
+        ("/contact/", "Ask for a live demo")),
     extra_scripts=media_scripts,
 ))
 

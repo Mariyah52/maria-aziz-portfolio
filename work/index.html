@@ -24,9 +24,8 @@
     <meta name="geo.region" content="PK-SD">
     <meta name="geo.placename" content="Karachi">
     <link rel="icon" href="/assets/favicon-imadi.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <style>@font-face{font-family:Inter;src:url(/assets/inter-var.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}</style>
     <meta property="og:image" content="https://www.imadi.tech/assets/maria-aziz.jpg?v=3">
     <script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
     <link rel="stylesheet" href="/assets/site.css">
@@ -236,15 +235,30 @@
             <p>For every project: the problem in one line, and what I built to solve it.</p>
         </section>
 
-        <div id="work-groups" aria-live="polite">
-            <section class="wrap section"><div class="card"><h2>Loading selected projects…</h2><p>If projects do not appear, check that JavaScript is enabled and reload this page.</p></div></section>
+        <div id="work-groups">
+        <section class="wrap section">
+            <div class="section-head"><h2>Client Work</h2>
+            <p class="section-intro">Real businesses, real problems, systems in daily use.</p></div>
+            <div class="grid two"><a class="card project-card ps-card" href="/case-study/alico/"><div class="project-status" data-status="Live">Live</div><h3>ALICO Business Suite</h3><div class="project-client">ALICO Enterprises, general order supplier · Karachi, Pakistan</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>Staff spent about 2 hours every day in Excel making quotations, invoices and bills, and tracking stock, payments and customer accounts.</p><p><b class="ps-l ps-s">Solution</b>I built one app that does all of this, works even without internet and shares print-ready documents on WhatsApp. The same daily work now takes about 20 minutes.</p></div><span class="arrow">Read the ALICO Business Suite case study →</span></a><a class="card project-card ps-card" href="/case-study/uk-logistics-erp/"><div class="project-status" data-status="Live">Live</div><h3>ERP &amp; Accounting Platform</h3><div class="project-client">UK Logistics · United Kingdom</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>The company did its accounting by hand and, when moving to software, wanted a system built around the way it works.</p><p><b class="ps-l ps-s">Solution</b>I built a custom accounting system with the features they asked for: credit notes, UK VAT and emailing invoices straight from the software, plus automatic invoice reading and delivery tracking.</p></div><span class="arrow">Read the ERP &amp; Accounting Platform case study →</span></a><a class="card project-card ps-card" href="/case-study/uk-logistics-whatsapp/"><div class="project-status" data-status="Live">Live</div><h3>WhatsApp Automation &amp; Operations Platform</h3><div class="project-client">UK Logistics · United Kingdom (returning client)</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>As a B2B company, staff had to sort through emails to find and handle damage claims.</p><p><b class="ps-l ps-s">Solution</b>A WhatsApp bot now runs the whole claims process, and staff raise, approve or reject claims from one dashboard. It saves time and keeps all data in sync.</p></div><span class="arrow">Read the WhatsApp Automation &amp; Operations Platform case study →</span></a><a class="card project-card ps-card" href="/case-study/renaz/"><div class="project-status" data-status="Live">Live</div><h3>ReNaz: WhatsApp Scrap Collection Platform</h3><div class="project-client">Scrap collection business · Pakistan</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>The client needed data on how much scrap comes from across Karachi, an easy way to collect it, and verified collectors who can enter gated communities.</p><p><b class="ps-l ps-s">Solution</b>Customers and collectors do everything through a WhatsApp conversation, and the data reaches a dashboard automatically. Collectors register with their CNIC. 23+ pickups completed.</p></div><span class="arrow">Read the ReNaz: WhatsApp Scrap Collection Platform case study →</span></a><a class="card project-card ps-card" href="/case-study/company-monitor/"><div class="project-status" data-status="Live">Live</div><h3>Company Monitor</h3><div class="project-client">Multi-branch business · Nairobi, Kenya</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>Salesmen were taking leads from WhatsApp, delivering goods from outside the company and keeping the commission.</p><p><b class="ps-l ps-s">Solution</b>Each branch scans a QR code to connect its WhatsApp to a dashboard, so management sees every lead and conversation for every branch and salesman.</p></div><span class="arrow">Read the Company Monitor case study →</span></a><a class="card project-card ps-card" href="/case-study/shah/"><div class="project-status" data-status="Live">Live</div><h3>SHAH Enterprise Business Suite</h3><div class="project-client">SHAH Enterprise, petrochemicals, solvents &amp; commodity goods · Karachi, Pakistan</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>A second trading business needed the same control over quotes, deliveries, invoices and stock, under its own name.</p><p><b class="ps-l ps-s">Solution</b>I adapted the ALICO system for them, adding one-click conversion from quotation to invoice and automatic stock updates.</p></div><span class="letter-badge">✓ Client letter</span><span class="arrow">Read the SHAH Enterprise Business Suite case study →</span></a></div>
+        </section>
+        <section class="wrap section">
+            <div class="section-head"><h2>My Own Products</h2>
+            <p class="section-intro">Products I built for problems I saw around me.</p></div>
+            <div class="grid two"><a class="card project-card ps-card" href="/case-study/hercommerce/"><div class="project-status" data-status="Live">Live</div><h3>HerCommerce</h3><div class="project-client">Own product</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>Women who sell on WhatsApp often cannot set up or afford an online store.</p><p><b class="ps-l ps-s">Solution</b>HerCommerce lets them open their own shop and take orders on WhatsApp, at no running cost. 18 active subscriptions.</p></div><span class="arrow">Read the HerCommerce case study →</span></a><a class="card project-card ps-card" href="/case-study/child-friendly-city-index/"><div class="project-status" data-status="Live">Live</div><h3>Child-Friendly City Index</h3><div class="project-client">Open-source contribution · free for anyone to use</div><div class="ps"><p><b class="ps-l ps-p">Problem</b>Parents have no simple way to know which neighbourhoods are good for children.</p><p><b class="ps-l ps-s">Solution</b>Ask the bot about any area and it scores how child-friendly it is. 1,683 cities and districts. Open source: anyone can use it for free.</p></div><span class="arrow">Read the Child-Friendly City Index case study →</span></a></div>
+        </section>
+        <section class="wrap section">
+            <div class="section-head"><h2>Hobby Projects</h2>
+            <p class="section-intro">What I build, write and try out in my free time, to learn, to experiment and sometimes just for fun.</p></div>
+            <div class="grid two"><a class="card project-card hobby-card" href="/case-study/marist-bot/"><div class="project-status" data-status="Live">Live</div><h3>Marist</h3><p>A WhatsApp AI assistant I built myself. It asks about your business and suggests which automation could help.</p><span class="arrow">More about Marist →</span></a><a class="card project-card hobby-card" href="/case-study/overthinking-journal/"><div class="project-status" data-status="In progress">In progress</div><h3>Overthinking Journal for Women</h3><p>A guided journal for women aged 25–40 who overthink. It&#x27;s on Amazon as a paperback, and I&#x27;m now designing a digital version.</p><span class="arrow">More about Overthinking Journal for Women →</span></a><a class="card project-card hobby-card" href="/case-study/smart-meal-planner/"><div class="project-status" data-status="Prototype">Prototype</div><h3>Smart Meal Planner</h3><p>An AI app I&#x27;m playing with that suggests meal plans based on each person&#x27;s nutrition needs.</p><span class="arrow">More about Smart Meal Planner →</span></a><a class="card project-card hobby-card" href="/case-study/ml-pipeline/"><div class="project-status" data-status="Hobby">Hobby</div><h3>End-to-End Machine Learning Pipeline</h3><p>A practice project from my AI course: I cleaned a dataset, then trained and compared 21 models to find the most accurate one.</p><span class="arrow">More about End-to-End Machine Learning Pipeline →</span></a><a class="card project-card hobby-card" href="/case-study/nlp-sentiment-analysis/"><div class="project-status" data-status="Hobby">Hobby</div><h3>NLP Sentiment Analysis of Travel Blogs</h3><p>Out of curiosity about travel writing, I compared BERT and LSTM models to spot emotions like joy, frustration and nostalgia in travel blogs.</p><span class="arrow">More about NLP Sentiment Analysis of Travel Blogs →</span></a></div>
+        </section>
+
         </div>
 
             </main>
 
             <footer class="foot">
                 <span>© <span id="year"></span> IMADI Tech · Maria Aziz · Karachi, Pakistan</span>
-                <span class="foot-links"><a href="/services/">Services</a> · <a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/faq/">FAQ</a> · <a href="/blog/">Blog</a> · <a href="/whatsapp-chatbot-developer-pakistan/">Developer</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · WhatsApp <a href="https://wa.me/923153205484" target="_blank" rel="noopener">0315 3205484</a></span>
+                <span class="foot-links"><a href="/services/">Services</a> · <a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/what-is-whatsapp-automation/">What it is</a> · <a href="/work/">Work</a> · <a href="/faq/">FAQ</a> · <a href="/blog/">Blog</a> · <a href="/whatsapp-chatbot-developer-pakistan/">Developer</a> · <a href="/ai-automation-for-business/">For US &amp; UK businesses</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · WhatsApp <a href="https://wa.me/923153205484" target="_blank" rel="noopener">0315 3205484</a></span>
                 <span class="foot-brand"><img src="/assets/imadi-mark.png" alt="" width="18" height="16"> Founder, IMADI Tech</span>
             </footer>
         </div>
@@ -252,64 +266,6 @@
     <a class="wa-fab" href="https://wa.me/923421393991?text=Hi%20Marist!" target="_blank" rel="noopener" aria-label="Say hi to Marist, my AI assistant, on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36A9.4 9.4 0 0 1 2.6 12C2.6 6.8 6.84 2.56 12.06 2.56c2.52 0 4.9.99 6.68 2.77A9.38 9.38 0 0 1 21.5 12c0 5.2-4.24 9.44-9.45 9.44M20.1 3.9A11.3 11.3 0 0 0 12.05.6C5.78.6.67 5.71.67 12c0 2 .52 3.97 1.52 5.7L.57 23.4l5.83-1.53A11.4 11.4 0 0 0 12.04 23.4h.01c6.27 0 11.38-5.11 11.38-11.4 0-3.04-1.18-5.9-3.33-8.1"/></svg><span class="wa-fab-text"><strong>Say hi to Marist</strong><small>AI assistant · WhatsApp</small></span></a>
     <script src="/assets/site.js"></script>
     <script src="/assets/marist-chat.js"></script>
-    <script src="/assets/projects-data.js"></script>
-    <script>
-        (function () {
-            var root = document.getElementById('work-groups');
-            if (!root || !window.PROJECTS) return;
-            var fallback = root.querySelector('.card'); if (fallback) fallback.remove();
-
-            var GROUPS = [
-                { title: 'Client Work', intro: 'Real businesses, real problems, systems in daily use.', slugs: ['alico', 'uk-logistics-erp', 'uk-logistics-whatsapp', 'renaz', 'company-monitor', 'shah'] },
-                { title: 'My Own Products', intro: 'Products I built for problems I saw around me.', slugs: ['hercommerce', 'child-friendly-city-index'] },
-                { title: 'Hobby Projects', intro: 'What I build, write and try out in my free time, to learn, to experiment and sometimes just for fun.', slugs: ['marist-bot', 'overthinking-journal', 'smart-meal-planner', 'ml-pipeline', 'nlp-sentiment-analysis'], compact: true }
-            ];
-
-            GROUPS.forEach(function (g) {
-                var section = document.createElement('section');
-                section.className = 'wrap section';
-                var head = document.createElement('div');
-                head.className = 'section-head';
-                head.innerHTML = '<h2></h2><p class="section-intro"></p>';
-                head.firstChild.textContent = g.title;
-                head.lastChild.textContent = g.intro || '';
-                var grid = document.createElement('div');
-                grid.className = 'grid two';
-
-                g.slugs.forEach(function (slug) {
-                    var p = window.getProjectBySlug(slug);
-                    if (!p) return;
-                    var a = document.createElement('a');
-                    a.href = '/case-study/' + encodeURIComponent(p.slug) + '/';
-                    a.className = 'card project-card';
-                    var prob = p.plainProblem || p.problem || '', sol = p.plainSolution || p.solution || '';
-                    if (g.compact) {
-                        a.className = 'card project-card hobby-card';
-                        a.innerHTML =
-                            '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
-                            '<h3>' + p.name + '</h3>' +
-                            '<p>' + (p.hobby || sol) + '</p>' +
-                            '<span class="arrow">More →</span>';
-                        grid.appendChild(a);
-                        return;
-                    }
-                    a.className = 'card project-card ps-card';
-                    a.innerHTML =
-                        '<div class="project-status" data-status="' + p.status + '">' + p.status + '</div>' +
-                        '<h3>' + p.name + '</h3>' + (p.client ? '<div class="project-client">' + p.client + '</div>' : '') +
-                        '<div class="ps">' + (prob ? '<p><b class="ps-l ps-p">Problem</b>' + prob + '</p>' : '') +
-                        (sol ? '<p><b class="ps-l ps-s">Solution</b>' + sol + '</p>' : '') + '</div>' +
-                        (p.letter ? '<span class="letter-badge">✓ Client letter</span>' : '') +
-                        '<span class="arrow">Read the case study →</span>';
-                    grid.appendChild(a);
-                });
-
-                section.appendChild(head);
-                section.appendChild(grid);
-                root.appendChild(section);
-            });
-        })();
-    </script>
 </body>
 
 </html>

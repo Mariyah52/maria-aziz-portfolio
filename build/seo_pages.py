@@ -16,7 +16,7 @@ import json
 import os
 import subprocess
 
-from generate import page, write, SITE_URL, ORG_ID, PERSON_ID, WEBSITE_ID
+from generate import page, write, SITE_URL, ORG_ID, PERSON_ID, WEBSITE_ID, related
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WA_MARIA = "https://wa.me/923153205484?text=Hi%20Maria%2C%20I%20found%20IMADI%20Tech%20on%20imadi.tech%20and%20would%20like%20a%20demo."
@@ -468,7 +468,12 @@ def build():
     write("/faq/index.html", page(
         "WhatsApp Chatbot FAQ | IMADI Tech, Karachi",
         "Answers about WhatsApp chatbots and lead automation from IMADI Tech: cost, setup time, quotations, Instagram and your WhatsApp number.",
-        "/faq/", faq_body(), ld=FAQ_LD))
+        "/faq/", faq_body() + related(
+            ("/whatsapp-automation/", "WhatsApp chatbots and lead automation"),
+            ("/what-is-whatsapp-automation/", "Plain-language definitions"),
+            ("/blog/whatsapp-chatbot-cost-pakistan/", "What a WhatsApp chatbot costs in Pakistan"),
+            ("/work/", "Case studies from real clients"),
+            ("/contact/", "Book a free 10-minute demo")), ld=FAQ_LD))
     llms_txt(projects)
     import services_pages
     return (["/whatsapp-automation/", "/faq/"] + aeo_pages.build()

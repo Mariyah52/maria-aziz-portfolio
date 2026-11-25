@@ -5,11 +5,19 @@ Same rule as the rest of the site: only claims IMADI Tech can stand behind.
 """
 import html
 
-from generate import page, write, SITE_URL, ORG_ID
+from generate import page, write, SITE_URL, ORG_ID, related
 from seo_pages import WA_MARIA, breadcrumb
 from growth_pages import _card_grid, _faq, DEV_PATH
 
 e = html.escape
+
+
+def _siblings(slug):
+    """Link each service page to the other services and to the work behind
+    them, so no service page is a dead end for a crawler or a reader."""
+    links = [(f'/{s["slug"]}/', s["nav"]) for s in SERVICES if s["slug"] != slug]
+    return related(*(links + [("/work/", "Case studies from real clients"),
+                              ("/faq/", "Common questions, answered")]))
 
 SERVICES = [
     {
@@ -203,7 +211,7 @@ def service_page(s, by_slug):
                 <p style="margin:18px 0 0;"><a href="/services/">See all IMADI Tech services</a></p>
             </div>
         </section>
-'''
+{_siblings(s["slug"])}'''
     ld = [
         {"@type": "Service", "@id": SITE_URL + path + "#service", "name": s["h1"], "serviceType": s["nav"],
          "description": s["description"], "provider": {"@id": ORG_ID}, "url": SITE_URL + path,

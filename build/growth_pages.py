@@ -384,6 +384,16 @@ POSTS = [
 ]
 
 
+def _other_posts(slug):
+    """Every post links to the others, so the three WhatsApp articles read as
+    one topic rather than three loose pages."""
+    others = [p for p in sorted(POSTS, key=lambda p: p["date"], reverse=True)
+              if p["slug"] != slug]
+    links = [f'<a href="/blog/{p["slug"]}/">{e(p["title"])}</a>' for p in others]
+    links.append('<a href="/what-is-whatsapp-automation/">What WhatsApp automation means</a>')
+    return " · ".join(links)
+
+
 def blog_post(post):
     path = f"/blog/{post['slug']}/"
     body = f'''
@@ -403,6 +413,11 @@ def blog_post(post):
                 <p style="margin-bottom:0;"><a href="/about/">More about Maria</a> ·
                 <a href="/work/">See the work</a> ·
                 <a href="https://www.linkedin.com/in/maria-aziz-ai/" target="_blank" rel="noopener">LinkedIn</a></p>
+            </aside>
+
+            <aside class="card" style="margin-top:20px;" aria-labelledby="more-reading">
+                <h2 id="more-reading" style="margin-top:0;font-size:1.05rem;">Read next</h2>
+                <p style="margin-bottom:0;">{_other_posts(post['slug'])}</p>
             </aside>
         </article>
 '''

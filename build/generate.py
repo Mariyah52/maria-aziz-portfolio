@@ -130,6 +130,25 @@ ICON_WA = '<svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><p
 ICON_THEME = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>'
 
 
+def related(*links):
+    """An in-content block of links to other pages on the site.
+
+    Every page needs a few links inside its own content, not only in the
+    header and footer: that is how a crawler reaches the rest of the site
+    from wherever it lands, and how it works out which pages belong
+    together. Pass (href, anchor text) pairs; the anchor text should say
+    what is on the other page, not "click here"."""
+    items = " · ".join(f'<a href="{h}">{t}</a>' for h, t in links)
+    return f"""
+        <section class="wrap section reveal">
+            <div class="card">
+                <h2 style="font-size:1.05rem;margin:0 0 8px;">Keep reading</h2>
+                <p style="margin:0;">{items}</p>
+            </div>
+        </section>
+"""
+
+
 def nav_html(current_path):
     links = []
     for label, href in NAV_ITEMS:
@@ -165,9 +184,8 @@ def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.
     <meta name="geo.region" content="PK-SD">
     <meta name="geo.placename" content="Karachi">
     <link rel="icon" href="/assets/favicon-imadi.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/assets/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+    <style>@font-face{{font-family:Inter;src:url(/assets/inter-var.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;}}</style>
     <meta property="og:image" content="{SITE_URL}{image}">
     <script>try{{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}</script>
     <link rel="stylesheet" href="/assets/site.css">
@@ -215,7 +233,7 @@ def page(title, description, path, body, extra_head="", extra_scripts="", ld=Non
 
             <footer class="foot">
                 <span>© <span id="year"></span> IMADI Tech · Maria Aziz · Karachi, Pakistan</span>
-                <span class="foot-links"><a href="/services/">Services</a> · <a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/faq/">FAQ</a> · <a href="/blog/">Blog</a> · <a href="/whatsapp-chatbot-developer-pakistan/">Developer</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · WhatsApp <a href="https://wa.me/923153205484" target="_blank" rel="noopener">0315 3205484</a></span>
+                <span class="foot-links"><a href="/services/">Services</a> · <a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/what-is-whatsapp-automation/">What it is</a> · <a href="/work/">Work</a> · <a href="/faq/">FAQ</a> · <a href="/blog/">Blog</a> · <a href="/whatsapp-chatbot-developer-pakistan/">Developer</a> · <a href="/ai-automation-for-business/">For US &amp; UK businesses</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · WhatsApp <a href="https://wa.me/923153205484" target="_blank" rel="noopener">0315 3205484</a></span>
                 <span class="foot-brand"><img src="/assets/imadi-mark.png" alt="" width="18" height="16"> Founder, IMADI Tech</span>
             </footer>
         </div>
