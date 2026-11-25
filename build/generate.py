@@ -178,9 +178,14 @@ def head(title, description, path, extra="", ld=None, image="/assets/maria-aziz.
     <meta name="twitter:description" content="{description}">
     <meta name="twitter:image" content="{SITE_URL}{image}">
     <meta name="author" content="Maria Aziz">
-    <!-- Google tag (Analytics: IMADI Tech / imadi.tech) -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KM4TM5SP"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){{dataLayer.push(arguments);}}gtag('js', new Date());</script>
+    <!-- Google tag (Analytics: IMADI Tech / imadi.tech). Queued immediately,
+         fetched once the page has painted and the browser is idle, so the tag
+         never sits between the visitor and the first paint. -->
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){{dataLayer.push(arguments);}}gtag('js', new Date());
+    (function(){{var done=false;function load(){{if(done)return;done=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-KM4TM5SP';document.head.appendChild(s);}}
+    function schedule(){{if(window.requestIdleCallback){{requestIdleCallback(load,{{timeout:2000}});}}else{{setTimeout(load,800);}}}}
+    if(document.readyState==='complete'){{schedule();}}else{{window.addEventListener('load',schedule);}}
+    ['pointerdown','keydown','touchstart'].forEach(function(ev){{window.addEventListener(ev,load,{{once:true,passive:true}});}});}})();</script>
     <meta name="geo.region" content="PK-SD">
     <meta name="geo.placename" content="Karachi">
     <link rel="icon" href="/assets/favicon-imadi.png" type="image/png">
@@ -203,11 +208,11 @@ def page(title, description, path, body, extra_head="", extra_scripts="", ld=Non
         <header class="side">
             <div class="side-top">
                 <a class="side-id" href="/">
-                    <img class="side-photo" src="/assets/maria-aziz.jpg?v=3" alt="Maria Aziz, founder of IMADI Tech, Karachi" width="88" height="88">
+                    <img class="side-photo" src="/assets/maria-aziz-264.webp" alt="Maria Aziz, founder of IMADI Tech, Karachi" width="88" height="88" decoding="async">
                     <span class="side-name">{SIDE_NAME}</span>
                 </a>
                 <div class="brand" aria-label="Founder, IMADI Tech">
-                    <img src="/assets/imadi-mark.png" alt="IMADI Tech logo" width="30" height="26">
+                    <img src="/assets/imadi-mark-90.webp" alt="IMADI Tech logo" width="30" height="26" decoding="async">
                     <span class="brand-text"><span class="brand-name">IMADI<span>TECH</span></span><span class="brand-role">Founder</span></span>
                 </div>
                 <p class="side-title">{SIDE_TITLE}</p>
@@ -234,13 +239,13 @@ def page(title, description, path, body, extra_head="", extra_scripts="", ld=Non
             <footer class="foot">
                 <span>© <span id="year"></span> IMADI Tech · Maria Aziz · Karachi, Pakistan</span>
                 <span class="foot-links"><a href="/services/">Services</a> · <a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/what-is-whatsapp-automation/">What it is</a> · <a href="/work/">Work</a> · <a href="/faq/">FAQ</a> · <a href="/blog/">Blog</a> · <a href="/whatsapp-chatbot-developer-pakistan/">Developer</a> · <a href="/ai-automation-for-business/">For US &amp; UK businesses</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · WhatsApp <a href="https://wa.me/923153205484" target="_blank" rel="noopener">0315 3205484</a></span>
-                <span class="foot-brand"><img src="/assets/imadi-mark.png" alt="" width="18" height="16"> Founder, IMADI Tech</span>
+                <span class="foot-brand"><img src="/assets/imadi-mark-90.webp" alt="" width="18" height="16" loading="lazy" decoding="async"> Founder, IMADI Tech</span>
             </footer>
         </div>
     </div>
     <a class="wa-fab" href="{WA_LINK}" target="_blank" rel="noopener" aria-label="Say hi to Marist, my AI assistant, on WhatsApp">{ICON_WA}<span class="wa-fab-text"><strong>Say hi to Marist</strong><small>AI assistant · WhatsApp</small></span></a>
-    <script src="/assets/site.js"></script>
-    <script src="/assets/marist-chat.js"></script>
+    <script defer src="/assets/site.js"></script>
+    <script defer src="/assets/marist-chat.js"></script>
 {extra_scripts}</body>
 
 </html>

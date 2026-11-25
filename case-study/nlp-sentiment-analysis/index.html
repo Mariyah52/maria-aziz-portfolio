@@ -18,9 +18,14 @@
     <meta name="twitter:description" content="Simple positive/negative scoring misses the real emotions in travel writing. I compared two AI models (BERT and LSTM) to detect emotions like joy,…">
     <meta name="twitter:image" content="https://www.imadi.tech/assets/maria-aziz.jpg?v=3">
     <meta name="author" content="Maria Aziz">
-    <!-- Google tag (Analytics: IMADI Tech / imadi.tech) -->
-    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-KM4TM5SP"></script>
-    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());</script>
+    <!-- Google tag (Analytics: IMADI Tech / imadi.tech). Queued immediately,
+         fetched once the page has painted and the browser is idle, so the tag
+         never sits between the visitor and the first paint. -->
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+    (function(){var done=false;function load(){if(done)return;done=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtm.js?id=GTM-KM4TM5SP';document.head.appendChild(s);}
+    function schedule(){if(window.requestIdleCallback){requestIdleCallback(load,{timeout:2000});}else{setTimeout(load,800);}}
+    if(document.readyState==='complete'){schedule();}else{window.addEventListener('load',schedule);}
+    ['pointerdown','keydown','touchstart'].forEach(function(ev){window.addEventListener(ev,load,{once:true,passive:true});});})();</script>
     <meta name="geo.region" content="PK-SD">
     <meta name="geo.placename" content="Karachi">
     <link rel="icon" href="/assets/favicon-imadi.png" type="image/png">
@@ -236,11 +241,11 @@
         <header class="side">
             <div class="side-top">
                 <a class="side-id" href="/">
-                    <img class="side-photo" src="/assets/maria-aziz.jpg?v=3" alt="Maria Aziz, founder of IMADI Tech, Karachi" width="88" height="88">
+                    <img class="side-photo" src="/assets/maria-aziz-264.webp" alt="Maria Aziz, founder of IMADI Tech, Karachi" width="88" height="88" decoding="async">
                     <span class="side-name">Maria Aziz</span>
                 </a>
                 <div class="brand" aria-label="Founder, IMADI Tech">
-                    <img src="/assets/imadi-mark.png" alt="IMADI Tech logo" width="30" height="26">
+                    <img src="/assets/imadi-mark-90.webp" alt="IMADI Tech logo" width="30" height="26" decoding="async">
                     <span class="brand-text"><span class="brand-name">IMADI<span>TECH</span></span><span class="brand-role">Founder</span></span>
                 </div>
                 <p class="side-title">AI Product Founder & Technology Entrepreneur</p>
@@ -312,13 +317,13 @@
             <footer class="foot">
                 <span>© <span id="year"></span> IMADI Tech · Maria Aziz · Karachi, Pakistan</span>
                 <span class="foot-links"><a href="/services/">Services</a> · <a href="/whatsapp-automation/">WhatsApp automation</a> · <a href="/what-is-whatsapp-automation/">What it is</a> · <a href="/work/">Work</a> · <a href="/faq/">FAQ</a> · <a href="/blog/">Blog</a> · <a href="/whatsapp-chatbot-developer-pakistan/">Developer</a> · <a href="/ai-automation-for-business/">For US &amp; UK businesses</a> · <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="mailto:maria@imadi.tech">maria@imadi.tech</a> · WhatsApp <a href="https://wa.me/923153205484" target="_blank" rel="noopener">0315 3205484</a></span>
-                <span class="foot-brand"><img src="/assets/imadi-mark.png" alt="" width="18" height="16"> Founder, IMADI Tech</span>
+                <span class="foot-brand"><img src="/assets/imadi-mark-90.webp" alt="" width="18" height="16" loading="lazy" decoding="async"> Founder, IMADI Tech</span>
             </footer>
         </div>
     </div>
     <a class="wa-fab" href="https://wa.me/923421393991?text=Hi%20Marist!" target="_blank" rel="noopener" aria-label="Say hi to Marist, my AI assistant, on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.94.95-3.48-.22-.36A9.4 9.4 0 0 1 2.6 12C2.6 6.8 6.84 2.56 12.06 2.56c2.52 0 4.9.99 6.68 2.77A9.38 9.38 0 0 1 21.5 12c0 5.2-4.24 9.44-9.45 9.44M20.1 3.9A11.3 11.3 0 0 0 12.05.6C5.78.6.67 5.71.67 12c0 2 .52 3.97 1.52 5.7L.57 23.4l5.83-1.53A11.4 11.4 0 0 0 12.04 23.4h.01c6.27 0 11.38-5.11 11.38-11.4 0-3.04-1.18-5.9-3.33-8.1"/></svg><span class="wa-fab-text"><strong>Say hi to Marist</strong><small>AI assistant · WhatsApp</small></span></a>
-    <script src="/assets/site.js"></script>
-    <script src="/assets/marist-chat.js"></script>
+    <script defer src="/assets/site.js"></script>
+    <script defer src="/assets/marist-chat.js"></script>
     <script src="/assets/projects-data.js"></script>
     <script src="/assets/media-data.js"></script>
     <script src="/assets/media-loader.js"></script>
