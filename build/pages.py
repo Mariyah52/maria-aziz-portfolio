@@ -854,18 +854,31 @@ for p in sitemap_paths:
 sitemap_xml += "</urlset>\n"
 write("/sitemap.xml", sitemap_xml)
 
+# One group, so every rule here applies to every crawler.
+#
+# The AI crawlers and tokens below are deliberately NOT given groups of
+# their own. A crawler obeys only the most specific group matching its
+# name, so naming GPTBot or ClaudeBot separately would quietly exempt them
+# from everything written for "*". Unnamed, they fall under "*" and get the
+# same full access, which is what we want:
+#
+#   OpenAI      GPTBot, OAI-SearchBot, ChatGPT-User
+#   Anthropic   ClaudeBot, Claude-SearchBot, Claude-User
+#   Perplexity  PerplexityBot, Perplexity-User
+#   Google      Google-Extended, Google-CloudVertexBot
+#   Apple       Applebot, Applebot-Extended
+#   Meta        meta-externalagent
+#   Others      CCBot (Common Crawl), Amazonbot
+#
+# Google-Extended and Applebot-Extended never fetch anything; they are
+# permission tokens for whether already-crawled pages may be used in
+# Gemini and Apple Intelligence. Allow: / below answers yes to both.
+#
+# If anything is ever closed off, add the Disallow here and it holds for
+# every crawler, AI ones included.
 robots_txt = f"""User-agent: *
 Allow: /
-
-# AI search crawlers are welcome too
-User-agent: GPTBot
-User-agent: OAI-SearchBot
-User-agent: ChatGPT-User
-User-agent: ClaudeBot
-User-agent: Claude-SearchBot
-User-agent: PerplexityBot
-User-agent: Google-Extended
-Allow: /
+Disallow:
 
 Sitemap: {SITE_URL_PLACEHOLDER}/sitemap.xml
 """
