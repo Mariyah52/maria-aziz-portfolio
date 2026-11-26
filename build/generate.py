@@ -47,7 +47,7 @@ SITE_GRAPH = [
                         "It builds WhatsApp chatbots and lead automation, custom ERP and business management "
                         "systems, and SaaS products for small and mid-sized businesses."),
         "address": {"@type": "PostalAddress", "addressLocality": "Karachi", "addressRegion": "Sindh", "addressCountry": "PK"},
-        "areaServed": ["Pakistan", "United Arab Emirates", "United Kingdom", "Kenya"],
+        "areaServed": ["Pakistan", "United Arab Emirates", "United Kingdom", "Canada", "Kenya"],
         "knowsAbout": ["WhatsApp chatbots", "WhatsApp Business API", "Lead follow-up automation",
                        "Business process automation", "ERP systems", "SaaS development", "AI chatbots"],
         "sameAs": ["https://www.facebook.com/profile.php?id=61595887345917",
@@ -67,7 +67,8 @@ SITE_GRAPH = [
         "description": ("Maria Aziz is the founder of IMADI Tech, an AI automation company in Karachi, Pakistan. "
                         "She builds WhatsApp chatbots and lead automation, custom ERP and business management "
                         "systems, and SaaS products, designing the architecture and writing the software herself. "
-                        "Her client platforms are live and in daily use in Pakistan, the United Kingdom and Kenya."),
+                        "Her client platforms are live and in daily use in Pakistan, the United Kingdom and Kenya, "
+                        "and she has delivered client websites in Canada."),
         "homeLocation": {"@type": "Place", "name": "Karachi, Pakistan"},
         "workLocation": {"@type": "Place", "name": "Karachi, Sindh, Pakistan"},
         "knowsLanguage": ["en", "ur"],

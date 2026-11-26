@@ -241,8 +241,8 @@ def services_hub():
             <div class="eyebrow">IMADI Tech · Services</div>
             <h1>AI automation and software for growing businesses</h1>
             <p>IMADI Tech, founded by Maria Aziz in Karachi, builds automation that saves your team hours every week: WhatsApp chatbots,
-            Instagram and Facebook marketing bots, email follow-ups, and custom ERP and business software. Our systems are live for businesses
-            in Pakistan, the UK and Kenya.</p>
+            Instagram and Facebook marketing bots, email follow-ups, and custom ERP and business software. Our client work is live for businesses
+            in Pakistan, the UK, Canada and Kenya.</p>
             <div class="hero-actions" style="margin-top:22px;">
                 <a class="btn primary" href="{WA_MARIA}" target="_blank" rel="noopener" data-track="services_whatsapp">Tell us what you want to automate</a>
                 <a class="btn" href="/work/">See our work</a>

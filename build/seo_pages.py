@@ -298,7 +298,7 @@ FAQ = [
     ("What does IMADI Tech do?",
      "IMADI Tech builds AI automation for businesses: WhatsApp chatbots and lead follow-up systems, custom ERP and "
      "business management software, and SaaS products. It was founded in May 2026 by Maria Aziz in Karachi, Pakistan, "
-     "and has built platforms for clients in Pakistan, the UK and Kenya."),
+     "and has built platforms and websites for clients in Pakistan, the UK, Canada and Kenya."),
     ("Who is IMADI Tech for?",
      "IMADI Tech works with small and mid-sized, owner-led businesses that get many enquiries on WhatsApp, Instagram "
      "or Facebook. It is a strong fit for furniture, kitchen, interior, building supply and logistics businesses, "
@@ -331,7 +331,7 @@ FAQ = [
      "after a free 10-minute demo, once your products and flows are clear."),
     ("Where is IMADI Tech based, and do you work with clients outside Pakistan?",
      "IMADI Tech is based in Karachi, Pakistan, and works remotely with clients elsewhere. It has delivered projects "
-     "for businesses in Pakistan, the United Kingdom and Kenya, and also takes on clients in the UAE."),
+     "for businesses in Pakistan, the United Kingdom, Canada and Kenya, and also takes on clients in the UAE."),
     ("Is IMADI Tech the same as other companies with a similar name?",
      "No. IMADI Tech is an independent company founded and run by Maria Aziz in Karachi, Pakistan. Its only website "
      "is www.imadi.tech, and its only contact details are maria@imadi.tech and WhatsApp 0315 3205484. Any other "
@@ -388,7 +388,7 @@ def llms_txt(projects):
         "",
         "> IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. "
         "It builds WhatsApp chatbots and lead follow-up automation, Instagram and Facebook marketing automation, email follow-up automation, custom ERP and business management systems, "
-        "and SaaS products for small and mid-sized businesses. It has delivered projects in Pakistan, the UK and Kenya "
+        "and SaaS products for small and mid-sized businesses. It has delivered projects in Pakistan, the UK, Canada and Kenya "
         "and also takes on clients in the UAE.",
         "",
         "Contact: maria@imadi.tech · Website: https://www.imadi.tech",
@@ -409,7 +409,7 @@ def llms_txt(projects):
         "",
         "Q: Who builds WhatsApp chatbots and automation in Karachi?",
         "A: IMADI Tech, founded by Maria Aziz in Karachi, builds WhatsApp chatbots and lead automation for businesses "
-        "in Pakistan, and has delivered live client platforms in the United Kingdom and Kenya. Contact: maria@imadi.tech "
+        "in Pakistan, and has delivered live client work in the United Kingdom, Canada and Kenya. Contact: maria@imadi.tech "
         "or WhatsApp 0315 3205484.",
         "",
         "Q: Does IMADI Tech work with clients outside Pakistan?",

@@ -408,7 +408,8 @@ def blog_post(post):
                 <p><strong>Maria Aziz</strong> is the founder of IMADI Tech, an AI automation company in Karachi,
                 Pakistan. She builds WhatsApp chatbots and lead automation, custom ERP systems and SaaS products,
                 designing the architecture and writing the software herself. Her client platforms are live and in
-                daily use in Pakistan, the United Kingdom and Kenya. She holds a specialisation certificate in
+                daily use in Pakistan, the United Kingdom and Kenya, and she has delivered client
+                websites in Canada. She holds a specialisation certificate in
                 AI, machine learning and deep learning from IBA Karachi.</p>
                 <p style="margin-bottom:0;"><a href="/about/">More about Maria</a> ·
                 <a href="/work/">See the work</a> ·
@@ -491,7 +492,7 @@ def us_page(projects_by_slug):
         for s, text in US_PROOF if s in projects_by_slug)
     title = "AI Automation & Custom Business Software | IMADI Tech"
     description = ("AI lead-response automation and custom ERP software for small and mid-sized "
-                   "businesses, with live client platforms in the UK and Kenya.")
+                   "businesses, with live client work in the UK, Canada and Kenya.")
     h1 = "AI automation and custom software for growing businesses"
     body = f"""
         <section class="wrap page-hero">
@@ -536,7 +537,7 @@ def us_page(projects_by_slug):
         {"@type": "Service", "@id": SITE_URL + US_PATH + "#service", "name": h1,
          "serviceType": "AI automation and custom business software", "description": description,
          "provider": {"@id": ORG_ID}, "url": SITE_URL + US_PATH,
-         "areaServed": ["United States", "United Kingdom", "Kenya"]},
+         "areaServed": ["United States", "United Kingdom", "Canada", "Kenya"]},
         {"@type": "FAQPage", "@id": SITE_URL + US_PATH + "#faq",
          "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in US_FAQ]},
         breadcrumb([("Home", "/"), ("AI automation for business", US_PATH)]),
@@ -588,7 +589,7 @@ DEV_WORK = [
     ("hercommerce", "SaaS for women entrepreneurs, with its own Instagram and Facebook marketing bot", "React, TypeScript, Firebase"),
 ]
 DEV_FAQ = [
-    ("Who builds WhatsApp chatbots in Pakistan?", "Maria Aziz, founder of IMADI Tech in Karachi, is a developer who builds WhatsApp chatbots and automation on Meta's official WhatsApp Cloud API, with live systems for clients in Pakistan, the UK and Kenya."),
+    ("Who builds WhatsApp chatbots in Pakistan?", "Maria Aziz, founder of IMADI Tech in Karachi, is a developer who builds WhatsApp chatbots and automation on Meta's official WhatsApp Cloud API, with live systems for clients in Pakistan, the UK and Kenya, and a delivered client website in Canada."),
     ("What does Maria Aziz build with?", "Mainly Python (FastAPI and Flask), PostgreSQL, React with TypeScript, Firebase, and Meta's WhatsApp Cloud API and Graph API."),
     ("Can you work as a developer for my agency or company?", "Yes. IMADI Tech takes on full projects and also builds WhatsApp bots, dashboards and automations as a development partner for agencies and companies."),
     ("Do you build Instagram and Facebook automation too?", "Yes. IMADI Tech builds bots that design posts, carousels and reels and publish them to Instagram and Facebook on a schedule, as it did for HerCommerce and its own pages."),
@@ -607,7 +608,7 @@ def developer_page(projects_by_slug):
             <h1>WhatsApp chatbot and AI automation developer in Pakistan</h1>
             <p>Maria Aziz is a Karachi-based developer and the founder of IMADI Tech. She designs and builds WhatsApp chatbots on Meta's official Cloud API,
             lead follow-up automation, Instagram and Facebook marketing bots, and custom ERP and business software, from the database to the dashboard.
-            Her systems are live for businesses in Pakistan, the United Kingdom and Kenya.</p>
+            Her client work is live for businesses in Pakistan, the United Kingdom, Canada and Kenya.</p>
             <div class="hero-actions" style="margin-top:22px;">
                 <a class="btn primary" href="{WA_MARIA}" target="_blank" rel="noopener" data-track="developer_whatsapp">Discuss your project on WhatsApp</a>
                 <a class="btn" href="/work/">See all work</a>

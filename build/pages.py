@@ -43,7 +43,7 @@ home_body = """
             <div>
                 <div class="eyebrow">Maria Aziz · Founder, IMADI Tech · Karachi</div>
                 <h1 style="font:700 clamp(2.4rem,5.6vw,4.2rem)/1.05 var(--display);letter-spacing:-.03em;margin:8px 0 20px;">AI WhatsApp Automation<br>&amp; Custom Software, Karachi</h1>
-                <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">I build AI-powered business software: WhatsApp chatbots and automation, custom ERP and business management systems, and SaaS products. Since May 2026 I have delivered 6 client platforms for businesses in Pakistan, the UK and Kenya, all live and in daily use, working across Python, FastAPI, JavaScript, Firebase, PostgreSQL and LLM integration.</p>
+                <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">I build AI-powered business software: WhatsApp chatbots and automation, custom ERP and business management systems, and SaaS products. Since May 2026 I have delivered 6 client platforms for businesses in Pakistan, the UK and Kenya, all live and in daily use, plus a client website in Canada, working across Python, FastAPI, JavaScript, Firebase, PostgreSQL and LLM integration.</p>
                 <p style="color:var(--body);max-width:580px;margin:0 0 30px;">My work begins with understanding the problem. I analyse workflows, users and operational challenges, then design practical technology solutions that can be built, tested and improved.</p>
                 <div class="hero-actions">
                     <a class="btn primary" href="/contact/?source=homepage" data-track="primary_cta">Discuss Your Project <span aria-hidden="true">↗</span></a>
@@ -59,7 +59,7 @@ home_body = """
             <div class="card">
                 <div class="eyebrow">IMADI Tech in short</div>
                 <h2 id="in-short" style="margin-top:6px;">What IMADI Tech does</h2>
-                <p>IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. It builds WhatsApp chatbots and lead automation, custom ERP and business management systems, and SaaS products for small and mid-sized businesses, with projects delivered in Pakistan, the UK and Kenya.</p>
+                <p>IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. It builds WhatsApp chatbots and lead automation, custom ERP and business management systems, and SaaS products for small and mid-sized businesses, with projects delivered in Pakistan, the UK, Canada and Kenya.</p>
                 <p style="margin-bottom:0;">For businesses that sell through WhatsApp, Instagram and Facebook ads, IMADI Tech sets up an assistant that replies to every enquiry instantly, shares designs and price ranges, sends quotations, follows up with customers who go quiet, and shows every lead in one dashboard. <a href="/whatsapp-automation/">See how WhatsApp lead automation works</a> or read the <a href="/faq/">frequently asked questions</a>.</p>
             </div>
         </section>
@@ -80,7 +80,7 @@ home_body = """
             <div class="stat-band">
                 <div class="stat"><span class="stat-num">6</span><span class="stat-label">Client platforms built</span></div>
                 <div class="stat"><span class="stat-num">6</span><span class="stat-label">Live in daily use</span></div>
-                <div class="stat"><span class="stat-num">3</span><span class="stat-label">Countries: Pakistan, UK, Kenya</span></div>
+                <div class="stat"><span class="stat-num">4</span><span class="stat-label">Countries: Pakistan, UK, Canada, Kenya</span></div>
                 <div class="stat"><span class="stat-num">358</span><span class="stat-label">Automated tests on one ERP</span><span class="stat-note">Checks that run automatically after every change</span></div>
             </div>
         </section>
@@ -133,7 +133,7 @@ HOME_FAQ = [
     ("Who builds WhatsApp chatbots and automation in Karachi?",
      "IMADI Tech, founded by Maria Aziz in Karachi, Pakistan, builds WhatsApp chatbots and automation for lead "
      "capture, quotations and follow-ups. Since May 2026 it has delivered client platforms for businesses in "
-     "Pakistan, the UK and Kenya, all live and in daily use."),
+     "Pakistan, the UK and Kenya, all live and in daily use, and a client website in Canada."),
     ("Who is Maria Aziz?",
      "Maria Aziz is the founder of IMADI Tech, based in Karachi, Pakistan. She builds AI-powered business software, "
      "including WhatsApp chatbots, ERP systems and SaaS products, and studied at the University of Karachi with an "
@@ -144,7 +144,7 @@ HOME_FAQ = [
      "after hours or get missed by staff."),
     ("Does IMADI Tech work with clients outside Pakistan?",
      "Yes. IMADI Tech works remotely from Karachi and has delivered WhatsApp bots, ERP systems and SaaS platforms "
-     "for businesses in Pakistan, the United Kingdom and Kenya. It also takes on clients in the UAE."),
+     "for businesses in Pakistan, the United Kingdom, Canada and Kenya. It also takes on clients in the UAE."),
     ("What technology does IMADI Tech use?",
      "IMADI Tech builds with Python, FastAPI, Flask, PostgreSQL, React, TypeScript and Firebase, connects to "
      "Meta's WhatsApp Cloud API, and integrates large language models for AI chat and automation."),
@@ -182,11 +182,11 @@ about_body = """
             <h1>Maria Aziz</h1>
             <p style="font-weight:700;color:var(--ink);font-size:1.15rem;margin:-6px 0 20px;">AI Product Founder &amp; Technology Entrepreneur</p>
             <p>I build practical technology solutions around real-world problems, working across AI-powered products, machine learning, natural language processing, automation, conversational systems and SaaS.</p>
-            <p>My approach begins with understanding the people, processes and challenges behind a problem before selecting the technology. Since May 2026, I have built six client platforms for businesses in Pakistan, the United Kingdom and Kenya, all six live in daily use, alongside my own SaaS products.</p>
+            <p>My approach begins with understanding the people, processes and challenges behind a problem before selecting the technology. Since May 2026, I have delivered seven client projects for businesses in Pakistan, the United Kingdom, Canada and Kenya, every one of them live, alongside my own SaaS products.</p>
             <div style="display:flex;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.86rem;margin-top:22px;">
                 <span>📍 Karachi, Sindh, Pakistan</span>
                 <span>🏢 Founder &amp; AI Specialist</span>
-                <span>🌍 Clients in Pakistan, UK &amp; Kenya</span>
+                <span>🌍 Clients in Pakistan, UK, Canada &amp; Kenya</span>
                 <span>🎓 AI/ML/DL Specialisation, IBA Karachi</span>
             </div>
         </section>
@@ -331,7 +331,7 @@ write("/about/index.html", page(
     # someone searching this common name could not tell it was the right
     # person. Both now lead with the facts that identify her.
     "Maria Aziz \u2014 AI Automation Founder in Karachi | IMADI Tech",
-    "Maria Aziz founded IMADI Tech in Karachi. She builds WhatsApp chatbots, ERP systems and SaaS used daily by businesses in Pakistan, the UK and Kenya.",
+    "Maria Aziz founded IMADI Tech in Karachi. She builds WhatsApp chatbots, ERP systems, SaaS and websites for businesses in Pakistan, the UK, Canada and Kenya.",
     "/about/",
     about_body + related(
         ("/work/", "The projects behind this"),
