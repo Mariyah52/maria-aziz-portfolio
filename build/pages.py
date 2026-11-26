@@ -325,8 +325,13 @@ about_body = """
         </section>
 """
 write("/about/index.html", page(
-    "About Maria Aziz, Founder | IMADI Tech",
-    "Maria Aziz is an AI Product Founder and Technology Entrepreneur building practical technology around real-world problems.",
+    # This page takes 92 of the 93 impressions for the query "maria aziz" and
+    # sits around position 5, but only one visitor in ninety clicks it. The
+    # old title and description could have described any founder anywhere, so
+    # someone searching this common name could not tell it was the right
+    # person. Both now lead with the facts that identify her.
+    "Maria Aziz \u2014 AI Automation Founder in Karachi | IMADI Tech",
+    "Maria Aziz founded IMADI Tech in Karachi. She builds WhatsApp chatbots, ERP systems and SaaS used daily by businesses in Pakistan, the UK and Kenya.",
     "/about/",
     about_body + related(
         ("/work/", "The projects behind this"),
