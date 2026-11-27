@@ -158,6 +158,69 @@ window.PROJECTS = [
     ]
   },
   {
+    slug: "farmazona",
+    name: "Farmaz'ona Parlour Dashboard",
+    tagline: "Client Work · Business Automation",
+    client: "Farmaz'ona, beauty parlour · Karachi, Pakistan",
+    period: "Nov 2026 – Present",
+    categories: ["client", "automation"],
+    featured: true,
+    status: "Live",
+    problem: "A beauty parlour needed billing, client records, stock and the daily closing in one place its staff could reach from a phone, with the bill going straight to the customer.",
+    challenge: "A parlour runs on a long price list and a small team on their feet, so the system had to handle 94 services, several staff logins and the day's closing without anyone sitting at a computer.",
+    solution: "A dashboard that bills a client in a few taps, sends the bill on WhatsApp, keeps client history and inventory, and closes the day with a summary the owner can check from anywhere.",
+    features: [
+      "Billing against a 94-service rate list",
+      "Bills sent to the customer on WhatsApp",
+      "Client records and visit history",
+      "Inventory and stock tracking",
+      "Separate staff logins",
+      "Daily closing and analysis for the owner"
+    ],
+    myRole: "Founder & AI Specialist. Designed and built the whole system, deployed it, and moved the database to cut page times after the client's testing round.",
+    technology: ["Python", "Flask", "PostgreSQL", "Render", "WhatsApp"],
+    architecture: ["Flask application", "PostgreSQL database", "Staff authentication", "WhatsApp bill delivery", "Owner analytics and daily closing"],
+    innovation: "Built phone-first, because parlour staff are standing with a client in front of them rather than sitting at a desk.",
+    results: [
+      "Live for the client after a full testing round",
+      "Page times cut from about a second to roughly 300ms by moving the database into the same region as the app",
+      "94-service rate list in use",
+      "Phase 2 agreed with the client: a WhatsApp booking bot"
+    ],
+    evidence: []
+  },
+  {
+    slug: "ai-commerce-engine",
+    name: "AI Commerce Engine: ERP to Online Store",
+    tagline: "Client Work · Operations & Quality Assurance",
+    client: "Fashion & lifestyle retailer · Kenya",
+    period: "Oct 2026 – Present",
+    categories: ["client", "automation"],
+    featured: false,
+    status: "Live",
+    problem: "A multi-branch retailer runs a pipeline that pulls branch stock out of its ERP, has AI write the product descriptions, and publishes them to its online store. Once something like that runs every day, the hard part stops being the build and becomes keeping it correct.",
+    challenge: "Stock arrives from several branches at different times, images have to land on the right product, and AI-written descriptions have to be checked rather than trusted.",
+    solution: "I run the daily operations and quality checks on the live pipeline: product images reaching the store properly, AI descriptions coming out right, stock syncing branch by branch, new products published, and branch-wise stock reporting for the team.",
+    features: [
+      "Twice-daily monitoring so nothing stops running",
+      "Checks that product images reach the store correctly",
+      "Review of AI-written product descriptions",
+      "Branch-wise stock reporting: snapshot times, product and unit counts, and gaps in incoming data",
+      "Publishing new products and website imagery",
+      "Applying code fixes to the pipeline"
+    ],
+    myRole: "Founder & AI Specialist, on operations and quality assurance. I did not build this platform — its codebase belongs to the client's team and I work on it as a collaborator. My work is the daily running, testing, reporting and fixes that keep a live AI commerce pipeline correct.",
+    technology: ["Python", "Shopify", "AI content generation", "ERP integration", "Git"],
+    architecture: ["Branch ERP data feed", "Product sync", "AI description generation", "Online store", "Admin dashboard"],
+    innovation: "The demanding part here is not the pipeline but the checking: an AI writing thousands of product descriptions needs someone deciding, every day, whether what it wrote is right.",
+    results: [
+      "Running every day since October 2026",
+      "Monitored twice daily",
+      "Branch-wise stock reporting delivered to the client's team"
+    ],
+    evidence: []
+  },
+  {
     slug: "renaz",
     name: "ReNaz: WhatsApp Scrap Collection Platform",
     tagline: "Client Work · Conversational Systems",
@@ -407,6 +470,14 @@ window.PLAIN = {
   "firmm-traders": {
     "problem": "A Canadian wholesale food distributor's site looked dated and showed almost nothing of the range it actually carries.",
     "solution": "I built a custom WordPress theme in their colours with all 79 products, pack sizes, brand pages and an enquiry form, and took it live on their own hosting."
+  },
+  "farmazona": {
+    "problem": "A beauty parlour needed billing, client records, stock and the daily closing in one place, reachable from a phone.",
+    "solution": "A dashboard that bills against a 94-service list, sends the bill on WhatsApp, tracks clients and stock, and closes the day for the owner."
+  },
+  "ai-commerce-engine": {
+    "problem": "A live pipeline moves a retailer's branch stock from its ERP to its online store, with AI writing the descriptions. Running it correctly every day is the hard part.",
+    "solution": "I run the daily operations and checks: images landing right, AI descriptions reviewed, stock syncing branch by branch, products published, fixes applied."
   },
   "renaz": {
     "problem": "The client needed data on how much scrap comes from across Karachi, an easy way to collect it, and verified collectors who can enter gated communities.",

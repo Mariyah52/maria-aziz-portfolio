@@ -35,7 +35,7 @@ def ps_card(slug):
             f'<p><b class="ps-l ps-s">Solution</b>{x["solution"]}</p></div>'
             f'<span class="arrow">Read the {_NAMES[slug].split(":")[0]} case study →</span></a>')
 
-HOME_SOLVED = "".join(ps_card(s_) for s_ in ["alico", "firmm-traders", "uk-logistics-whatsapp", "company-monitor", "renaz", "uk-logistics-erp", "hercommerce"])
+HOME_SOLVED = "".join(ps_card(s_) for s_ in ["alico", "firmm-traders", "farmazona", "uk-logistics-whatsapp", "company-monitor", "renaz", "uk-logistics-erp", "hercommerce"])
 
 # ---------------------------------------------------------------- HOME -----
 home_body = """
@@ -78,8 +78,8 @@ home_body = """
 
         <section class="wrap section reveal" style="padding-top:0;">
             <div class="stat-band">
-                <div class="stat"><span class="stat-num">6</span><span class="stat-label">Client platforms built</span></div>
-                <div class="stat"><span class="stat-num">6</span><span class="stat-label">Live in daily use</span></div>
+                <div class="stat"><span class="stat-num">7</span><span class="stat-label">Client platforms built</span></div>
+                <div class="stat"><span class="stat-num">7</span><span class="stat-label">Live</span></div>
                 <div class="stat"><span class="stat-num">4</span><span class="stat-label">Countries: Pakistan, UK, Canada, Kenya</span></div>
                 <div class="stat"><span class="stat-num">358</span><span class="stat-label">Automated tests on one ERP</span><span class="stat-note">Checks that run automatically after every change</span></div>
             </div>
@@ -362,8 +362,9 @@ def _esc(s):
 WORK_GROUPS = [
     {"title": "Client Work",
      "intro": "Real businesses, real problems, systems in daily use.",
-     "slugs": ["alico", "firmm-traders", "uk-logistics-erp", "uk-logistics-whatsapp",
-               "renaz", "company-monitor", "shah"]},
+     "slugs": ["alico", "firmm-traders", "farmazona", "uk-logistics-erp",
+               "uk-logistics-whatsapp", "renaz", "company-monitor", "shah",
+               "ai-commerce-engine"]},
     {"title": "My Own Products",
      "intro": "Products I built for problems I saw around me.",
      "slugs": ["hercommerce", "child-friendly-city-index"]},
