@@ -35,7 +35,7 @@ def ps_card(slug):
             f'<p><b class="ps-l ps-s">Solution</b>{x["solution"]}</p></div>'
             f'<span class="arrow">Read the {_NAMES[slug].split(":")[0]} case study →</span></a>')
 
-HOME_SOLVED = "".join(ps_card(s_) for s_ in ["alico", "uk-logistics-whatsapp", "company-monitor", "renaz", "uk-logistics-erp", "hercommerce"])
+HOME_SOLVED = "".join(ps_card(s_) for s_ in ["alico", "firmm-traders", "uk-logistics-whatsapp", "company-monitor", "renaz", "uk-logistics-erp", "hercommerce"])
 
 # ---------------------------------------------------------------- HOME -----
 home_body = """
@@ -362,8 +362,8 @@ def _esc(s):
 WORK_GROUPS = [
     {"title": "Client Work",
      "intro": "Real businesses, real problems, systems in daily use.",
-     "slugs": ["alico", "uk-logistics-erp", "uk-logistics-whatsapp", "renaz",
-               "company-monitor", "shah"]},
+     "slugs": ["alico", "firmm-traders", "uk-logistics-erp", "uk-logistics-whatsapp",
+               "renaz", "company-monitor", "shah"]},
     {"title": "My Own Products",
      "intro": "Products I built for problems I saw around me.",
      "slugs": ["hercommerce", "child-friendly-city-index"]},

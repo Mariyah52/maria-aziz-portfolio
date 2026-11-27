@@ -21,7 +21,7 @@ window.MEDIA_FORM_URL = "";
 
 window.MEDIA = {
   videos: [
-    { title: "FIRMM Traders: wholesale food distribution site", project: "", caption: "Live client site · firmmtraders.com", src: "/assets/media/firmm-traders.mp4", webm: "/assets/media/firmm-traders.webm", poster: "/assets/media/firmm-traders-poster.jpg" },
+    { title: "FIRMM Traders: wholesale food distribution site", project: "firmm-traders", caption: "Live client site · firmmtraders.com", src: "/assets/media/firmm-traders.mp4", webm: "/assets/media/firmm-traders.webm", poster: "/assets/media/firmm-traders-poster.jpg" },
     { title: "Farmaz'ona Parlour Dashboard: billing, stock and daily closing", project: "", caption: "Live · demo data in this video", src: "/assets/media/farmazona.mp4", webm: "/assets/media/farmazona.webm", poster: "/assets/media/farmazona-poster.jpg" },
     { title: "AI Commerce Engine: ERP to AI to online store", project: "", caption: "Kenyan fashion & lifestyle retailer · IMADI Tech on daily operations, testing and fixes", src: "/assets/media/ximi-commerce.mp4", webm: "/assets/media/ximi-commerce.webm", poster: "/assets/media/ximi-commerce-poster.jpg" },
     { title: "HerCommerce: set up a store, add products, get the link", project: "hercommerce", caption: "Seller side · dummy data", src: "/assets/media/hercommerce-seller.mp4", webm: "/assets/media/hercommerce-seller.webm", poster: "/assets/media/hercommerce-seller-poster.jpg" },

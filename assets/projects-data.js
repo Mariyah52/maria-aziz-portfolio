@@ -124,6 +124,40 @@ window.PROJECTS = [
     evidence: []
   },
   {
+    slug: "firmm-traders",
+    name: "FIRMM Traders: Wholesale Food Distribution Site",
+    tagline: "Client Work \u00b7 Web Development",
+    client: "FIRMM Traders, wholesale food distributor \u00b7 Canada",
+    period: "Nov 2026",
+    categories: ["client", "web"],
+    featured: true,
+    status: "Live",
+    problem: "The business supplies grocers and food-service kitchens across North America, but its website looked dated and did not reflect the size of the range it carries.",
+    challenge: "A catalogue of nearly eighty products across seven categories and several partner brands had to stay easy to browse, and the whole site had to move from a local build onto the client's own hosting without losing anything.",
+    solution: "A custom WordPress theme built from scratch in the client's colours, with a browsable product catalogue, brand pages, pack sizes on every item, a private-label section and an enquiry form for wholesale pricing.",
+    features: [
+      "Custom WordPress theme, written rather than bought, in the client's own colours",
+      "79 products across coffee, dry fruits, flours, lentils and pulses, marinades, rice and spices",
+      "Pack sizes on each product, from 100g jars to 8lb lentil bags",
+      "Brand pages for the partner brands the business distributes",
+      "Private-label section for retailers who want their own branding",
+      "Enquiry form and WhatsApp link for wholesale pricing requests"
+    ],
+    myRole: "Founder & AI Specialist. Built the theme, structured and entered the catalogue, prepared the product imagery, and ran the go-live onto the client's hosting with the client on the call.",
+    technology: ["WordPress", "PHP", "Custom theme", "Contact Form 7", "WordPress.com hosting"],
+    architecture: ["Custom WordPress theme", "Product catalogue with category filters", "Brand pages", "Enquiry form", "WordPress.com Business hosting"],
+    innovation: "Built and reviewed locally in WordPress Studio first, so the client could walk through the whole site and give feedback before anything touched the live domain.",
+    results: [
+      "Live on firmmtraders.com since November 2026",
+      "79 products published across seven categories",
+      "First North American client project for IMADI Tech",
+      "Phase 2 agreed with the client for further partner-brand ranges"
+    ],
+    evidence: [
+      { label: "The live site: firmmtraders.com", href: "https://firmmtraders.com/" }
+    ]
+  },
+  {
     slug: "renaz",
     name: "ReNaz: WhatsApp Scrap Collection Platform",
     tagline: "Client Work · Conversational Systems",
@@ -369,6 +403,10 @@ window.PLAIN = {
   "shah": {
     "problem": "A second trading business needed the same control over quotes, deliveries, invoices and stock, under its own name.",
     "solution": "I adapted the ALICO system for them, adding one-click conversion from quotation to invoice and automatic stock updates."
+  },
+  "firmm-traders": {
+    "problem": "A Canadian wholesale food distributor's site looked dated and showed almost nothing of the range it actually carries.",
+    "solution": "I built a custom WordPress theme in their colours with all 79 products, pack sizes, brand pages and an enquiry form, and took it live on their own hosting."
   },
   "renaz": {
     "problem": "The client needed data on how much scrap comes from across Karachi, an easy way to collect it, and verified collectors who can enter gated communities.",
