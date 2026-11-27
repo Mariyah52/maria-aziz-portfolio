@@ -179,9 +179,17 @@ def case_study(p):
     probl = " ".join(((p.get("plainProblem") or p.get("problem")) or "").split())
     soln = " ".join(((p.get("plainSolution") or p.get("solution")) or "").split())
     cs_desc = clip(f"{probl} {soln}".strip() if soln else probl)
+    # Three practice projects are kept on the site but out of the search
+    # index: machine-learning and meal-planning pages pull the site's topic
+    # away from WhatsApp automation, which is what it sells. "follow" means
+    # Google still travels the links on them.
+    off_search = {"ml-pipeline", "nlp-sentiment-analysis", "smart-meal-planner"}
+    head_extra = ('<meta name="robots" content="noindex, follow">'
+                  if p["slug"] in off_search else "")
     write(path + "index.html", page(cs_title, cs_desc, path, body,
+                                    extra_head=head_extra,
                                     extra_scripts=scripts, ld=ld))
-    return path
+    return None if p["slug"] in off_search else path
 
 
 # ------------------------------------------------------- SERVICE PAGE ------
@@ -459,7 +467,10 @@ def build():
     import growth_pages
     import aeo_pages
     projects = load_projects()
-    paths = [case_study(p) for p in projects]
+    # case_study returns None for the pages kept out of the index, so they
+    # never reach the sitemap: a sitemap entry for a noindex page is a
+    # contradiction Search Console reports as an error.
+    paths = [q for q in (case_study(p) for p in projects) if q]
     write("/whatsapp-automation/index.html", page(
         "WhatsApp Chatbot & Lead Automation in Karachi | IMADI Tech",
         "AI WhatsApp automation for furniture, kitchen, interior and supply businesses: instant replies, PDF quotations, auto follow-ups and one lead dashboard.",
