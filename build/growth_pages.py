@@ -148,6 +148,7 @@ INDUSTRIES = [
         "proof": [("company-monitor", "For a multi-branch business in Nairobi, Kenya: every WhatsApp lead and conversation across branches, in one dashboard."),
                   ("uk-logistics-whatsapp", "A WhatsApp bot running a full claims process for an international client.")],
         "faq": [
+            ("How much does WhatsApp automation cost for a UAE business?", "A starter build begins at $600 and goes live in one to two weeks. A full build with lead qualification, quotations, follow-ups and a dashboard is $1,500 to $2,800 and takes two to four weeks. A system with ordering or billing behind it starts at $6,500. Monthly support starts at $120, and Meta's own per-message charges are billed to you separately by Meta."),
             ("Do you work with clients in the UAE?", "Yes. IMADI Tech works remotely with clients outside Pakistan and has delivered projects for international clients: a WhatsApp claims bot and ERP for a logistics company in the UK, and Company Monitor, a WhatsApp lead-monitoring dashboard for a multi-branch business in Nairobi, Kenya."),
             ("Can the assistant reply in Arabic?", "The assistant can be set up for English and Arabic replies, depending on your customers."),
             ("Can it follow up on email inquiries too?", "Yes. Follow-up automation can cover both WhatsApp and email inquiries, with every lead tracked in one dashboard."),
@@ -183,6 +184,7 @@ INDUSTRIES = [
         "proof": [("uk-logistics-whatsapp", "A WhatsApp bot running a UK logistics company's damage-claims process end to end."),
                   ("uk-logistics-erp", "The ERP and accounting platform behind it, with UK VAT and credit notes.")],
         "faq": [
+            ("How much does WhatsApp automation cost for a UK business?", "A starter build begins at £600 and goes live in one to two weeks. A full build with guided conversations, follow-ups and a dashboard is £1,500 to £3,000 and takes two to four weeks. A system with an ERP or billing platform behind it starts at £5,500. Monthly support starts at £100, and Meta's own per-message charges are billed to you separately by Meta."),
             ("Have you worked with clients in the UK?", "Yes. IMADI Tech has delivered two live platforms for a logistics company in the United Kingdom: a WhatsApp claims bot and a custom ERP and accounting platform that handles UK VAT and credit notes."),
             ("Where does our data live, and who owns it?", "The WhatsApp number, the hosting account and the data stay in your business's name. IMADI Tech builds and supports the system on infrastructure chosen with you, and works to whatever data-handling rules your business already follows."),
             ("Do we need the WhatsApp Business API?", "Yes, for anything beyond simple away messages. IMADI Tech connects your number to Meta's official WhatsApp Business Platform and completes Meta's verification as part of the build."),
@@ -219,6 +221,7 @@ INDUSTRIES = [
         "proof": [("firmm-traders", "A live wholesale food distribution website in Canada, with 79 products by pack size and brand."),
                   ("alico", "Orders, quotations, challans and invoices generated in one app and shared on WhatsApp.")],
         "faq": [
+            ("How much does WhatsApp automation cost for a Canadian business?", "A starter build begins at CAD 900 and goes live in one to two weeks. A full ordering build with repeat orders, invoices and a dashboard is CAD 2,200 to CAD 4,000 and takes two to four weeks. A system that also covers the website and catalogue starts at CAD 8,000. Monthly support starts at CAD 150, and Meta's own per-message charges are billed to you separately by Meta."),
             ("Have you worked with a Canadian client?", "Yes. IMADI Tech built the website for FIRMM Traders, a wholesale food distribution business in Canada, which has been live since November 2026 with 79 products listed by pack size and brand."),
             ("Can buyers order from a catalogue on WhatsApp?", "Yes. The assistant can show products by brand and pack size, take the order in the chat and confirm it back, so nobody re-types it afterwards."),
             ("Can it work alongside our existing website?", "Yes. The website and the ordering system can share the same product list, so a price or pack-size change is made once."),
@@ -226,6 +229,85 @@ INDUSTRIES = [
         ],
     },
 ]
+
+
+PRICING_NOTE = ("Every project is quoted after a short call, because the price depends on how many conversation flows you need, "
+                "what the system connects to, and whether a dashboard or an ERP sits behind it. "
+                "Meta's own per-message charges are billed to your business by Meta and are separate from the figures below.")
+
+PRICING = {
+    "pakistan": {
+        "currency": "PKR", "low": 55000, "high": 400000,
+        "tiers": [
+            ("Starter", "from PKR 55,000", "1–2 weeks",
+             "Instant replies, a product and price menu, lead capture and a simple dashboard, on Meta's official WhatsApp Business Platform."),
+            ("Core", "PKR 120,000–250,000", "2–4 weeks",
+             "Guided conversations, quotations or invoices generated from your price list, automatic follow-ups, and a dashboard your team works from."),
+            ("System", "from PKR 400,000", "6–10 weeks",
+             "The bot plus the system behind it: ERP, billing, stock or reporting, built around how your business already runs."),
+        ],
+        "support": "Monthly support, which keeps the system online and your answers and prices up to date, starts at PKR 8,000.",
+    },
+    "united-kingdom": {
+        "currency": "GBP", "low": 600, "high": 5500,
+        "tiers": [
+            ("Starter", "from £600", "1–2 weeks",
+             "Instant replies, a service or price menu, enquiry capture and a simple dashboard, on Meta's official WhatsApp Business Platform."),
+            ("Core", "£1,500–£3,000", "2–4 weeks",
+             "Guided conversations that collect the details and documents you need, automatic follow-ups, and a dashboard where your team approves or rejects each case."),
+            ("System", "from £5,500", "6–10 weeks",
+             "The bot plus the platform behind it, as built for a UK logistics client: ERP, VAT, credit notes and reporting."),
+        ],
+        "support": "Monthly support, covering hosting, updates and changes to your flows, starts at £100.",
+    },
+    "dubai-uae": {
+        "currency": "USD", "low": 600, "high": 6500,
+        "tiers": [
+            ("Starter", "from $600", "1–2 weeks",
+             "Instant replies to your ad enquiries, a product and price menu, lead capture and a simple dashboard."),
+            ("Core", "$1,500–$2,800", "2–4 weeks",
+             "Lead qualification, quotations sent on WhatsApp or email, automatic follow-ups for enquiries that go quiet, and one dashboard for the pipeline."),
+            ("System", "from $6,500", "6–10 weeks",
+             "The bot plus the system behind it: ordering, billing, stock or reporting, connected to your existing tools."),
+        ],
+        "support": "Monthly support, covering hosting, updates and changes to your flows, starts at $120.",
+    },
+    "canada": {
+        "currency": "CAD", "low": 900, "high": 8000,
+        "tiers": [
+            ("Starter", "from CAD 900", "1–2 weeks",
+             "Instant replies, a catalogue of products by brand and pack size, order capture and a simple dashboard."),
+            ("Core", "CAD 2,200–4,000", "2–4 weeks",
+             "Repeat orders placed and confirmed in chat, invoices generated without re-typing, follow-ups, and every order in one dashboard."),
+            ("System", "from CAD 8,000", "6–10 weeks",
+             "The ordering system plus the website and catalogue behind it, kept in step so a price or pack size is changed once."),
+        ],
+        "support": "Monthly support, covering hosting, updates and catalogue changes, starts at CAD 150.",
+    },
+}
+
+
+def _pricing(key):
+    p = PRICING[key]
+    rows = "".join(
+        f'<div class="card"><div class="eyebrow">{e(name)} · {e(weeks)}</div>'
+        f'<h3 style="margin:6px 0 10px;">{e(price)}</h3><p>{e(desc)}</p></div>'
+        for name, price, weeks, desc in p["tiers"])
+    return f'''
+        <section class="wrap section" id="pricing">
+            <div class="section-head"><div class="eyebrow">Pricing</div><h2>What it costs</h2>
+            <p class="section-intro">{e(PRICING_NOTE)}</p></div>
+            <div class="grid three">{rows}</div>
+            <p style="margin-top:18px;">{e(p["support"])}</p>
+        </section>
+'''
+
+
+def _pricing_ld(key, url, name):
+    p = PRICING[key]
+    return {"@type": "AggregateOffer", "@id": url + "#offers", "name": name,
+            "priceCurrency": p["currency"], "lowPrice": p["low"], "highPrice": p["high"],
+            "offerCount": len(p["tiers"]), "url": url, "offeredBy": {"@id": ORG_ID}}
 
 
 def _card_grid(items):
@@ -282,7 +364,7 @@ def industry_page(ind, projects_by_slug):
             <div class="section-head"><div class="eyebrow">Proof</div><h2>Related work by IMADI Tech</h2></div>
             <div class="grid two">{proof}</div>
         </section>
-
+{_pricing(ind["slug"]) if ind["slug"] in PRICING else ""}
         <section class="wrap section">
             <div class="section-head"><div class="eyebrow">FAQ</div><h2>Common questions</h2></div>
             <div class="faq-list">{_faq(ind["faq"])}</div>
@@ -307,6 +389,8 @@ def industry_page(ind, projects_by_slug):
          "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in ind["faq"]]},
         breadcrumb([("Home", "/"), ("WhatsApp Automation", "/whatsapp-automation/"), (ind["nav"], path)]),
     ]
+    if ind["slug"] in PRICING:
+        ld.append(_pricing_ld(ind["slug"], SITE_URL + path, ind["h1"]))
     write(path + "index.html", page(ind["title"], ind["description"], path, body, ld=ld))
     return path
 
@@ -330,7 +414,13 @@ POSTS = [
                 <li>Connecting your number to Meta's official WhatsApp Business Platform and completing Meta's verification</li>
                 <li>Extras such as PDF quotations, automatic follow-ups or a lead dashboard</li>
             </ul>
-            <p>A simple bot that answers common questions costs far less than one that sends quotations, follows up and feeds a dashboard. That's why any honest quote comes after a short call about your workflow.</p>
+            <p>A simple bot that answers common questions costs far less than one that sends quotations, follows up and feeds a dashboard. These are the ranges IMADI Tech works to in Pakistan:</p>
+            <ul>
+                <li><strong>From PKR 55,000</strong> &mdash; instant replies, a product and price menu, lead capture and a simple dashboard. Live in one to two weeks.</li>
+                <li><strong>PKR 120,000 to PKR 250,000</strong> &mdash; guided conversations, quotations or invoices generated from your price list, automatic follow-ups, and a dashboard your team works from. Two to four weeks.</li>
+                <li><strong>From PKR 400,000</strong> &mdash; the bot plus the system behind it: ERP, billing, stock or reporting. Six to ten weeks.</li>
+            </ul>
+            <p>Monthly support starts at PKR 8,000. An exact quote still comes after a short call about your workflow, because the number of flows and what the system connects to move the figure more than anything else.</p>
 
             <h2>2. Hosting and support (monthly)</h2>
             <p>The bot runs on a server around the clock. The monthly fee covers keeping it online, updating answers and prices, fixing anything that breaks, and adjusting the flows as you learn what customers ask.</p>
@@ -662,6 +752,7 @@ DEV_WORK = [
 ]
 DEV_FAQ = [
     ("Who builds WhatsApp chatbots in Pakistan?", "Maria Aziz, founder of IMADI Tech in Karachi, is a developer who builds WhatsApp chatbots and automation on Meta's official WhatsApp Cloud API, with live systems for clients in Pakistan, the UK and Kenya, and a delivered client website in Canada."),
+    ("How much does a WhatsApp chatbot cost in Pakistan?", "A starter build from IMADI Tech begins at PKR 55,000 and goes live in one to two weeks. A full build with guided conversations, quotations or invoices, follow-ups and a dashboard is PKR 120,000 to PKR 250,000 and takes two to four weeks. A system with an ERP or billing platform behind it starts at PKR 400,000. Monthly support starts at PKR 8,000, and Meta's own per-message charges are billed to your business separately by Meta."),
     ("What does Maria Aziz build with?", "Mainly Python (FastAPI and Flask), PostgreSQL, React with TypeScript, Firebase, and Meta's WhatsApp Cloud API and Graph API."),
     ("Can you work as a developer for my agency or company?", "Yes. IMADI Tech takes on full projects and also builds WhatsApp bots, dashboards and automations as a development partner for agencies and companies."),
     ("Do you build Instagram and Facebook automation too?", "Yes. IMADI Tech builds bots that design posts, carousels and reels and publish them to Instagram and Facebook on a schedule, as it did for HerCommerce and its own pages."),
@@ -708,6 +799,7 @@ def developer_page(projects_by_slug):
             </ul>
         </section>
 
+{_pricing("pakistan")}
         <section class="wrap section">
             <div class="section-head"><div class="eyebrow">FAQ</div><h2>Questions developers get asked</h2></div>
             <div class="faq-list">{_faq(DEV_FAQ)}</div>
