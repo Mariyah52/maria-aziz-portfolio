@@ -42,9 +42,9 @@ home_body = """
         <section class="wrap hero-grid reveal">
             <div>
                 <div class="eyebrow">Maria Aziz · Founder, IMADI Tech · Karachi</div>
-                <h1 style="font:700 clamp(2.4rem,5.6vw,4.2rem)/1.05 var(--display);letter-spacing:-.03em;margin:8px 0 20px;">AI WhatsApp Automation<br>&amp; Custom Software, Karachi</h1>
-                <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">I build AI-powered business software: WhatsApp chatbots and automation, custom ERP and business management systems, and SaaS products. Since May 2026 I have delivered 7 client platforms for businesses in Pakistan, the UK and Kenya, all live and in daily use, plus a client website in Canada, working across Python, FastAPI, JavaScript, Firebase, PostgreSQL and LLM integration.</p>
-                <p style="color:var(--body);max-width:580px;margin:0 0 30px;">My work begins with understanding the problem. I analyse workflows, users and operational challenges, then design practical technology solutions that can be built, tested and improved.</p>
+                <h1 style="font:700 clamp(2.4rem,5.6vw,4.2rem)/1.05 var(--display);letter-spacing:-.03em;margin:8px 0 20px;">Your Business Runs<br>on WhatsApp. I Build<br>the System Behind It.</h1>
+                <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">Orders, invoices, claims, branch reporting, collection requests &mdash; the work your team does by hand inside WhatsApp, running instead as a tested system on the official WhatsApp Business Platform, with every enquiry visible in a dashboard or ERP. Since May 2026 I have delivered 7 client platforms for businesses in Pakistan, the UK and Kenya, all live and in daily use, plus a client website in Canada.</p>
+                <p style="color:var(--body);max-width:580px;margin:0 0 30px;">Every build starts with your actual workflow, not a template. Each project below names what the business was struggling with and the number that changed once it was running.</p>
                 <div class="hero-actions">
                     <a class="btn primary" href="/contact/?source=homepage" data-track="primary_cta">Discuss Your Project <span aria-hidden="true">↗</span></a>
                     <a class="btn" href="/work/">Explore Case Studies</a>
@@ -59,8 +59,8 @@ home_body = """
             <div class="card">
                 <div class="eyebrow">IMADI Tech in short</div>
                 <h2 id="in-short" style="margin-top:6px;">What IMADI Tech does</h2>
-                <p>IMADI Tech is an AI automation company in Karachi, Pakistan, founded by Maria Aziz in May 2026. It builds WhatsApp chatbots and lead automation, custom ERP and business management systems, and SaaS products for small and mid-sized businesses, with projects delivered in Pakistan, the UK, Canada and Kenya.</p>
-                <p style="margin-bottom:0;">For businesses that sell through WhatsApp, Instagram and Facebook ads, IMADI Tech sets up an assistant that replies to every enquiry instantly, shares designs and price ranges, sends quotations, follows up with customers who go quiet, and shows every lead in one dashboard. <a href="/whatsapp-automation/">See how WhatsApp lead automation works</a> or read the <a href="/faq/">frequently asked questions</a>.</p>
+                <p>IMADI Tech is an automation studio in Karachi, Pakistan, founded by Maria Aziz in May 2026. It works with businesses that already run on WhatsApp &mdash; wholesalers taking orders in chat, logistics firms handling claims, parlours booking services, companies whose branches report through their phones &mdash; and turns that daily chat work into a system on the official WhatsApp Business Platform, connected to an ERP, billing or dashboard the owner can see. Projects have been delivered in Pakistan, the UK, Canada and Kenya.</p>
+                <p style="margin-bottom:0;">If your enquiries arrive on WhatsApp, Instagram or through Facebook ads, the assistant replies instantly, shares prices and designs, sends quotations, follows up with the customers who go quiet, and records every lead in one place. <a href="/whatsapp-automation/">See how WhatsApp lead automation works</a> or read the <a href="/faq/">frequently asked questions</a>.</p>
             </div>
         </section>
 
@@ -101,11 +101,12 @@ home_body = """
                 <h2>From Problems to Technology Solutions</h2>
             </div>
             <div class="grid three">
-                <div class="card project-card"><div class="project-icon">✦</div><h3>AI-Powered Products</h3><p>Products designed so intelligence solves a real workflow problem, not just a demo.</p></div>
-                <div class="card project-card"><div class="project-icon">↻</div><h3>Intelligent Automation</h3><p>Removing repetitive, manual steps so teams spend time on judgement, not data entry.</p></div>
-                <div class="card project-card"><div class="project-icon">◇</div><h3>Chatbots &amp; Conversational Systems</h3><p>Conversational interfaces that meet people where they already are, like WhatsApp.</p></div>
-                <div class="card project-card"><div class="project-icon">◌</div><h3>Machine Learning &amp; NLP</h3><p>Applying ML and NLP where it genuinely improves a decision or an understanding of language.</p></div>
-                <div class="card project-card"><div class="project-icon">▣</div><h3>Scalable SaaS Platforms</h3><p>Multi-tenant products built for a team's real workflow, not a single user's.</p></div>
+                <div class="card project-card"><div class="project-icon">✦</div><h3>Orders and invoicing in chat</h3><p>A customer orders on WhatsApp, the invoice is created and sent back in the same conversation, and the sale is already recorded.</p></div>
+                <div class="card project-card"><div class="project-icon">↻</div><h3>Enquiries and claims</h3><p>Every enquiry or claim is captured, given a reference, routed to the right person and followed up, instead of sitting unread in someone's phone.</p></div>
+                <div class="card project-card"><div class="project-icon">◇</div><h3>Branch and staff reporting</h3><p>Branches report from their own phones and the owner sees all of it in one dashboard, without chasing anyone for numbers.</p></div>
+                <div class="card project-card"><div class="project-icon">◌</div><h3>Bookings and collection requests</h3><p>Customers book a service or request a pickup through chat, and the team works from a single queue rather than scattered messages.</p></div>
+                <div class="card project-card"><div class="project-icon">▣</div><h3>ERP, billing and dashboards</h3><p>The system behind the chat: rate cards, billing, stock and reporting, built for how the business actually works.</p></div>
+                <div class="card project-card"><div class="project-icon">◈</div><h3>SaaS platforms</h3><p>Multi-tenant products where many businesses use the same platform, each with their own data and their own view.</p></div>
             </div>
         </section>
 
@@ -165,7 +166,7 @@ home_body += """
 
 write("/index.html", page(
     "IMADI Tech by Maria Aziz | AI WhatsApp Automation, Karachi",
-    "IMADI Tech, founded by Maria Aziz in Karachi, builds AI WhatsApp automation, chatbots, ERP and SaaS so businesses never miss a lead or a follow-up.",
+    "IMADI Tech turns the orders, invoices and claims your team handles by hand on WhatsApp into a tested system, connected to a dashboard or ERP you can see.",
     "/",
     home_body,
     ld=[{"@type": "WebPage", "@id": "https://www.imadi.tech/#webpage", "url": "https://www.imadi.tech/",

@@ -42,6 +42,8 @@ A: Python, FastAPI, Flask, PostgreSQL, React, TypeScript and Firebase, connected
 - [A WhatsApp assistant for kitchen and wardrobe companies](https://www.imadi.tech/whatsapp-automation/kitchens-wardrobes/): WhatsApp automation for kitchen, cabinet and wardrobe makers: collect measurements and photos, book site visits, send quotations and follow up automatically.
 - [WhatsApp bots for logistics and delivery companies](https://www.imadi.tech/whatsapp-automation/logistics/): WhatsApp bots for logistics companies: rate questions, order inquiries, damage claims with photos and documents, and a dashboard to approve or reject them.
 - [WhatsApp automation for businesses in Dubai and the UAE](https://www.imadi.tech/whatsapp-automation/dubai-uae/): WhatsApp chatbots and lead follow-up for UAE businesses: instant replies to ad enquiries, quotations, follow-ups and a lead dashboard, built remotely.
+- [WhatsApp automation for businesses in the United Kingdom](https://www.imadi.tech/whatsapp-automation/united-kingdom/): WhatsApp automation for UK companies: guided claim filing, order enquiries, follow-ups and a dashboard. Two platforms already live for a UK client.
+- [WhatsApp automation and ordering for businesses in Canada](https://www.imadi.tech/whatsapp-automation/canada/): Ordering, catalogue and enquiry automation for Canadian wholesalers and distributors, from the team behind a live wholesale food distribution site.
 
 ## Blog
 - [What a WhatsApp chatbot costs in Pakistan](https://www.imadi.tech/blog/whatsapp-chatbot-cost-pakistan/): What you actually pay for when you set up a WhatsApp chatbot in Pakistan: the build, monthly support, and Meta's own per-message charges, explained simply.

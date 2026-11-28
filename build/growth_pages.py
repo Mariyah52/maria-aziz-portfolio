@@ -153,6 +153,78 @@ INDUSTRIES = [
             ("Can it follow up on email inquiries too?", "Yes. Follow-up automation can cover both WhatsApp and email inquiries, with every lead tracked in one dashboard."),
         ],
     },
+    {
+        "slug": "united-kingdom",
+        "nav": "United Kingdom",
+        "title": "WhatsApp Automation for UK Businesses | IMADI Tech",
+        "description": "WhatsApp automation for UK companies: guided claim filing, order enquiries, follow-ups and a dashboard. Two platforms already live for a UK client.",
+        "eyebrow": "WhatsApp automation · United Kingdom",
+        "h1": "WhatsApp automation for businesses in the United Kingdom",
+        "intro": ("Two of the platforms IMADI Tech has built are already running for a logistics company in the United Kingdom: "
+                  "a WhatsApp bot that handles the full damage-claims process, and a custom ERP with UK VAT and credit notes behind it. "
+                  "The same approach suits any UK business whose customers message first and whose paperwork then has to be chased by hand."),
+        "problems": [
+            ("Enquiries that arrive after the office closes", "Customers message in the evening or at the weekend, and the reply waits until Monday, by which time some have gone elsewhere."),
+            ("Paperwork spread across email threads", "Claims, order changes and documents arrive as long threads with photos and PDFs attached in the wrong places."),
+            ("No single view of what is still open", "Without one dashboard, nobody can say quickly which enquiries or claims are waiting, approved or rejected."),
+        ],
+        "features": [
+            "Built on the official WhatsApp Business Platform, with Meta's business verification completed",
+            "Guided conversations that collect the details, photos and documents you actually need",
+            "A dashboard where your team reviews, approves or rejects each case",
+            "Automatic follow-ups for customers who go quiet",
+            "Your business keeps ownership of the WhatsApp number, the data and the hosting account",
+            "Working hours overlap the UK morning, with support arranged around your day",
+        ],
+        "chat": [("in", "Hi, one of the pallets arrived damaged. What do I do?"),
+                 ("out", "Sorry to hear that. Please send the consignment number, then photos of the label and the damage."),
+                 ("in", "CN-44821, photos attached 📷"),
+                 ("out", "Thank you. Claim CLM-1043 is open and with our claims team. You'll get an update here.")],
+        "proof": [("uk-logistics-whatsapp", "A WhatsApp bot running a UK logistics company's damage-claims process end to end."),
+                  ("uk-logistics-erp", "The ERP and accounting platform behind it, with UK VAT and credit notes.")],
+        "faq": [
+            ("Have you worked with clients in the UK?", "Yes. IMADI Tech has delivered two live platforms for a logistics company in the United Kingdom: a WhatsApp claims bot and a custom ERP and accounting platform that handles UK VAT and credit notes."),
+            ("Where does our data live, and who owns it?", "The WhatsApp number, the hosting account and the data stay in your business's name. IMADI Tech builds and supports the system on infrastructure chosen with you, and works to whatever data-handling rules your business already follows."),
+            ("Do we need the WhatsApp Business API?", "Yes, for anything beyond simple away messages. IMADI Tech connects your number to Meta's official WhatsApp Business Platform and completes Meta's verification as part of the build."),
+            ("Do you work remotely with UK clients?", "Yes. Both UK platforms were built and are supported remotely from Karachi, with calls arranged in UK hours."),
+        ],
+    },
+    {
+        "slug": "canada",
+        "nav": "Canada",
+        "title": "WhatsApp Automation for Canadian Businesses | IMADI Tech",
+        "description": "Ordering, catalogue and enquiry automation for Canadian wholesalers and distributors, from the team behind a live wholesale food distribution site.",
+        "eyebrow": "WhatsApp automation · Canada",
+        "h1": "WhatsApp automation and ordering for businesses in Canada",
+        "intro": ("IMADI Tech built and launched the website for FIRMM Traders, a wholesale food distribution business in Canada, "
+                  "with 79 products listed by pack size and brand. Wholesale and distribution businesses usually take their repeat orders in chat, "
+                  "which is exactly the work a WhatsApp system can take over: the catalogue, the order, the confirmation and the invoice."),
+        "problems": [
+            ("Repeat orders typed out by hand", "The same buyers order the same items every week, and someone re-enters each order into the system."),
+            ("Pack sizes and prices asked again and again", "Buyers message to check a pack size, a brand or this week's price before they commit."),
+            ("Orders split between chat, phone and email", "By the end of the day nobody is certain which orders came in or which were confirmed."),
+        ],
+        "features": [
+            "A product catalogue the buyer can browse inside WhatsApp, by brand and pack size",
+            "Repeat orders placed in chat and confirmed back in the same conversation",
+            "Invoices generated and sent without re-typing the order",
+            "Price and stock answers from a list your team maintains",
+            "Every order visible in one dashboard, with the chat attached",
+            "A public website and the ordering system kept in step with each other",
+        ],
+        "chat": [("in", "Do you have the 5kg basmati in stock this week?"),
+                 ("out", "Yes, the 5kg pack is in stock. Would you like your usual 20 cases?"),
+                 ("in", "Make it 25 this time"),
+                 ("out", "Done. 25 cases confirmed, and your invoice is on the way here.")],
+        "proof": [("firmm-traders", "A live wholesale food distribution website in Canada, with 79 products by pack size and brand."),
+                  ("alico", "Orders, quotations, challans and invoices generated in one app and shared on WhatsApp.")],
+        "faq": [
+            ("Have you worked with a Canadian client?", "Yes. IMADI Tech built the website for FIRMM Traders, a wholesale food distribution business in Canada, which has been live since November 2026 with 79 products listed by pack size and brand."),
+            ("Can buyers order from a catalogue on WhatsApp?", "Yes. The assistant can show products by brand and pack size, take the order in the chat and confirm it back, so nobody re-types it afterwards."),
+            ("Can it work alongside our existing website?", "Yes. The website and the ordering system can share the same product list, so a price or pack-size change is made once."),
+            ("Do you work remotely with Canadian clients?", "Yes. The FIRMM Traders site was built and launched remotely from Karachi, with calls arranged around Canadian hours."),
+        ],
+    },
 ]
 
 
