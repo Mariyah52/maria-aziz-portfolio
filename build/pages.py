@@ -44,7 +44,7 @@ home_body = """
                 <div class="eyebrow">Maria Aziz · Founder, IMADI Tech · Karachi</div>
                 <h1 style="font:700 clamp(2.4rem,5.6vw,4.2rem)/1.05 var(--display);letter-spacing:-.03em;margin:8px 0 20px;">Your Business Runs<br>on WhatsApp. I Build<br>the System Behind It.</h1>
                 <p style="color:var(--muted);font-size:1.12rem;max-width:560px;margin:0 0 18px;">Orders, invoices, claims, branch reporting, collection requests &mdash; the work your team does by hand inside WhatsApp, running instead as a tested system on the official WhatsApp Business Platform, with every enquiry visible in a dashboard or ERP. Since May 2026 I have delivered 7 client platforms for businesses in Pakistan, the UK and Kenya, all live and in daily use, plus a client website in Canada.</p>
-                <p style="color:var(--body);max-width:580px;margin:0 0 30px;">Every build starts with your actual workflow, not a template. Each project below names what the business was struggling with and the number that changed once it was running.</p>
+                <p style="color:var(--body);max-width:580px;margin:0 0 30px;">Every build starts with your actual workflow, not a template, and most go live in two to four weeks. Each project below names what the business was struggling with and the number that changed once it was running.</p>
                 <div class="hero-actions">
                     <a class="btn primary" href="/contact/?source=homepage" data-track="primary_cta">Discuss Your Project <span aria-hidden="true">↗</span></a>
                     <a class="btn" href="/work/">Explore Case Studies</a>
@@ -143,6 +143,10 @@ HOME_FAQ = [
      "A WhatsApp AI bot replies to customer questions at any hour, captures and qualifies leads, sends quotations "
      "and follows up automatically with people who go quiet, so a business stops losing enquiries that arrive "
      "after hours or get missed by staff."),
+    ("How long does a WhatsApp automation project take?",
+     "Most WhatsApp automation projects built by IMADI Tech go live in two to four weeks, from the first workflow "
+     "call to a working system on the official WhatsApp Business Platform. A project that also needs an ERP, "
+     "billing or a full dashboard behind it takes longer, and the timeline is agreed before any work starts."),
     ("Does IMADI Tech work with clients outside Pakistan?",
      "Yes. IMADI Tech works remotely from Karachi and has delivered WhatsApp bots, ERP systems and SaaS platforms "
      "for businesses in Pakistan, the United Kingdom, Canada and Kenya. It also takes on clients in the UAE."),
